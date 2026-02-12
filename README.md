@@ -1,6 +1,6 @@
 # Next Portfolio(https://next-umsungjun.vercel.app/ko/home)
 
-<img width="100%" src="https://drive.google.com/thumbnail?id=1JoY3oZxH1lDNXwItJ6c13rG-H1HU4LYH&sz=w1000"/>
+<img width="100%" src="https://drive.google.com/thumbnail?id=1_OWiDt2NzD4g2pdq0wdsZsctNaHC5zpu&sz=w1000"/>
 
 ## 프로젝트 소개
 
