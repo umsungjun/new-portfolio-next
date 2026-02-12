@@ -3,7 +3,13 @@ import ChatHeader from "./header";
 
 export default async function Chat() {
   return (
-    <section className="max-w-[475px] w-[475px] h-dvh border-x border-slate-200/60 bg-gradient-to-b from-slate-50 to-white">
+    <section
+      className="max-w-[475px] w-[475px] h-dvh border-x bg-gradient-to-b"
+      style={{
+        borderColor: "var(--color-border-subtle)",
+        backgroundImage: "linear-gradient(to bottom, var(--color-bg-chat), var(--color-bg-primary))",
+      }}
+    >
       <ChatHeader />
       <ChatBody />
     </section>

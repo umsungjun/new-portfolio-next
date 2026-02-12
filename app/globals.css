@@ -2,8 +2,114 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ===== 테마 CSS 변수 ===== */
+:root,
+[data-theme="light"] {
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f1f5f9;
+  --color-bg-tertiary: #f8fafc;
+  --color-bg-accent: #1e293b;
+  --color-bg-header: #ffffff;
+  --color-bg-chat: #f8fafc;
+  --color-text-primary: #1e293b;
+  --color-text-secondary: #475569;
+  --color-text-tertiary: #64748b;
+  --color-text-muted: #94a3b8;
+  --color-text-heading: #0f172a;
+  --color-text-on-accent: #ffffff;
+  --color-border-primary: #e2e8f0;
+  --color-border-subtle: rgba(226, 232, 240, 0.6);
+  --color-hover-bg: #f1f5f9;
+  --color-hover-border: #cbd5e1;
+  --color-shadow: rgba(0, 0, 0, 0.06);
+  --color-loader: #94a3b8;
+  --color-skeleton-from: #f1f5f9;
+  --color-skeleton-via: #f8fafc;
+  --color-bubble-arrow: #e2e8f0;
+  --color-bubble-arrow-inner: #ffffff;
+  --color-hover-text: #0f172a;
+  --color-success: #10b981;
+}
+
+[data-theme="dark"] {
+  --color-bg-primary: #0f172a;
+  --color-bg-secondary: #1e293b;
+  --color-bg-tertiary: #1a2332;
+  --color-bg-accent: #e2e8f0;
+  --color-bg-header: #0f172a;
+  --color-bg-chat: #0c1322;
+  --color-text-primary: #e2e8f0;
+  --color-text-secondary: #cbd5e1;
+  --color-text-tertiary: #94a3b8;
+  --color-text-muted: #64748b;
+  --color-text-heading: #f8fafc;
+  --color-text-on-accent: #0f172a;
+  --color-border-primary: #334155;
+  --color-border-subtle: rgba(51, 65, 85, 0.6);
+  --color-hover-bg: #334155;
+  --color-hover-border: #475569;
+  --color-shadow: rgba(0, 0, 0, 0.3);
+  --color-loader: #64748b;
+  --color-skeleton-from: #1e293b;
+  --color-skeleton-via: #253347;
+  --color-bubble-arrow: #334155;
+  --color-bubble-arrow-inner: #0f172a;
+  --color-hover-text: #f8fafc;
+  --color-success: #34d399;
+  color-scheme: dark;
+}
+
+/* ===== Ocean: Light 기반 + 블루 포인트 ===== */
+[data-theme="ocean"] {
+  --color-bg-accent: #0284c7;
+  --color-bg-chat: #eff8ff;
+  --color-hover-bg: #e0f2fe;
+  --color-hover-border: #38bdf8;
+  --color-shadow: rgba(3, 105, 161, 0.1);
+  --color-loader: #0ea5e9;
+}
+
+/* ===== Rose: Light 기반 + 핑크 포인트 ===== */
+[data-theme="rose"] {
+  --color-bg-accent: #e11d48;
+  --color-bg-chat: #fff0f1;
+  --color-hover-bg: #ffe4e6;
+  --color-hover-border: #fb7185;
+  --color-shadow: rgba(190, 18, 60, 0.1);
+  --color-loader: #f43f5e;
+}
+
+/* ===== Forest: Light 기반 + 그린 포인트 ===== */
+[data-theme="forest"] {
+  --color-bg-accent: #16a34a;
+  --color-bg-chat: #f0fdf4;
+  --color-hover-bg: #dcfce7;
+  --color-hover-border: #4ade80;
+  --color-shadow: rgba(22, 101, 52, 0.1);
+  --color-loader: #22c55e;
+}
+
+/* 테마 전환 트랜지션 */
+html.theme-transition body,
+html.theme-transition header,
+html.theme-transition section,
+html.theme-transition aside,
+html.theme-transition .answer,
+html.theme-transition .answerLoader,
+html.theme-transition .questionMark,
+html.theme-transition .questionWrapper p,
+html.theme-transition .questionButtonBox,
+html.theme-transition .questionButtonBox button,
+html.theme-transition .bubbleGuide,
+html.theme-transition .linkCard {
+  transition: background-color 0.3s ease, color 0.3s ease,
+    border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
 body {
   font-family: "Pretendard Variable", Pretendard, sans-serif;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
 }
 
 @keyframes slideDown {
@@ -49,44 +155,70 @@ body {
   @apply w-11/12 flex flex-col gap-3 web:w-4/5;
 }
 .questionMark {
-  @apply w-7 h-7 flex items-center justify-center rounded-full bg-slate-800 text-white text-xs font-bold;
+  @apply w-7 h-7 flex items-center justify-center rounded-full text-xs font-bold;
+  background-color: var(--color-bg-accent);
+  color: var(--color-text-on-accent);
 }
 .questionWrapper p {
-  @apply w-fit bg-white p-4 rounded-2xl rounded-bl-sm shadow-[0_1px_2px_rgba(0,0,0,0.06)] text-[15px] text-slate-800 leading-relaxed;
+  @apply w-fit p-4 rounded-2xl rounded-bl-sm text-[15px] leading-relaxed;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  box-shadow: 0 1px 2px var(--color-shadow);
 }
 .questionButtonBox {
-  @apply p-4 bg-white rounded-2xl rounded-bl-sm flex flex-col gap-2.5;
+  @apply p-4 rounded-2xl rounded-bl-sm flex flex-col gap-2.5;
+  background-color: var(--color-bg-primary);
   animation: slideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .questionButtonBox span {
-  @apply text-[13px] text-slate-500 font-medium leading-6;
+  @apply text-[13px] font-medium leading-6;
+  color: var(--color-text-tertiary);
 }
 .questionButtonBox button {
-  @apply h-11 text-sm text-slate-700 border border-solid border-slate-200 rounded-xl bg-white hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98] transition-all duration-150 ease-out;
+  @apply h-11 text-sm border border-solid rounded-xl active:scale-[0.98] transition-all duration-150 ease-out;
+  color: var(--color-text-secondary);
+  background-color: var(--color-bg-primary);
+  border-color: var(--color-border-primary);
+}
+.questionButtonBox button:hover {
+  background-color: var(--color-hover-bg);
+  border-color: var(--color-hover-border);
 }
 
 /* 질문 버튼 스켈레톤 UI */
 .questionButtonBox button.questionButtonSkeleton {
-  @apply h-11 border-none rounded-xl relative overflow-hidden bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100;
+  @apply h-11 border-none rounded-xl relative overflow-hidden;
+  background: linear-gradient(
+    to right,
+    var(--color-skeleton-from),
+    var(--color-skeleton-via),
+    var(--color-skeleton-from)
+  );
   background-size: 200% 100%;
   animation: shimmer 2s ease-in-out infinite;
 }
 
 .answerLoader {
-  @apply w-fit max-w-64 web:max-w-80 bg-slate-100 ml-auto p-4 rounded-2xl rounded-br-sm shadow-[0_1px_2px_rgba(0,0,0,0.06)] flex flex-col gap-3;
+  @apply w-fit max-w-64 web:max-w-80 ml-auto p-4 rounded-2xl rounded-br-sm flex flex-col gap-3;
+  background-color: var(--color-bg-secondary);
+  box-shadow: 0 1px 2px var(--color-shadow);
   animation: slideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* 답변 CSS */
 .answer {
-  @apply w-fit max-w-80 bg-slate-100 text-slate-800 ml-auto p-4 rounded-2xl rounded-br-sm shadow-[0_1px_2px_rgba(0,0,0,0.06)] flex flex-col gap-3;
+  @apply w-fit max-w-80 ml-auto p-4 rounded-2xl rounded-br-sm flex flex-col gap-3;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  box-shadow: 0 1px 2px var(--color-shadow);
   animation: slideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .answer p {
   @apply w-full break-words leading-relaxed;
 }
 .answer .question {
-  @apply font-black text-black;
+  @apply font-black;
+  color: var(--color-text-primary);
 }
 .answer img {
   @apply rounded-lg;
@@ -99,16 +231,30 @@ body {
   @apply block mt-1.5;
 }
 
+/* 사이드 링크 카드 */
+.linkCard {
+  background-color: var(--color-bg-secondary);
+}
+.linkCard:hover {
+  background-color: var(--color-hover-bg);
+}
+.linkCardText {
+  color: var(--color-text-tertiary);
+}
+
 /* 말풍선 안내 */
 .bubbleGuide {
-  @apply absolute top-[3.75rem] right-1 bg-white z-10 px-3 py-1.5 rounded-xl shadow-lg border border-solid border-slate-200 flex items-center gap-1.5 !text-black text-sm;
+  @apply absolute top-[3.75rem] right-1 z-10 px-3 py-1.5 rounded-xl shadow-lg border border-solid flex items-center gap-1.5 text-sm;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-primary);
   animation: hide 5s ease-in forwards;
 }
 .bubbleGuide::before {
   border-top: 0px solid transparent;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 12px solid #e2e8f0;
+  border-bottom: 12px solid var(--color-bubble-arrow);
   content: "";
   position: absolute;
   top: -0.75rem;
@@ -118,7 +264,7 @@ body {
   border-top: 0px solid transparent;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-bottom: 12px solid #fff;
+  border-bottom: 12px solid var(--color-bubble-arrow-inner);
   content: "";
   position: absolute;
   top: -0.7rem;

@@ -1,11 +1,14 @@
 import "../globals.css";
 
+import { Suspense } from "react";
+
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
 import { ChannelTalk } from "@/components/channelTalk";
 import { SwrProviders } from "@/components/swrProvider";
+import { ThemeProvider } from "@/components/themeProvider";
 import { LOCALE_KO } from "@/lib/client/constants";
 import { localeType } from "@/lib/client/type";
 
@@ -74,7 +77,7 @@ export default async function LocaleLayout({
   const messages = await getMessages({ locale });
 
   return (
-    <html lang={locale}>
+    <html lang={locale} suppressHydrationWarning>
       <head>
         <link
           rel="stylesheet"
@@ -83,11 +86,15 @@ export default async function LocaleLayout({
         />
       </head>
       <body>
-        <SwrProviders>
-          <NextIntlClientProvider locale={locale} messages={messages}>
-            {children}
-          </NextIntlClientProvider>
-        </SwrProviders>
+        <Suspense fallback={null}>
+          <ThemeProvider>
+            <SwrProviders>
+              <NextIntlClientProvider locale={locale} messages={messages}>
+                {children}
+              </NextIntlClientProvider>
+            </SwrProviders>
+          </ThemeProvider>
+        </Suspense>
         <ChannelTalk />
       </body>
     </html>
