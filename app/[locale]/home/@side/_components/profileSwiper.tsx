@@ -31,7 +31,7 @@ export default function ProfileSwiper() {
         return (
           <SwiperSlide
             key={`${index}+${imgId}`}
-            className="relative w-[215px] h-[290px]"
+            className="relative w-[215px] h-[290px] rounded-2xl overflow-hidden"
           >
             <Image
               fill
