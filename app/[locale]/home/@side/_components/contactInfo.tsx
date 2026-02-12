@@ -49,14 +49,24 @@ export default function ContactInfo({ value, type }: ContactInfoProps) {
   return (
     <button
       onClick={handleClick}
-      className="mt-2 text-lg flex items-center gap-2 group hover:text-slate-900 transition-colors"
+      className="mt-2 text-lg flex items-center gap-2 group transition-colors"
+      style={{ color: "var(--color-text-secondary)" }}
       title={isVisible ? "클릭하여 복사" : "클릭하여 보기"}
+      onMouseEnter={(e) =>
+        (e.currentTarget.style.color = "var(--color-hover-text)")
+      }
+      onMouseLeave={(e) =>
+        (e.currentTarget.style.color = "var(--color-text-secondary)")
+      }
     >
       <span className="font-mono">{isVisible ? value : maskValue(value)}</span>
       {isVisible && (
         <span className="text-sm opacity-0 group-hover:opacity-100 transition-opacity">
           {isCopied ? (
-            <ClipboardDocumentCheckIcon className="size-5 text-emerald-500" />
+            <ClipboardDocumentCheckIcon
+              className="size-5"
+              style={{ color: "var(--color-success)" }}
+            />
           ) : (
             <ClipboardDocumentIcon className="size-5" />
           )}

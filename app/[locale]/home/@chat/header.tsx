@@ -5,29 +5,49 @@ import { useParams } from "next/navigation";
 
 import { Link } from "@/i18n/routing";
 import { LOCALE_EN, LOCALE_KO } from "@/lib/client/constants";
+import {
+  THEME_LIGHT,
+  useThemeStore,
+} from "@/store/useThemeStore";
 
-/* 아이콘 */
-// import { MoonIcon } from "@heroicons/react/24/solid";
 import { GlobeAsiaAustraliaIcon } from "@heroicons/react/24/solid";
+
+import ThemeToggle from "@/components/themeToggle";
 
 export default function ChatHeader() {
   const { locale } = useParams();
   const t = useTranslations();
+  const { theme } = useThemeStore();
 
   const showBubbleGuide = locale === LOCALE_KO;
 
+  /* 언어 전환 시 현재 테마 파라미터 보존 */
+  const langHref =
+    theme === THEME_LIGHT ? "/home" : `/home?theme=${theme}`;
+
   return (
-    <header className="sticky top-0 z-10 w-full h-14 bg-white/80 backdrop-blur-md border-b border-slate-200/60 flex items-center justify-center text-[15px] font-semibold tracking-tight">
-      {/* ToDo: 다크모드 구현, 다크모드 아이콘 */}
-      {/* <button className="cursor-pointer absolute left-3">
-        <MoonIcon className="size-5" />
-      </button> */}
+    <header
+      className="sticky top-0 z-10 w-full h-14 backdrop-blur-md border-b flex items-center justify-center text-[15px] font-semibold tracking-tight"
+      style={{
+        backgroundColor: "color-mix(in srgb, var(--color-bg-header), transparent 20%)",
+        borderColor: "var(--color-border-subtle)",
+        color: "var(--color-text-primary)",
+      }}
+    >
+      <ThemeToggle />
       {t("portfolioTitle")}
       {/* 언어 변경 */}
       <Link
-        href="/home"
+        href={langHref}
         locale={locale === LOCALE_KO ? LOCALE_EN : LOCALE_KO}
-        className="absolute right-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors duration-200"
+        className="absolute right-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm font-medium transition-colors duration-200"
+        style={{ color: "var(--color-text-secondary)" }}
+        onMouseEnter={(e) =>
+          (e.currentTarget.style.backgroundColor = "var(--color-hover-bg)")
+        }
+        onMouseLeave={(e) =>
+          (e.currentTarget.style.backgroundColor = "transparent")
+        }
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -42,7 +62,10 @@ export default function ChatHeader() {
       </Link>
       {showBubbleGuide && (
         <div className="bubbleGuide">
-          <GlobeAsiaAustraliaIcon className="size-4 text-slate-500" />
+          <GlobeAsiaAustraliaIcon
+            className="size-4"
+            style={{ color: "var(--color-text-muted)" }}
+          />
           We offer English translation services.
         </div>
       )}
