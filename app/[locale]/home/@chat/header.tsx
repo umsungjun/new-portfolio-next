@@ -17,7 +17,7 @@ export default function ChatHeader() {
   const showBubbleGuide = locale === LOCALE_KO;
 
   return (
-    <header className="relative w-full h-14 bg-white  shadow-sm flex items-center justify-center text-lg">
+    <header className="sticky top-0 z-10 w-full h-14 bg-white/80 backdrop-blur-md border-b border-slate-200/60 flex items-center justify-center text-[15px] font-semibold tracking-tight">
       {/* ToDo: 다크모드 구현, 다크모드 아이콘 */}
       {/* <button className="cursor-pointer absolute left-3">
         <MoonIcon className="size-5" />
@@ -27,12 +27,12 @@ export default function ChatHeader() {
       <Link
         href="/home"
         locale={locale === LOCALE_KO ? LOCALE_EN : LOCALE_KO}
-        className="absolute right-4 cursor-pointer flex gap-1.5"
+        className="absolute right-3 flex items-center gap-1.5 px-2.5 py-1.5 rounded-full text-sm font-medium text-slate-600 hover:bg-slate-100 transition-colors duration-200"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="currentColor"
-          className="w-6 h-6 "
+          className="w-5 h-5"
           viewBox="0 0 16 16"
         >
           <path d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
@@ -42,7 +42,7 @@ export default function ChatHeader() {
       </Link>
       {showBubbleGuide && (
         <div className="bubbleGuide">
-          <GlobeAsiaAustraliaIcon className="size-5 text-blue-500" />
+          <GlobeAsiaAustraliaIcon className="size-4 text-slate-500" />
           We offer English translation services.
         </div>
       )}

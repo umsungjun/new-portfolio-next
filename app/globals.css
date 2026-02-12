@@ -9,7 +9,7 @@ body {
 @keyframes slideDown {
   0% {
     opacity: 0;
-    transform: translateY(-20px);
+    transform: translateY(-12px);
   }
   100% {
     opacity: 1;
@@ -19,7 +19,7 @@ body {
 @keyframes slideUp {
   0% {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(12px);
   }
   100% {
     opacity: 1;
@@ -49,41 +49,41 @@ body {
   @apply w-11/12 flex flex-col gap-3 web:w-4/5;
 }
 .questionMark {
-  @apply w-8 h-8 flex items-center justify-center rounded-full bg-blue-500 text-white font-black;
+  @apply w-7 h-7 flex items-center justify-center rounded-full bg-slate-800 text-white text-xs font-bold;
 }
 .questionWrapper p {
-  @apply w-fit bg-white p-5 rounded-2xl rounded-bl-none shadow-sm leading-6;
+  @apply w-fit bg-white p-4 rounded-2xl rounded-bl-sm shadow-[0_1px_2px_rgba(0,0,0,0.06)] text-[15px] text-slate-800 leading-relaxed;
 }
 .questionButtonBox {
-  @apply p-5 bg-white rounded-2xl rounded-bl-none flex flex-col gap-3;
-  animation: slideDown 0.85s ease-in-out forwards;
+  @apply p-4 bg-white rounded-2xl rounded-bl-sm flex flex-col gap-2.5;
+  animation: slideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .questionButtonBox span {
-  @apply leading-6;
+  @apply text-[13px] text-slate-500 font-medium leading-6;
 }
 .questionButtonBox button {
-  @apply h-12 border border-solid border-gray-400 rounded-xl shadow-sm hover:shadow-md transition-all ease-in-out;
+  @apply h-11 text-sm text-slate-700 border border-solid border-slate-200 rounded-xl bg-white hover:bg-slate-50 hover:border-slate-300 active:scale-[0.98] transition-all duration-150 ease-out;
 }
 
 /* 질문 버튼 스켈레톤 UI */
 .questionButtonBox button.questionButtonSkeleton {
-  @apply h-12 border-none rounded-xl relative overflow-hidden bg-gradient-to-r from-gray-200 via-gray-100 to-gray-200;
+  @apply h-11 border-none rounded-xl relative overflow-hidden bg-gradient-to-r from-slate-100 via-slate-50 to-slate-100;
   background-size: 200% 100%;
-  animation: shimmer 1.5s ease-in-out infinite;
+  animation: shimmer 2s ease-in-out infinite;
 }
 
 .answerLoader {
-  @apply w-fit max-w-64 web:max-w-80 bg-blue-200 ml-auto p-5 rounded-2xl rounded-br-none shadow-sm flex flex-col gap-3;
-  animation: slideDown 0.85s ease-in-out forwards;
+  @apply w-fit max-w-64 web:max-w-80 bg-slate-100 ml-auto p-4 rounded-2xl rounded-br-sm shadow-[0_1px_2px_rgba(0,0,0,0.06)] flex flex-col gap-3;
+  animation: slideDown 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* 답변 CSS */
 .answer {
-  @apply w-fit max-w-80 bg-blue-200 ml-auto p-5 rounded-2xl rounded-br-none shadow-sm flex flex-col gap-3;
-  animation: slideUp 0.85s ease-in-out forwards;
+  @apply w-fit max-w-80 bg-slate-100 text-slate-800 ml-auto p-4 rounded-2xl rounded-br-sm shadow-[0_1px_2px_rgba(0,0,0,0.06)] flex flex-col gap-3;
+  animation: slideUp 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 .answer p {
-  @apply w-full break-words leading-6;
+  @apply w-full break-words leading-relaxed;
 }
 .answer .question {
   @apply font-black text-black;
@@ -101,26 +101,26 @@ body {
 
 /* 말풍선 안내 */
 .bubbleGuide {
-  @apply absolute top-[3.75rem] right-1 bg-white z-10 px-3 py-1 rounded-2xl shadow-md border border-solid border-gray-400 flex items-center gap-1 !text-black;
+  @apply absolute top-[3.75rem] right-1 bg-white z-10 px-3 py-1.5 rounded-xl shadow-lg border border-solid border-slate-200 flex items-center gap-1.5 !text-black text-sm;
   animation: hide 5s ease-in forwards;
 }
 .bubbleGuide::before {
   border-top: 0px solid transparent;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 15px solid black;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid #e2e8f0;
   content: "";
   position: absolute;
-  top: -0.9rem;
+  top: -0.75rem;
   right: 2rem;
 }
 .bubbleGuide::after {
-  border-top: 0.1px solid transparent;
-  border-left: 10px solid transparent;
-  border-right: 10px solid transparent;
-  border-bottom: 15px solid #fff;
+  border-top: 0px solid transparent;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 12px solid #fff;
   content: "";
   position: absolute;
-  top: -0.9rem;
+  top: -0.7rem;
   right: 2rem;
 }

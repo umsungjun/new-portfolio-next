@@ -35,8 +35,8 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
       {!isRefresh && isLoading ? (
         <div className="answerLoader">
           <PulseLoader
-            color="#3B82f6"
-            size={10}
+            color="#94a3b8"
+            size={8}
             loading={true}
             speedMultiplier={0.8}
             aria-label="Loading Spinner"
@@ -46,17 +46,17 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
       ) : (
         <div className="answer">
           <p className="whitespace-pre-line">
-            <span className="font-black text-blue-600 pr-1">A.</span>
+            <span className="font-semibold text-slate-400 pr-1">A.</span>
             {locale === LOCALE_KO ? chat.contentKo : chat.contentEn}
           </p>
           {/* 참고 이미지 */}
           {chat.mediaType === IMAGE_TYPE && chat.mediaUrl !== null && (
             <div className="">
               <span className="flex items-center gap-1 font-bold">
-                <PhotoIcon className="size-5 text-green-500" />
+                <PhotoIcon className="size-5 text-slate-400" />
                 {t("referenceImage")}
               </span>
-              <div className="relative mt-3 flex h-[200px] w-full bg-blue-100 rounded-lg shadow-sm">
+              <div className="relative mt-3 flex h-[200px] w-full bg-slate-50 rounded-lg overflow-hidden">
                 <Image
                   className="object-contain p-1"
                   fill
@@ -71,7 +71,7 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
           {chat.mediaType === VIDEO_TYPE && chat.mediaUrl !== null && (
             <div className="mt-3 flex flex-col gap-3">
               <span className="flex items-center gap-1 font-bold">
-                <VideoCameraIcon className="size-5 text-red-500" />
+                <VideoCameraIcon className="size-5 text-slate-400" />
                 {t("referenceVideo")}
               </span>
               <div className="videoPlayer flex justify-center ">
