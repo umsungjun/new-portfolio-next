@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-이 파일은 Claude Code(claude.ai/code)가 이 저장소의 코드를 다룰 때 참고하는 가이드입니다.
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## 프로젝트 개요
 
@@ -17,8 +17,8 @@ Next.js 15 풀스택 포트폴리오 애플리케이션 (React에서 마이그�
 ## 기술 스택
 
 - **프레임워크:** Next.js 15, React 19, TypeScript (strict 모드)
-- **스타일링:** Tailwind CSS 3 (커스텀 브레이크포인트 `web: 1055px`)
-- **상태 관리:** Zustand + sessionStorage 영속성
+- **스타일링:** Tailwind CSS 3 (커스텀 브레이크포인트 `web: 1055px`) + CSS 변수 기반 테마
+- **상태 관리:** Zustand — `useChatStore` (sessionStorage 영속), `useThemeStore` (URL `?theme=` 파라미터 영속)
 - **데이터 페칭:** SWR (클라이언트), Prisma 7 + PostgreSQL/Supabase (서버)
 - **i18n:** next-intl — 한국어(기본) 및 영어, URL에 항상 locale 접두사 포함
 - **폰트:** Pretendard Variable (layout에서 CDN으로 로드)
@@ -53,12 +53,29 @@ Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 �
 3. 답변은 1초 로딩 애니메이션 후 텍스트 + 선택적 미디어 표시
 4. 채팅 기록은 sessionStorage 기반 Zustand 스토어에 저장 (세션마다 초기화)
 
+### 멀티 테마 시스템
+
+5가지 테마 지원: Light(기본), Dark, Ocean, Rose, Forest.
+
+- `app/globals.css`에서 `[data-theme]` 속성 선택자로 CSS 변수 정의 (`--color-bg-*`, `--color-text-*`, `--color-border-*` 등)
+- Light/Dark: 전체 CSS 변수 독립 정의, Ocean/Rose/Forest: Light 기반 포인트 컬러 오버라이드
+- `components/themeProvider.tsx`가 `<html data-theme="...">` 속성 및 0.3초 전환 관리
+- `components/themeToggle.tsx`가 컬러 스와치 드롭다운 UI 제공
+- `store/useThemeStore.ts`에서 상태 관리, URL `?theme=` 파라미터로 영속 (localStorage 미사용)
+
 ### i18n
 
 - 라우팅 설정: `i18n/routing.ts` — 래핑된 Next.js 네비게이션 API 내보냄 (Link, redirect, usePathname, useRouter)
 - 서버 요청 설정: `i18n/request.ts`
 - 번역 파일: `messages/ko.json`, `messages/en.json`
 - DB 콘텐츠는 이중 언어: `contentKo` / `contentEn` 필드, 컴포넌트에서 locale에 따라 선택
+
+### 공유 컴포넌트 (`components/`)
+
+- `swrProvider.tsx` — SWR 전역 설정 프로바이더
+- `themeProvider.tsx` — `data-theme` 속성 및 테마 전환 관리
+- `themeToggle.tsx` — 테마 선택 드롭다운 UI
+- `channelTalk.tsx` — Channel.io 채팅 위젯 초기화
 
 ### 환경 변수
 
