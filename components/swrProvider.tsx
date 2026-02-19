@@ -13,6 +13,8 @@ export function SwrProviders({ children }: SwrProviderProps) {
     <SWRConfig
       value={{
         fetcher: (url: string) => fetch(url).then((res) => res.json()),
+        revalidateOnFocus: false,
+        revalidateOnReconnect: false,
       }}
     >
       {children}

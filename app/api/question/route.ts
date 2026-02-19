@@ -2,6 +2,8 @@ import { NextResponse } from "next/server";
 
 import { prisma } from "@/lib/server/prisma";
 
+export const revalidate = 86400; // 1일 캐싱
+
 export async function GET() {
   try {
     const data = await prisma.question.findMany({

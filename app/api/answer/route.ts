@@ -1,6 +1,18 @@
 import { NextRequest, NextResponse } from "next/server";
 
+import { unstable_cache } from "next/cache";
+
 import { prisma } from "@/lib/server/prisma";
+
+const getCachedAnswers = unstable_cache(
+  async (questionId: number) =>
+    prisma.answer.findMany({
+      where: { questionId },
+      orderBy: { id: "asc" },
+    }),
+  ["answers"],
+  { revalidate: 86400 } // 1일 캐싱
+);
 
 export async function POST(request: NextRequest) {
   try {
@@ -14,12 +26,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const data = await prisma.answer.findMany({
-      where: { questionId: Number(id) },
-      orderBy: {
-        id: "asc",
-      },
-    });
+    const data = await getCachedAnswers(Number(id));
 
     return NextResponse.json({ success: true, data });
   } catch (error) {
