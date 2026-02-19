@@ -12,7 +12,11 @@ Next.js 15 풀스택 포트폴리오 애플리케이션 (React에서 마이그�
 - `npm run build` — Prisma 클라이언트 생성 후 빌드 (`prisma generate && next build`)
 - `npm run lint` — ESLint 실행
 - `npm run prettier` — Prettier로 전체 파일 포맷팅
-- `npm run download:i18n` — Google Sheets에서 번역 파일을 `messages/` 디렉토리로 동기화
+- `npm run download:i18n` — Google Sheets에서 번역 파일을 `messages/` 디렉토리로 동기화 (`i18n/credentials.js` Google 서비스 계정 파일 필요, `.gitignore`에 포함됨)
+- `npx prisma migrate dev` — DB 스키마 변경 후 마이그레이션 실행 (`DIRECT_URL` 환경 변수 필요)
+- `npx prisma studio` — DB 데이터 확인/편집 GUI
+
+**테스트:** 테스트 프레임워크 미설정 (Jest/Vitest 없음)
 
 ## 기술 스택
 
@@ -52,6 +56,9 @@ Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 �
 2. 사용자가 질문 클릭 → Zustand 스토어에 추가 → POST `/api/answer`로 답변 페칭
 3. 답변은 1초 로딩 애니메이션 후 텍스트 + 선택적 미디어 표시
 4. 채팅 기록은 sessionStorage 기반 Zustand 스토어에 저장 (세션마다 초기화)
+5. 초기 인사 메시지 2개는 하드코딩(ID 998, 999)으로 DB 조회 없이 스토어 초기값으로 설정
+
+미디어 렌더링: 이미지는 Next.js `<Image>` (Google Drive 원격 패턴 허용), 동영상은 `react-player`. 프로필 이미지 슬라이더는 Swiper 사용.
 
 ### 멀티 테마 시스템
 
@@ -65,10 +72,19 @@ Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 �
 
 ### i18n
 
-- 라우팅 설정: `i18n/routing.ts` — 래핑된 Next.js 네비게이션 API 내보냄 (Link, redirect, usePathname, useRouter)
+- 라우팅 설정: `i18n/routing.ts` — 래핑된 Next.js 네비게이션 API 내보냄 (Link, redirect, usePathname, useRouter). next/navigation 대신 이 파일에서 import 해야 함.
 - 서버 요청 설정: `i18n/request.ts`
-- 번역 파일: `messages/ko.json`, `messages/en.json`
+- 번역 파일: `messages/ko.json`, `messages/en.json` (총 19개 키)
 - DB 콘텐츠는 이중 언어: `contentKo` / `contentEn` 필드, 컴포넌트에서 locale에 따라 선택
+- `lib/client/constants.ts`에 `LOCALE_KO`, `LOCALE_EN`, `SUPPORTED_LOCALES` 상수 정의
+
+### 코드 구조 컨벤션
+
+- `_components/` — 라우트 전용 컴포넌트 (해당 경로에만 사용, colocate)
+- `_lib/` — 라우트 전용 유틸/상수
+- `components/` (루트) — 앱 전역 공유 컴포넌트
+- `lib/client/` — 클라이언트용 타입/상수 (`type.ts`, `constants.ts`)
+- `lib/server/` — 서버 전용 모듈 (Prisma 싱글톤 등)
 
 ### 공유 컴포넌트 (`components/`)
 
