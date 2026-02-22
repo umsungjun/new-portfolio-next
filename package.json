@@ -43,5 +43,10 @@
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   },
-  "type": "module"
+  "type": "module",
+  "pnpm": {
+    "overrides": {
+      "axios": ">=1.13.5"
+    }
+  }
 }
