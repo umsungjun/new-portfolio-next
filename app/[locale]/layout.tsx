@@ -56,7 +56,13 @@ export async function generateMetadata({
           : "Frontend Developer Sungjun Um Next Portfolio",
       images: [
         {
-          url: "/favicon.ico",
+          url: locale === LOCALE_KO ? "/og-image-ko.png" : "/og-image-en.png",
+          width: 1200,
+          height: 630,
+          alt:
+            locale === LOCALE_KO
+              ? "프론트엔드 개발자 엄성준 포트폴리오"
+              : "Frontend Developer Sungjun Um Portfolio",
         },
       ],
       type: "website",
