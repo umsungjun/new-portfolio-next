@@ -38,6 +38,6 @@ export const config = {
     - (?! ... ) : negative lookahead - 괄호 안의 패턴과 일치하지 않는 경우만 선택
   */
   matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml).*)",
+    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.html).*)",
   ],
 };
