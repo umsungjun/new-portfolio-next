@@ -55,16 +55,19 @@ export async function generateMetadata({
       "TypeScript",
     ],
     alternates: {
-      canonical: `/${locale}/home`,
+      canonical: locale === LOCALE_KO ? "/home" : `/${locale}/home`,
       languages: {
-        ko: "/ko/home",
+        ko: "/home",
         en: "/en/home",
       },
     },
     openGraph: {
       title: config.title,
       description: config.description,
-      url: `${SITE_URL}/${locale}/home`,
+      url:
+        locale === LOCALE_KO
+          ? `${SITE_URL}/home`
+          : `${SITE_URL}/${locale}/home`,
       siteName: config.title,
       locale: locale === LOCALE_KO ? "ko_KR" : "en_US",
       type: "website",
@@ -118,7 +121,10 @@ export default async function MainLayout({
     alternateName: "Sungjun Um",
     jobTitle: locale === LOCALE_KO ? "프론트엔드 개발자" : "Frontend Developer",
     description: METADATA_CONFIG[locale].description,
-    url: `${SITE_URL}/${locale}/home`,
+    url:
+      locale === LOCALE_KO
+        ? `${SITE_URL}/home`
+        : `${SITE_URL}/${locale}/home`,
     image: `${SITE_URL}${METADATA_CONFIG[locale].ogImage}`,
     sameAs: [
       "https://github.com/umsungjun",
