@@ -2,30 +2,21 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 
 import { routing } from "./i18n/routing";
-import { LOCALE_EN, LOCALE_KO } from "./lib/client/constants";
+import { LOCALE_EN } from "./lib/client/constants";
 
 const intlMiddleware = createMiddleware(routing);
 
 export default async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
 
-  // 루트 경로나 locale만 있는 경우 /home으로 리다이렉트
-  if (
-    pathname === "/" ||
-    pathname === `/${LOCALE_KO}` ||
-    pathname === `/${LOCALE_EN}`
-  ) {
-    // locale 추출
-    let locale = LOCALE_KO;
-    if (pathname === `/${LOCALE_EN}`) {
-      locale = LOCALE_EN;
-    } else if (pathname === `/${LOCALE_KO}`) {
-      locale = LOCALE_KO;
-    }
+  // 루트 경로 → /home으로 리다이렉트 (기본 locale은 prefix 없이)
+  if (pathname === "/") {
+    return NextResponse.redirect(new URL("/home", request.url));
+  }
 
-    // 직접 리다이렉트 반환
-    const url = new URL(`/${locale}/home`, request.url);
-    return NextResponse.redirect(url);
+  // /en만 접속한 경우 → /en/home으로 리다이렉트
+  if (pathname === `/${LOCALE_EN}`) {
+    return NextResponse.redirect(new URL(`/${LOCALE_EN}/home`, request.url));
   }
 
   // 나머지는 next-intl middleware에게 위임
