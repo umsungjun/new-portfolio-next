@@ -12,7 +12,7 @@ interface MainLayoutProps {
 }
 
 // SEO 최적화: 페이지 레벨 메타데이터 (Layout보다 우선순위 높음)
-const SITE_URL = "https://next-umsungjun.vercel.app" as const;
+const SITE_URL = "https://umsungjun.kro.kr" as const;
 
 const METADATA_CONFIG = {
   [LOCALE_KO]: {

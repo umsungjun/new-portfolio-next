@@ -17,7 +17,7 @@ interface LocaleLayoutParams {
 
 // 공통 메타데이터 베이스 URL (하위 페이지에서 상속됨)
 export const metadata: Metadata = {
-  metadataBase: new URL("https://next-umsungjun.vercel.app"),
+  metadataBase: new URL("https://umsungjun.kro.kr"),
 };
 
 export default async function LocaleLayout({
