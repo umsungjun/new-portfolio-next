@@ -19,6 +19,12 @@ export default async function middleware(request: NextRequest) {
     return NextResponse.redirect(new URL(`/${LOCALE_EN}/home`, request.url));
   }
 
+  // 유효한 경로만 허용, 나머지는 /home으로 리다이렉트
+  const validPaths = ["/home", `/${LOCALE_EN}/home`];
+  if (!validPaths.includes(pathname)) {
+    return NextResponse.redirect(new URL("/home", request.url));
+  }
+
   // 나머지는 next-intl middleware에게 위임
   return intlMiddleware(request);
 }
