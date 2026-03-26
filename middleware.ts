@@ -2,27 +2,29 @@ import createMiddleware from "next-intl/middleware";
 import { NextRequest, NextResponse } from "next/server";
 
 import { routing } from "./i18n/routing";
-import { LOCALE_EN } from "./lib/client/constants";
+import { LOCALE_EN, LOCALE_KO } from "./lib/client/constants";
 
 const intlMiddleware = createMiddleware(routing);
 
 export default async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
+  const permanentRedirect = { status: 301 as const };
 
-  // 루트 경로 → /home으로 리다이렉트 (기본 locale은 prefix 없이)
-  if (pathname === "/") {
-    return NextResponse.redirect(new URL("/home", request.url));
+  // 기존 /home, /ko/home, /en/home URL → 루트로 301 영구 리다이렉트 (이전 URL 호환)
+  if (pathname === "/home" || pathname === `/${LOCALE_KO}/home`) {
+    return NextResponse.redirect(new URL("/", request.url), permanentRedirect);
+  }
+  if (pathname === `/${LOCALE_EN}/home`) {
+    return NextResponse.redirect(
+      new URL(`/${LOCALE_EN}`, request.url),
+      permanentRedirect,
+    );
   }
 
-  // /en만 접속한 경우 → /en/home으로 리다이렉트
-  if (pathname === `/${LOCALE_EN}`) {
-    return NextResponse.redirect(new URL(`/${LOCALE_EN}/home`, request.url));
-  }
-
-  // 유효한 경로만 허용, 나머지는 /home으로 리다이렉트
-  const validPaths = ["/home", `/${LOCALE_EN}/home`];
+  // 유효한 경로만 허용, 나머지는 루트로 리다이렉트
+  const validPaths = ["/", `/${LOCALE_EN}`];
   if (!validPaths.includes(pathname)) {
-    return NextResponse.redirect(new URL("/home", request.url));
+    return NextResponse.redirect(new URL("/", request.url), permanentRedirect);
   }
 
   // 나머지는 next-intl middleware에게 위임
