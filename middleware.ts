@@ -10,21 +10,30 @@ export default async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const permanentRedirect = { status: 301 as const };
 
+  // searchParams 보존하며 리다이렉트하는 헬퍼
+  const redirectTo = (newPath: string) => {
+    const url = request.nextUrl.clone();
+    url.pathname = newPath;
+    return NextResponse.redirect(url, permanentRedirect);
+  };
+
+  // trailing slash 정규화 (예: /en/ → /en)
+  if (pathname !== "/" && pathname.endsWith("/")) {
+    return redirectTo(pathname.slice(0, -1));
+  }
+
   // 기존 /home, /ko/home, /en/home URL → 루트로 301 영구 리다이렉트 (이전 URL 호환)
   if (pathname === "/home" || pathname === `/${LOCALE_KO}/home`) {
-    return NextResponse.redirect(new URL("/", request.url), permanentRedirect);
+    return redirectTo("/");
   }
   if (pathname === `/${LOCALE_EN}/home`) {
-    return NextResponse.redirect(
-      new URL(`/${LOCALE_EN}`, request.url),
-      permanentRedirect,
-    );
+    return redirectTo(`/${LOCALE_EN}`);
   }
 
   // 유효한 경로만 허용, 나머지는 루트로 리다이렉트
   const validPaths = ["/", `/${LOCALE_EN}`];
   if (!validPaths.includes(pathname)) {
-    return NextResponse.redirect(new URL("/", request.url), permanentRedirect);
+    return redirectTo("/");
   }
 
   // 나머지는 next-intl middleware에게 위임
