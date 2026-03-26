@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://umsungjun.kro.kr/sitemap.xml
+Sitemap: https://next-umsungjun.vercel.app/sitemap.xml

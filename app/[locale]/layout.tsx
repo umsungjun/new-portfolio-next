@@ -18,7 +18,7 @@ interface LocaleLayoutProps {
   params: Promise<{ locale: localeType }>;
 }
 
-const SITE_URL = "https://umsungjun.kro.kr" as const;
+const SITE_URL = "https://next-umsungjun.vercel.app" as const;
 
 const METADATA_CONFIG = {
   [LOCALE_KO]: {
