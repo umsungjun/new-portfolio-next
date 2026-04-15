@@ -6,3 +6,7 @@ node_modules
 
 # Google console 계정 정보
 i18n/credentials.js
+
+# Playwright
+playwright-report/
+test-results/

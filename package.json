@@ -8,7 +8,10 @@
     "start": "next start",
     "lint": "next lint",
     "download:i18n": "node i18n/loadSpreadSheet.js",
-    "prettier": "prettier --write ."
+    "prettier": "prettier --write .",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:report": "playwright show-report"
   },
   "dependencies": {
     "@channel.io/channel-web-sdk-loader": "^2.0.2",
@@ -31,6 +34,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@playwright/test": "^1.59.1",
     "@trivago/prettier-plugin-sort-imports": "^6.0.0",
     "@types/node": "^20",
     "@types/pg": "^8.16.0",
