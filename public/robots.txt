@@ -2,6 +2,5 @@ User-agent: *
 Allow: /
 Disallow: /home
 Disallow: /ko/home
-Disallow: /favicon.ico
 
 Sitemap: https://next-umsungjun.vercel.app/sitemap.xml
