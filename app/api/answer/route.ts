@@ -11,7 +11,7 @@ const getCachedAnswers = unstable_cache(
       orderBy: { id: "asc" },
     }),
   ["answers"],
-  { revalidate: 86400 } // 1일 캐싱
+  { tags: ["answers"], revalidate: 86400 }
 );
 
 export async function POST(request: NextRequest) {
