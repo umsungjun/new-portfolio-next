@@ -1,16 +1,18 @@
 import { NextResponse } from "next/server";
 
+import { unstable_cache } from "next/cache";
+
 import { prisma } from "@/lib/server/prisma";
 
-export const revalidate = 86400; // 1일 캐싱
+const getCachedQuestions = unstable_cache(
+  async () => prisma.question.findMany({ orderBy: { id: "asc" } }),
+  ["questions"],
+  { tags: ["questions"], revalidate: 86400 }
+);
 
 export async function GET() {
   try {
-    const data = await prisma.question.findMany({
-      orderBy: {
-        id: "asc",
-      },
-    });
+    const data = await getCachedQuestions();
 
     if (!data || data.length === 0) {
       return NextResponse.json(
