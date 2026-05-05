@@ -48,21 +48,23 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
       );
     }
 
-    const answer = await prisma.answer.update({
-      where: { id: Number(id) },
-      data: {
-        contentKo: contentKo.trim(),
-        contentEn: contentEn.trim(),
-        mediaUrl: mediaUrl?.trim() || null,
-        mediaType: mediaType || null,
-      },
-    });
+    // prisma.answer.update이 MediaType enum을 public.MediaType으로 타입 캐스팅하면서
+    // @prisma/adapter-pg에서 PostgreSQL이 타입을 찾지 못하는 버그 우회
+    await prisma.$executeRaw`
+      UPDATE "Answer"
+      SET
+        "contentKo" = ${contentKo.trim()},
+        "contentEn" = ${contentEn.trim()},
+        "mediaUrl"  = ${mediaUrl?.trim() || null},
+        "mediaType" = ${mediaType || null}
+      WHERE "id" = ${Number(id)}
+    `;
 
     revalidateTag("answers");
     revalidatePath("/");
     revalidatePath("/en");
 
-    return NextResponse.json({ success: true, data: answer });
+    return NextResponse.json({ success: true });
   } catch (error) {
     return handlePrismaError(error, "PUT /api/admin/answers/[id]");
   }
