@@ -9,7 +9,8 @@ import { prisma } from "@/lib/server/prisma";
 
 type RouteParams = { params: Promise<{ id: string }> };
 
-function handlePrismaError(error: unknown) {
+function handlePrismaError(error: unknown, context: string) {
+  console.error(`[${context}]`, error);
   if (
     error instanceof Prisma.PrismaClientKnownRequestError &&
     error.code === "P2025"
@@ -63,7 +64,7 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
 
     return NextResponse.json({ success: true, data: answer });
   } catch (error) {
-    return handlePrismaError(error);
+    return handlePrismaError(error, "PUT /api/admin/answers/[id]");
   }
 }
 
@@ -82,6 +83,6 @@ export async function DELETE(req: NextRequest, { params }: RouteParams) {
 
     return NextResponse.json({ success: true });
   } catch (error) {
-    return handlePrismaError(error);
+    return handlePrismaError(error, "DELETE /api/admin/answers/[id]");
   }
 }
