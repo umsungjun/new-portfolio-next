@@ -192,8 +192,8 @@ export default function AdminAnswersPage() {
             ) : (
               <div className="flex gap-3 items-start">
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm">{a.contentKo}</p>
-                  <p className="text-gray-500 text-xs mt-0.5">{a.contentEn}</p>
+                  <p className="text-sm whitespace-pre-wrap">{a.contentKo}</p>
+                  <p className="text-gray-500 text-xs mt-2 whitespace-pre-wrap">{a.contentEn}</p>
                   {a.mediaType && (
                     <p className="text-xs mt-1 text-blue-500">
                       {a.mediaType}: {a.mediaUrl}
@@ -256,14 +256,14 @@ function AnswerForm({
         placeholder="한국어 답변"
         value={form.contentKo}
         onChange={(e) => onChange({ ...form, contentKo: e.target.value })}
-        className={`${inputClass} resize-y min-h-[80px]`}
+        className={`${inputClass} resize-y min-h-[400px]`}
         required
       />
       <textarea
         placeholder="English Answer"
         value={form.contentEn}
         onChange={(e) => onChange({ ...form, contentEn: e.target.value })}
-        className={`${inputClass} resize-y min-h-[80px]`}
+        className={`${inputClass} resize-y min-h-[400px]`}
         required
       />
       <input
