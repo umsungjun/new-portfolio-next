@@ -6,6 +6,8 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
+import { Agentation } from "agentation";
+
 import { ChannelTalk } from "@/components/channelTalk";
 import { SwrProviders } from "@/components/swrProvider";
 import { ThemeProvider } from "@/components/themeProvider";
@@ -178,6 +180,7 @@ export default async function LocaleLayout({
           </ThemeProvider>
         </Suspense>
         <ChannelTalk />
+        {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
   );

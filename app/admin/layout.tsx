@@ -1,6 +1,8 @@
+import "../globals.css";
+
 import { ReactNode } from "react";
 
-import "../globals.css";
+import { Agentation } from "agentation";
 
 export const metadata = {
   title: "Admin",
@@ -12,6 +14,7 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
     <html lang="ko">
       <body className="min-h-screen bg-gray-50 text-gray-900 font-sans antialiased">
         {children}
+        {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
   );
