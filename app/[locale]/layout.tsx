@@ -6,18 +6,18 @@ import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 
-import { Agentation } from "agentation";
-
 import { ChannelTalk } from "@/components/channelTalk";
 import { SwrProviders } from "@/components/swrProvider";
 import { ThemeProvider } from "@/components/themeProvider";
 import { LOCALE_EN, LOCALE_KO } from "@/lib/client/constants";
 import { localeType } from "@/lib/client/type";
 
+import { Agentation } from "agentation";
+
 interface LocaleLayoutProps {
   side: ReactNode;
   chat: ReactNode;
-  params: Promise<{ locale: localeType }>;
+  params: Promise<{ locale: string }>;
 }
 
 const SITE_URL = "https://next-umsungjun.vercel.app" as const;
@@ -42,9 +42,9 @@ const METADATA_CONFIG = {
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ locale: localeType }>;
+  params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-  const { locale } = await params;
+  const { locale } = (await params) as { locale: localeType };
   const config = METADATA_CONFIG[locale];
 
   return {
@@ -116,7 +116,7 @@ export default async function LocaleLayout({
   chat,
   params,
 }: LocaleLayoutProps) {
-  const { locale } = await params;
+  const { locale } = (await params) as { locale: localeType };
   const messages = await getMessages({ locale });
 
   // 구조화된 데이터 (JSON-LD)

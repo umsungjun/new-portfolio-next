@@ -10,13 +10,11 @@ import ContactInfo from "./_components/contactInfo";
 import ProfileSwiper from "./_components/profileSwiper";
 
 interface SideProps {
-  params: {
-    locale: localeType;
-  };
+  params: Promise<{ locale: string }>;
 }
 
 export default async function Side({ params }: SideProps) {
-  const { locale } = await params;
+  const { locale } = (await params) as { locale: localeType };
   const t = await getTranslations({ locale });
 
   return (
