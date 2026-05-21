@@ -4,6 +4,8 @@ import { ReactNode } from "react";
 
 import { Agentation } from "agentation";
 
+import "@uiw/react-md-editor/markdown-editor.css";
+
 export const metadata = {
   title: "Admin",
   robots: { index: false, follow: false },

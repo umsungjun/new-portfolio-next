@@ -96,14 +96,18 @@ html.theme-transition section,
 html.theme-transition aside,
 html.theme-transition .answer,
 html.theme-transition .answerLoader,
+html.theme-transition .answerMark,
 html.theme-transition .questionMark,
 html.theme-transition .questionWrapper p,
 html.theme-transition .questionButtonBox,
 html.theme-transition .questionButtonBox button,
 html.theme-transition .bubbleGuide,
 html.theme-transition .linkCard {
-  transition: background-color 0.3s ease, color 0.3s ease,
-    border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 body {
@@ -206,8 +210,16 @@ body {
 }
 
 /* 답변 CSS */
+.answerWrapper {
+  @apply w-fit max-w-80 ml-auto flex flex-col gap-3 items-end;
+}
+.answerMark {
+  @apply w-7 h-7 flex items-center justify-center rounded-full text-xs font-bold;
+  background-color: var(--color-bg-accent);
+  color: var(--color-text-on-accent);
+}
 .answer {
-  @apply w-fit max-w-80 ml-auto p-4 rounded-2xl rounded-br-sm flex flex-col gap-3;
+  @apply w-fit max-w-80 p-4 rounded-2xl rounded-br-sm flex flex-col gap-3;
   background-color: var(--color-bg-secondary);
   color: var(--color-text-primary);
   box-shadow: 0 1px 2px var(--color-shadow);
@@ -229,6 +241,114 @@ body {
 /* 기술 스택 */
 .answer .frontStackBox {
   @apply block mt-1.5;
+}
+
+/* 답변 마크다운 본문 (react-markdown) */
+.answer-md-body {
+  color: var(--color-text-primary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+.answer-md-body > *:first-child {
+  @apply mt-0;
+}
+.answer-md-body > *:last-child {
+  @apply mb-0;
+}
+.answer-md-body p {
+  @apply my-1.5 break-words;
+}
+.answer-md-body h1 {
+  @apply text-[1.1rem] font-bold mt-4 mb-2;
+  color: var(--color-text-heading);
+  letter-spacing: -0.01em;
+}
+.answer-md-body h2 {
+  @apply text-[1rem] font-bold mt-3 mb-1.5;
+  color: var(--color-text-heading);
+  letter-spacing: -0.01em;
+}
+.answer-md-body h3 {
+  @apply text-[0.9rem] font-semibold mt-2.5 mb-1;
+  color: var(--color-text-heading);
+}
+/* 좁은 채팅 폭(320px)에 맞춰 리스트 들여쓰기 최소화 */
+.answer-md-body ul {
+  @apply list-disc my-1.5 space-y-0.5;
+  padding-left: 1.1rem;
+}
+.answer-md-body ol {
+  @apply list-decimal my-1.5 space-y-0.5;
+  padding-left: 1.3rem;
+}
+.answer-md-body li {
+  padding-left: 0.15rem;
+}
+.answer-md-body li::marker {
+  color: var(--color-text-muted);
+}
+.answer-md-body li > p {
+  @apply my-0;
+}
+.answer-md-body strong {
+  @apply font-semibold;
+  color: var(--color-text-heading);
+}
+.answer-md-body em {
+  @apply italic;
+}
+.answer-md-body a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  color: var(--color-bg-accent);
+}
+.answer-md-body a:hover {
+  opacity: 0.8;
+}
+.answer-md-body blockquote {
+  @apply border-l-2 pl-3 my-2 italic;
+  border-color: var(--color-border-primary);
+  color: var(--color-text-secondary);
+}
+.answer-md-body code {
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.82em;
+  font-weight: 600;
+  padding: 0.15em 0.4em;
+  border-radius: 0.3rem;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-heading);
+  border: 1px solid var(--color-border-primary);
+  /* 좁은 채팅 폭에서 긴 인라인 코드가 말풍선을 넘치지 않도록 wrap 허용 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.answer-md-body pre {
+  @apply rounded-lg p-3 my-2 overflow-x-auto text-xs;
+  background-color: var(--color-bg-tertiary);
+}
+.answer-md-body pre code {
+  background: transparent;
+  padding: 0;
+  font-size: inherit;
+}
+.answer-md-body table {
+  @apply w-full text-xs my-2 border-collapse;
+}
+.answer-md-body th,
+.answer-md-body td {
+  @apply border px-2 py-1;
+  border-color: var(--color-border-primary);
+}
+.answer-md-body hr {
+  @apply my-3 border-0 h-px;
+  background-color: var(--color-border-primary);
+}
+.answer-md-body input[type="checkbox"] {
+  @apply mr-1 align-middle;
+}
+.answer-md-body img {
+  @apply rounded-lg my-2 max-w-full h-auto;
 }
 
 /* 사이드 링크 카드 */

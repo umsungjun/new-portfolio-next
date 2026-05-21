@@ -5,6 +5,8 @@ import { FormEvent, useCallback, useEffect, useState } from "react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 
+import AdminMarkdownEditor from "@/app/admin/_components/markdown-editor";
+
 type MediaType = "IMAGE" | "VIDEO";
 
 type Answer = {
@@ -61,6 +63,10 @@ export default function AdminAnswersPage() {
 
   async function handleCreate(e: FormEvent) {
     e.preventDefault();
+    if (!newForm.contentKo.trim() || !newForm.contentEn.trim()) {
+      window.alert("한국어/영어 답변을 모두 입력해주세요.");
+      return;
+    }
     const res = await fetch("/api/admin/answers", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -90,6 +96,10 @@ export default function AdminAnswersPage() {
   }
 
   async function handleUpdate(answerId: number) {
+    if (!editForm.contentKo.trim() || !editForm.contentEn.trim()) {
+      window.alert("한국어/영어 답변을 모두 입력해주세요.");
+      return;
+    }
     const res = await fetch(`/api/admin/answers/${answerId}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
@@ -193,7 +203,9 @@ export default function AdminAnswersPage() {
               <div className="flex gap-3 items-start">
                 <div className="flex-1 min-w-0">
                   <p className="text-sm whitespace-pre-wrap">{a.contentKo}</p>
-                  <p className="text-gray-500 text-xs mt-2 whitespace-pre-wrap">{a.contentEn}</p>
+                  <p className="text-gray-500 text-xs mt-2 whitespace-pre-wrap">
+                    {a.contentEn}
+                  </p>
                   {a.mediaType && (
                     <p className="text-xs mt-1 text-blue-500">
                       {a.mediaType}: {a.mediaUrl}
@@ -252,20 +264,28 @@ function AnswerForm({
       onSubmit={onSubmit}
       className="mb-4 p-4 bg-gray-50 rounded-xl border border-gray-200 flex flex-col gap-3"
     >
-      <textarea
-        placeholder="한국어 답변"
-        value={form.contentKo}
-        onChange={(e) => onChange({ ...form, contentKo: e.target.value })}
-        className={`${inputClass} resize-y min-h-[400px]`}
-        required
-      />
-      <textarea
-        placeholder="English Answer"
-        value={form.contentEn}
-        onChange={(e) => onChange({ ...form, contentEn: e.target.value })}
-        className={`${inputClass} resize-y min-h-[400px]`}
-        required
-      />
+      <div>
+        <label className="block text-xs font-medium text-gray-600 mb-1">
+          한국어 답변 (Markdown 지원)
+        </label>
+        <AdminMarkdownEditor
+          value={form.contentKo}
+          onChange={(v) => onChange({ ...form, contentKo: v })}
+          placeholder="한국어 답변을 마크다운으로 작성하세요"
+          height={400}
+        />
+      </div>
+      <div>
+        <label className="block text-xs font-medium text-gray-600 mb-1">
+          English Answer (Markdown supported)
+        </label>
+        <AdminMarkdownEditor
+          value={form.contentEn}
+          onChange={(v) => onChange({ ...form, contentEn: v })}
+          placeholder="Write the English answer in markdown"
+          height={400}
+        />
+      </div>
       <input
         placeholder="미디어 URL (선택, Google Drive 파일 ID 또는 YouTube URL)"
         value={form.mediaUrl}

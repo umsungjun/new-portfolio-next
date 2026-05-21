@@ -15,7 +15,11 @@ export default function Question({
 }: QuestionProps) {
   return (
     <div className="questionWrapper">
-      {showMark && <div className="questionMark">Q</div>}
+      {showMark && (
+        <div className="questionMark" aria-hidden="true">
+          Q
+        </div>
+      )}
       <p>{locale === LOCALE_KO ? chat.contentKo : chat.contentEn}</p>
     </div>
   );
