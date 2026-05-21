@@ -2,9 +2,8 @@
 
 import dynamic from "next/dynamic";
 
-import "@uiw/react-md-editor/markdown-editor.css";
-
 // @uiw/react-md-editor는 navigator/window에 직접 의존하므로 SSR 비활성화
+// CSS는 admin layout에서 import (글로벌 CSS는 layout 진입점에서 로드)
 const MDEditor = dynamic(() => import("@uiw/react-md-editor"), { ssr: false });
 
 interface AdminMarkdownEditorProps {

@@ -21,7 +21,6 @@
     "@uiw/react-md-editor": "^4.1.0",
     "google-auth-library": "^9.15.1",
     "google-spreadsheet": "^4.1.4",
-    "lucide-react": "^1.16.0",
     "next": "15.5.18",
     "next-intl": "^3.26.5",
     "pg": "^8.16.3",

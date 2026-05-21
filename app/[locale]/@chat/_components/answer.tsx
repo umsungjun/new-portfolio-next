@@ -60,15 +60,20 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
         </div>
       ) : (
         <div className="answerWrapper">
-          <div className="answerMark">A</div>
+          <div className="answerMark" aria-hidden="true">
+            A
+          </div>
           <div className="answer">
             <div className="answer-md-body">
               <ReactMarkdown
                 remarkPlugins={[remarkGfm, remarkBreaks]}
                 rehypePlugins={[rehypeSanitize]}
                 components={{
-                  a: ({ ...props }) => (
-                    <a {...props} target="_blank" rel="noopener noreferrer" />
+                  // react-markdown이 넘기는 내부 props(node 등) 제외하고 필요한 것만 전달
+                  a: ({ href, children }) => (
+                    <a href={href} target="_blank" rel="noopener noreferrer">
+                      {children}
+                    </a>
                   ),
                 }}
               >
