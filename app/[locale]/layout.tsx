@@ -24,16 +24,16 @@ const SITE_URL = "https://next-umsungjun.vercel.app" as const;
 
 const METADATA_CONFIG = {
   [LOCALE_KO]: {
-    title: "프론트엔드 개발자 엄성준 Next 포트폴리오",
+    title: "프론트엔드 개발자 엄성준 포트폴리오",
     description:
-      "꾸준함이 강점이자 자랑인 프론트엔드 개발자 엄성준 Next 포트폴리오입니다.",
+      "안녕하세요, 꾸준함이 강점인 프론트엔드 개발자 엄성준입니다. 2023년 오토위니 입사 후 신규 기능 개발과 유지보수, 레거시 JSP 페이지의 React 전환을 진행하며 쌓아온 실무 경험을 Q&A 형식 포트폴리오에 기록하고 있습니다.",
     ogImage: "/og-image-ko.png",
     ogImageAlt: "프론트엔드 개발자 엄성준 포트폴리오",
   },
   [LOCALE_EN]: {
-    title: "Frontend Developer Sungjun Um Next Portfolio",
+    title: "Frontend Developer Sungjun Um Portfolio",
     description:
-      "This is the Next portfolio of Frontend Developer Sungjun Um, whose strength and pride is consistency.",
+      "Hi, I'm Sungjun Um, a frontend developer driven by consistency. Since joining Autowini in 2023, I've shipped new features and migrated legacy JSP pages to React — documented in this Q&A-style portfolio.",
     ogImage: "/og-image-en.png",
     ogImageAlt: "Frontend Developer Sungjun Um Portfolio",
   },
@@ -55,12 +55,15 @@ export async function generateMetadata({
       "프론트엔드 개발자",
       "엄성준",
       "포트폴리오",
+      "웹 개발자",
       "frontend developer",
       "umsungjun",
       "portfolio",
+      "web developer",
       "React",
       "Next.js",
       "TypeScript",
+      "JavaScript",
     ],
     alternates: {
       canonical: locale === LOCALE_KO ? "/" : `/${locale}`,
