@@ -10,3 +10,6 @@ i18n/credentials.js
 # Playwright
 playwright-report/
 test-results/
+
+# DB 백업
+backups/answers-*.json
