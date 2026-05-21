@@ -69,11 +69,11 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
                 remarkPlugins={[remarkGfm, remarkBreaks]}
                 rehypePlugins={[rehypeSanitize]}
                 components={{
-                  // react-markdown이 넘기는 내부 props(node 등) 제외하고 필요한 것만 전달
-                  a: ({ href, children }) => (
-                    <a href={href} target="_blank" rel="noopener noreferrer">
-                      {children}
-                    </a>
+                  // react-markdown 내부용 node prop만 제외하고 나머지 props는 그대로 전달
+                  // (title, className 등 마크다운 링크 속성 보존)
+                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                  a: ({ node, ...props }) => (
+                    <a {...props} target="_blank" rel="noopener noreferrer" />
                   ),
                 }}
               >

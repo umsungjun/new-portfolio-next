@@ -319,7 +319,9 @@ body {
   background-color: var(--color-bg-primary);
   color: var(--color-text-heading);
   border: 1px solid var(--color-border-primary);
-  white-space: nowrap;
+  /* 좁은 채팅 폭에서 긴 인라인 코드가 말풍선을 넘치지 않도록 wrap 허용 */
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 .answer-md-body pre {
   @apply rounded-lg p-3 my-2 overflow-x-auto text-xs;
