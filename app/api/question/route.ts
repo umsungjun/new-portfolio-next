@@ -5,7 +5,11 @@ import { unstable_cache } from "next/cache";
 import { prisma } from "@/lib/server/prisma";
 
 const getCachedQuestions = unstable_cache(
-  async () => prisma.question.findMany({ orderBy: { id: "asc" } }),
+  async () =>
+    prisma.question.findMany({
+      where: { isDraft: false },
+      orderBy: { id: "asc" },
+    }),
   ["questions"],
   { tags: ["questions"], revalidate: 86400 }
 );

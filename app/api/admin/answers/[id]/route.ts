@@ -32,7 +32,26 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
 
   try {
     const { id } = await params;
-    const { contentKo, contentEn, mediaUrl, mediaType } = await req.json();
+    const body = await req.json();
+    const { contentKo, contentEn, mediaUrl, mediaType, isDraft } = body;
+
+    // isDraft만 토글하는 케이스: 본문 검증 건너뛰고 isDraft만 업데이트
+    const isToggleOnly =
+      typeof isDraft === "boolean" &&
+      contentKo === undefined &&
+      contentEn === undefined &&
+      mediaUrl === undefined &&
+      mediaType === undefined;
+
+    if (isToggleOnly) {
+      await prisma.$executeRaw`
+        UPDATE "Answer" SET "isDraft" = ${isDraft} WHERE "id" = ${Number(id)}
+      `;
+      revalidateTag("answers");
+      revalidatePath("/");
+      revalidatePath("/en");
+      return NextResponse.json({ success: true });
+    }
 
     if (!contentKo?.trim() || !contentEn?.trim()) {
       return NextResponse.json(
@@ -50,15 +69,28 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
 
     // prisma.answer.update이 MediaType enum을 public.MediaType으로 타입 캐스팅하면서
     // @prisma/adapter-pg에서 PostgreSQL이 타입을 찾지 못하는 버그 우회
-    await prisma.$executeRaw`
-      UPDATE "Answer"
-      SET
-        "contentKo" = ${contentKo.trim()},
-        "contentEn" = ${contentEn.trim()},
-        "mediaUrl"  = ${mediaUrl?.trim() || null},
-        "mediaType" = ${mediaType || null}
-      WHERE "id" = ${Number(id)}
-    `;
+    if (typeof isDraft === "boolean") {
+      await prisma.$executeRaw`
+        UPDATE "Answer"
+        SET
+          "contentKo" = ${contentKo.trim()},
+          "contentEn" = ${contentEn.trim()},
+          "mediaUrl"  = ${mediaUrl?.trim() || null},
+          "mediaType" = ${mediaType || null},
+          "isDraft"   = ${isDraft}
+        WHERE "id" = ${Number(id)}
+      `;
+    } else {
+      await prisma.$executeRaw`
+        UPDATE "Answer"
+        SET
+          "contentKo" = ${contentKo.trim()},
+          "contentEn" = ${contentEn.trim()},
+          "mediaUrl"  = ${mediaUrl?.trim() || null},
+          "mediaType" = ${mediaType || null}
+        WHERE "id" = ${Number(id)}
+      `;
+    }
 
     revalidateTag("answers");
     revalidatePath("/");

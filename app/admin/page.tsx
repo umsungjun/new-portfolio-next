@@ -9,17 +9,22 @@ type Question = {
   id: number;
   contentKo: string;
   contentEn: string;
-  answers: { id: number }[];
+  isDraft: boolean;
+  answers: { id: number; isDraft: boolean }[];
 };
+
+type FilterMode = "all" | "published" | "draft";
 
 export default function AdminPage() {
   const router = useRouter();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [filter, setFilter] = useState<FilterMode>("all");
 
   // 새 질문 추가 폼 상태
   const [newKo, setNewKo] = useState("");
   const [newEn, setNewEn] = useState("");
+  const [newIsDraft, setNewIsDraft] = useState(true);
   const [isAdding, setIsAdding] = useState(false);
 
   // 인라인 수정 상태
@@ -52,14 +57,28 @@ export default function AdminPage() {
     const res = await fetch("/api/admin/questions", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ contentKo: newKo, contentEn: newEn }),
+      body: JSON.stringify({
+        contentKo: newKo,
+        contentEn: newEn,
+        isDraft: newIsDraft,
+      }),
     });
     if (res.ok) {
       setNewKo("");
       setNewEn("");
+      setNewIsDraft(true);
       setIsAdding(false);
       fetchQuestions();
     }
+  }
+
+  async function handleToggleDraft(q: Question) {
+    const res = await fetch(`/api/admin/questions/${q.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ isDraft: !q.isDraft }),
+    });
+    if (res.ok) fetchQuestions();
   }
 
   function startEdit(q: Question) {
@@ -120,19 +139,27 @@ export default function AdminPage() {
           className="mb-6 p-4 bg-white rounded-xl border border-gray-200 flex flex-col gap-3"
         >
           <input
-            placeholder="한국어 질문"
+            placeholder="한국어 토픽 라벨 (예: [2025] 오픈소스 기여 경험)"
             value={newKo}
             onChange={(e) => setNewKo(e.target.value)}
             className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
             required
           />
           <input
-            placeholder="English Question"
+            placeholder="English Topic Label"
             value={newEn}
             onChange={(e) => setNewEn(e.target.value)}
             className="w-full px-3 py-2 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-gray-300"
             required
           />
+          <label className="flex items-center gap-2 text-xs text-gray-600">
+            <input
+              type="checkbox"
+              checked={newIsDraft}
+              onChange={(e) => setNewIsDraft(e.target.checked)}
+            />
+            임시저장으로 추가 (체크 해제 시 즉시 공개)
+          </label>
           <div className="flex gap-2">
             <button
               type="submit"
@@ -151,8 +178,40 @@ export default function AdminPage() {
         </form>
       )}
 
+      <div className="flex gap-2 mb-3 text-xs">
+        {(["all", "published", "draft"] as FilterMode[]).map((mode) => {
+          const counts = {
+            all: questions.length,
+            published: questions.filter((q) => !q.isDraft).length,
+            draft: questions.filter((q) => q.isDraft).length,
+          };
+          const label = { all: "전체", published: "공개됨", draft: "임시저장" }[
+            mode
+          ];
+          return (
+            <button
+              key={mode}
+              onClick={() => setFilter(mode)}
+              className={`px-3 py-1.5 rounded-lg transition-colors ${
+                filter === mode
+                  ? "bg-gray-900 text-white"
+                  : "border border-gray-200 hover:bg-gray-100"
+              }`}
+            >
+              {label} ({counts[mode]})
+            </button>
+          );
+        })}
+      </div>
+
       <ul className="space-y-3">
-        {questions.map((q) => (
+        {questions
+          .filter((q) => {
+            if (filter === "published") return !q.isDraft;
+            if (filter === "draft") return q.isDraft;
+            return true;
+          })
+          .map((q) => (
           <li
             key={q.id}
             className="p-4 bg-white rounded-xl border border-gray-200"
@@ -187,12 +246,26 @@ export default function AdminPage() {
             ) : (
               <div className="flex gap-3 items-start">
                 <div className="flex-1 min-w-0">
-                  <p className="font-medium text-sm truncate">{q.contentKo}</p>
+                  <div className="flex items-center gap-2">
+                    {q.isDraft && (
+                      <span className="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium shrink-0">
+                        임시저장
+                      </span>
+                    )}
+                    <p className="font-medium text-sm truncate">
+                      {q.contentKo}
+                    </p>
+                  </div>
                   <p className="text-gray-500 text-xs mt-0.5 truncate">
                     {q.contentEn}
                   </p>
                   <p className="text-gray-400 text-xs mt-1">
                     답변 {q.answers.length}개
+                    {q.answers.filter((a) => a.isDraft).length > 0 && (
+                      <span className="text-amber-600 ml-1">
+                        (임시저장 {q.answers.filter((a) => a.isDraft).length}개)
+                      </span>
+                    )}
                   </p>
                 </div>
                 <div className="flex gap-2 shrink-0">
@@ -202,6 +275,16 @@ export default function AdminPage() {
                   >
                     답변 관리
                   </Link>
+                  <button
+                    onClick={() => handleToggleDraft(q)}
+                    className={`px-3 py-1.5 rounded-lg text-xs transition-colors ${
+                      q.isDraft
+                        ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                        : "bg-amber-50 text-amber-700 hover:bg-amber-100"
+                    }`}
+                  >
+                    {q.isDraft ? "공개" : "임시저장으로"}
+                  </button>
                   <button
                     onClick={() => startEdit(q)}
                     className="px-3 py-1.5 border border-gray-200 rounded-lg text-xs hover:bg-gray-100 transition-colors"

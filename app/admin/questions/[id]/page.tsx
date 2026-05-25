@@ -15,12 +15,14 @@ type Answer = {
   contentEn: string;
   mediaUrl: string | null;
   mediaType: MediaType | null;
+  isDraft: boolean;
 };
 
 type QuestionWithAnswers = {
   id: number;
   contentKo: string;
   contentEn: string;
+  isDraft: boolean;
   answers: Answer[];
 };
 
@@ -29,6 +31,7 @@ const EMPTY_FORM = {
   contentEn: "",
   mediaUrl: "",
   mediaType: "" as MediaType | "",
+  isDraft: true,
 };
 
 export default function AdminAnswersPage() {
@@ -76,6 +79,7 @@ export default function AdminAnswersPage() {
         contentEn: newForm.contentEn,
         mediaUrl: newForm.mediaUrl || null,
         mediaType: newForm.mediaType || null,
+        isDraft: newForm.isDraft,
       }),
     });
     if (res.ok) {
@@ -92,6 +96,7 @@ export default function AdminAnswersPage() {
       contentEn: a.contentEn,
       mediaUrl: a.mediaUrl ?? "",
       mediaType: a.mediaType ?? "",
+      isDraft: a.isDraft,
     });
   }
 
@@ -108,12 +113,22 @@ export default function AdminAnswersPage() {
         contentEn: editForm.contentEn,
         mediaUrl: editForm.mediaUrl || null,
         mediaType: editForm.mediaType || null,
+        isDraft: editForm.isDraft,
       }),
     });
     if (res.ok) {
       setEditingId(null);
       fetchQuestion();
     }
+  }
+
+  async function handleToggleDraft(a: Answer) {
+    const res = await fetch(`/api/admin/answers/${a.id}`, {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ isDraft: !a.isDraft }),
+    });
+    if (res.ok) fetchQuestion();
   }
 
   async function handleDelete(answerId: number) {
@@ -153,7 +168,14 @@ export default function AdminAnswersPage() {
       </Link>
 
       <div className="mt-4 mb-6 p-4 bg-white rounded-xl border border-gray-200">
-        <p className="font-medium text-sm">{question.contentKo}</p>
+        <div className="flex items-center gap-2">
+          {question.isDraft && (
+            <span className="px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">
+              임시저장
+            </span>
+          )}
+          <p className="font-medium text-sm">{question.contentKo}</p>
+        </div>
         <p className="text-gray-500 text-xs mt-0.5">{question.contentEn}</p>
       </div>
 
@@ -202,6 +224,11 @@ export default function AdminAnswersPage() {
             ) : (
               <div className="flex gap-3 items-start">
                 <div className="flex-1 min-w-0">
+                  {a.isDraft && (
+                    <span className="inline-block mb-2 px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">
+                      임시저장
+                    </span>
+                  )}
                   <p className="text-sm whitespace-pre-wrap">{a.contentKo}</p>
                   <p className="text-gray-500 text-xs mt-2 whitespace-pre-wrap">
                     {a.contentEn}
@@ -212,7 +239,17 @@ export default function AdminAnswersPage() {
                     </p>
                   )}
                 </div>
-                <div className="flex gap-2 shrink-0">
+                <div className="flex flex-col gap-2 shrink-0">
+                  <button
+                    onClick={() => handleToggleDraft(a)}
+                    className={`px-3 py-1.5 rounded-lg text-xs transition-colors ${
+                      a.isDraft
+                        ? "bg-emerald-50 text-emerald-700 hover:bg-emerald-100"
+                        : "bg-amber-50 text-amber-700 hover:bg-amber-100"
+                    }`}
+                  >
+                    {a.isDraft ? "공개" : "임시저장으로"}
+                  </button>
                   <button
                     onClick={() => startEdit(a)}
                     className="px-3 py-1.5 border border-gray-200 rounded-lg text-xs hover:bg-gray-100 transition-colors"
@@ -303,6 +340,14 @@ function AnswerForm({
         <option value="IMAGE">IMAGE</option>
         <option value="VIDEO">VIDEO</option>
       </select>
+      <label className="flex items-center gap-2 text-xs text-gray-600">
+        <input
+          type="checkbox"
+          checked={form.isDraft}
+          onChange={(e) => onChange({ ...form, isDraft: e.target.checked })}
+        />
+        임시저장 (체크 해제 시 즉시 공개)
+      </label>
       <div className="flex gap-2">
         <button
           type="submit"
