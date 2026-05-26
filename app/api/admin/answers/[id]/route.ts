@@ -32,6 +32,13 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
 
   try {
     const { id } = await params;
+    const answerId = Number(id);
+    if (!Number.isFinite(answerId)) {
+      return NextResponse.json(
+        { success: false, message: "잘못된 ID 값입니다." },
+        { status: 400 }
+      );
+    }
     const body = await req.json();
     const { contentKo, contentEn, mediaUrl, mediaType, isDraft } = body;
 
@@ -44,9 +51,15 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
       mediaType === undefined;
 
     if (isToggleOnly) {
-      await prisma.$executeRaw`
-        UPDATE "Answer" SET "isDraft" = ${isDraft} WHERE "id" = ${Number(id)}
+      const updated = await prisma.$executeRaw`
+        UPDATE "Answer" SET "isDraft" = ${isDraft} WHERE "id" = ${answerId}
       `;
+      if (updated === 0) {
+        return NextResponse.json(
+          { success: false, message: "항목을 찾을 수 없습니다." },
+          { status: 404 }
+        );
+      }
       revalidateTag("answers");
       revalidatePath("/");
       revalidatePath("/en");
@@ -78,7 +91,7 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
           "mediaUrl"  = ${mediaUrl?.trim() || null},
           "mediaType" = ${mediaType || null},
           "isDraft"   = ${isDraft}
-        WHERE "id" = ${Number(id)}
+        WHERE "id" = ${answerId}
       `;
     } else {
       await prisma.$executeRaw`
@@ -88,7 +101,7 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
           "contentEn" = ${contentEn.trim()},
           "mediaUrl"  = ${mediaUrl?.trim() || null},
           "mediaType" = ${mediaType || null}
-        WHERE "id" = ${Number(id)}
+        WHERE "id" = ${answerId}
       `;
     }
 
@@ -108,8 +121,15 @@ export async function DELETE(req: NextRequest, { params }: RouteParams) {
 
   try {
     const { id } = await params;
+    const answerId = Number(id);
+    if (!Number.isFinite(answerId)) {
+      return NextResponse.json(
+        { success: false, message: "잘못된 ID 값입니다." },
+        { status: 400 }
+      );
+    }
 
-    await prisma.answer.delete({ where: { id: Number(id) } });
+    await prisma.answer.delete({ where: { id: answerId } });
 
     revalidateTag("answers");
     revalidatePath("/");

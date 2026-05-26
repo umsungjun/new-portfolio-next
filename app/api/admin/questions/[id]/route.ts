@@ -31,6 +31,13 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
 
   try {
     const { id } = await params;
+    const questionId = Number(id);
+    if (!Number.isFinite(questionId)) {
+      return NextResponse.json(
+        { success: false, message: "잘못된 ID 값입니다." },
+        { status: 400 }
+      );
+    }
     const body = await req.json();
     const { contentKo, contentEn, isDraft } = body;
 
@@ -54,7 +61,7 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
     if (typeof isDraft === "boolean") data.isDraft = isDraft;
 
     const question = await prisma.question.update({
-      where: { id: Number(id) },
+      where: { id: questionId },
       data,
     });
 
@@ -74,8 +81,15 @@ export async function DELETE(req: NextRequest, { params }: RouteParams) {
 
   try {
     const { id } = await params;
+    const questionId = Number(id);
+    if (!Number.isFinite(questionId)) {
+      return NextResponse.json(
+        { success: false, message: "잘못된 ID 값입니다." },
+        { status: 400 }
+      );
+    }
 
-    await prisma.question.delete({ where: { id: Number(id) } });
+    await prisma.question.delete({ where: { id: questionId } });
 
     revalidateTag("questions");
     revalidateTag("answers");

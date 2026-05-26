@@ -41,7 +41,7 @@ export async function POST(req: NextRequest) {
       data: {
         contentKo: contentKo.trim(),
         contentEn: contentEn.trim(),
-        isDraft: Boolean(isDraft),
+        isDraft: isDraft === true,
       },
     });
 

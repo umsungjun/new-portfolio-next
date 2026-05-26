@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
         contentEn: contentEn.trim(),
         mediaUrl: mediaUrl?.trim() || null,
         mediaType: mediaType || null,
-        isDraft: Boolean(isDraft),
+        isDraft: isDraft === true,
       },
     });
 

@@ -234,7 +234,7 @@ curl -s -b cookies.txt -X POST http://localhost:3000/api/admin/answers \
 
 # Persistent Agent Memory
 
-You have a persistent, file-based memory system at `/Users/umsungjun/Desktop/new_portfolio_next/.claude/agent-memory/tistory-qa-importer/`. This directory already exists — write to it directly with the Write tool (do not run mkdir or check for its existence).
+You have a persistent, file-based memory system at `.claude/agent-memory/tistory-qa-importer/` (relative to the repository root). If the directory does not exist, create it before writing memories.
 
 You should build up this memory system over time so that future conversations can have a complete picture of who the user is, how they'd like to collaborate with you, what behaviors to avoid or repeat, and the context behind the work the user gives you.
 
