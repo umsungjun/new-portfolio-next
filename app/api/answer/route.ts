@@ -7,7 +7,7 @@ import { prisma } from "@/lib/server/prisma";
 const getCachedAnswers = unstable_cache(
   async (questionId: number) =>
     prisma.answer.findMany({
-      where: { questionId },
+      where: { questionId, isDraft: false },
       orderBy: { id: "asc" },
     }),
   ["answers"],

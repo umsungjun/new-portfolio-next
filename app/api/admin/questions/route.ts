@@ -28,7 +28,7 @@ export async function POST(req: NextRequest) {
   if (authError) return authError;
 
   try {
-    const { contentKo, contentEn } = await req.json();
+    const { contentKo, contentEn, isDraft } = await req.json();
 
     if (!contentKo?.trim() || !contentEn?.trim()) {
       return NextResponse.json(
@@ -38,7 +38,11 @@ export async function POST(req: NextRequest) {
     }
 
     const question = await prisma.question.create({
-      data: { contentKo: contentKo.trim(), contentEn: contentEn.trim() },
+      data: {
+        contentKo: contentKo.trim(),
+        contentEn: contentEn.trim(),
+        isDraft: isDraft === true,
+      },
     });
 
     revalidateTag("questions");

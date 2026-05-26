@@ -31,18 +31,38 @@ export async function PUT(req: NextRequest, { params }: RouteParams) {
 
   try {
     const { id } = await params;
-    const { contentKo, contentEn } = await req.json();
+    const questionId = Number(id);
+    if (!Number.isFinite(questionId)) {
+      return NextResponse.json(
+        { success: false, message: "잘못된 ID 값입니다." },
+        { status: 400 }
+      );
+    }
+    const body = await req.json();
+    const { contentKo, contentEn, isDraft } = body;
 
-    if (!contentKo?.trim() || !contentEn?.trim()) {
+    // isDraft만 토글하는 케이스(발행/임시저장 되돌림)는 본문 검증을 건너뜀
+    const isToggleOnly =
+      typeof isDraft === "boolean" &&
+      contentKo === undefined &&
+      contentEn === undefined;
+
+    if (!isToggleOnly && (!contentKo?.trim() || !contentEn?.trim())) {
       return NextResponse.json(
         { success: false, message: "한국어/영어 내용을 모두 입력해주세요." },
         { status: 400 }
       );
     }
 
+    const data: { contentKo?: string; contentEn?: string; isDraft?: boolean } =
+      {};
+    if (typeof contentKo === "string") data.contentKo = contentKo.trim();
+    if (typeof contentEn === "string") data.contentEn = contentEn.trim();
+    if (typeof isDraft === "boolean") data.isDraft = isDraft;
+
     const question = await prisma.question.update({
-      where: { id: Number(id) },
-      data: { contentKo: contentKo.trim(), contentEn: contentEn.trim() },
+      where: { id: questionId },
+      data,
     });
 
     revalidateTag("questions");
@@ -61,8 +81,15 @@ export async function DELETE(req: NextRequest, { params }: RouteParams) {
 
   try {
     const { id } = await params;
+    const questionId = Number(id);
+    if (!Number.isFinite(questionId)) {
+      return NextResponse.json(
+        { success: false, message: "잘못된 ID 값입니다." },
+        { status: 400 }
+      );
+    }
 
-    await prisma.question.delete({ where: { id: Number(id) } });
+    await prisma.question.delete({ where: { id: questionId } });
 
     revalidateTag("questions");
     revalidateTag("answers");

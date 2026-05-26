@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
   if (authError) return authError;
 
   try {
-    const { questionId, contentKo, contentEn, mediaUrl, mediaType } =
+    const { questionId, contentKo, contentEn, mediaUrl, mediaType, isDraft } =
       await req.json();
 
     if (!questionId || !contentKo?.trim() || !contentEn?.trim()) {
@@ -39,6 +39,7 @@ export async function POST(req: NextRequest) {
         contentEn: contentEn.trim(),
         mediaUrl: mediaUrl?.trim() || null,
         mediaType: mediaType || null,
+        isDraft: isDraft === true,
       },
     });
 

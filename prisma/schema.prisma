@@ -19,6 +19,7 @@ enum MediaType {
 model Question {
   id        Int      @id @default(autoincrement())
   type      Type     @default(QUESTION) // 고정값으로 'QUESTION' 설정
+  isDraft   Boolean  @default(false) // 임시저장 여부 — true면 공개 페이지 비노출
   contentKo String
   contentEn String
   answers   Answer[]
@@ -27,6 +28,7 @@ model Question {
 model Answer {
   id         Int        @id @default(autoincrement())
   type       Type       @default(ANSWER) // 고정값으로 'ANSWER' 설정
+  isDraft    Boolean    @default(false) // 임시저장 여부 — true면 공개 페이지 비노출
   contentKo  String
   contentEn  String
   mediaUrl   String?

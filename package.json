@@ -47,6 +47,7 @@
     "@types/react-dom": "^19",
     "agentation": "^3.0.2",
     "agentation-mcp": "^1.2.0",
+    "dotenv": "^17.4.2",
     "eslint": "^9",
     "eslint-config-next": "15.5.18",
     "postcss": "^8",
