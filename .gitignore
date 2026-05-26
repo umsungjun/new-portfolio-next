@@ -3,6 +3,7 @@ node_modules
 .env
 *.db
 *.sql
+!prisma/migrations/**/*.sql
 
 # Google console 계정 정보
 i18n/credentials.js
