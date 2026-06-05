@@ -7,6 +7,11 @@ import { useParams, useRouter } from "next/navigation";
 
 import AdminMarkdownEditor from "@/app/admin/_components/markdown-editor";
 
+import ReactMarkdown from "react-markdown";
+import rehypeSanitize from "rehype-sanitize";
+import remarkBreaks from "remark-breaks";
+import remarkGfm from "remark-gfm";
+
 type MediaType = "IMAGE" | "VIDEO";
 
 type Answer = {
@@ -141,7 +146,7 @@ export default function AdminAnswersPage() {
 
   if (isLoading) {
     return (
-      <main className="max-w-3xl mx-auto p-8">
+      <main className="max-w-6xl mx-auto p-8">
         <p className="text-gray-500 text-sm">불러오는 중...</p>
       </main>
     );
@@ -149,7 +154,7 @@ export default function AdminAnswersPage() {
 
   if (!question) {
     return (
-      <main className="max-w-3xl mx-auto p-8">
+      <main className="max-w-6xl mx-auto p-8">
         <p className="text-gray-500 text-sm">질문을 찾을 수 없습니다.</p>
         <Link href="/admin" className="text-blue-500 text-sm mt-2 block">
           ← 질문 목록으로
@@ -159,7 +164,7 @@ export default function AdminAnswersPage() {
   }
 
   return (
-    <main className="max-w-3xl mx-auto p-8">
+    <main className="max-w-6xl mx-auto p-8">
       <Link
         href="/admin"
         className="text-gray-500 text-sm hover:text-gray-700 transition-colors"
@@ -222,24 +227,20 @@ export default function AdminAnswersPage() {
                 submitLabel="저장"
               />
             ) : (
-              <div className="flex gap-3 items-start">
-                <div className="flex-1 min-w-0">
-                  {a.isDraft && (
-                    <span className="inline-block mb-2 px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">
-                      임시저장
-                    </span>
-                  )}
-                  <p className="text-sm whitespace-pre-wrap">{a.contentKo}</p>
-                  <p className="text-gray-500 text-xs mt-2 whitespace-pre-wrap">
-                    {a.contentEn}
+              <div className="flex flex-col gap-3">
+                {a.isDraft && (
+                  <span className="self-start inline-block px-1.5 py-0.5 bg-amber-100 text-amber-700 rounded text-[10px] font-medium">
+                    임시저장
+                  </span>
+                )}
+                <AnswerPreview label="한국어" source={a.contentKo} />
+                <AnswerPreview label="English" source={a.contentEn} muted />
+                {a.mediaType && (
+                  <p className="text-xs text-blue-500">
+                    {a.mediaType}: {a.mediaUrl}
                   </p>
-                  {a.mediaType && (
-                    <p className="text-xs mt-1 text-blue-500">
-                      {a.mediaType}: {a.mediaUrl}
-                    </p>
-                  )}
-                </div>
-                <div className="flex flex-col gap-2 shrink-0">
+                )}
+                <div className="flex gap-2 justify-end">
                   <button
                     onClick={() => handleToggleDraft(a)}
                     className={`px-3 py-1.5 rounded-lg text-xs transition-colors ${
@@ -366,3 +367,39 @@ function AnswerForm({
     </form>
   );
 }
+
+// 답변 본문을 좌(원본 마크다운) + 우(렌더링 미리보기) 분할로 표시
+const AnswerPreview = ({
+  label,
+  source,
+  muted = false,
+}: {
+  label: string;
+  source: string;
+  muted?: boolean;
+}) => {
+  return (
+    <div>
+      <p
+        className={`text-xs font-medium mb-1 ${muted ? "text-gray-400" : "text-gray-600"}`}
+      >
+        {label}
+      </p>
+      <div className="grid grid-cols-2 gap-2">
+        <pre
+          className={`text-xs whitespace-pre-wrap break-words font-sans bg-gray-50 p-3 rounded-lg border border-gray-200 ${muted ? "text-gray-500" : "text-gray-800"}`}
+        >
+          {source}
+        </pre>
+        <div className="answer-md-body bg-white p-3 rounded-lg border border-gray-200 text-sm">
+          <ReactMarkdown
+            remarkPlugins={[remarkGfm, remarkBreaks]}
+            rehypePlugins={[rehypeSanitize]}
+          >
+            {source}
+          </ReactMarkdown>
+        </div>
+      </div>
+    </div>
+  );
+};
