@@ -326,11 +326,21 @@ body {
 .answer-md-body pre {
   @apply rounded-lg p-3 my-2 overflow-x-auto text-xs;
   background-color: var(--color-bg-tertiary);
+  border: 1px solid var(--color-border-subtle);
+  line-height: 1.7;
 }
+/* 인라인 code 스타일(보더·굵기·강제 줄바꿈)이 코드 블록에 상속되지 않도록 리셋 */
 .answer-md-body pre code {
+  display: block;
   background: transparent;
   padding: 0;
+  border: none;
   font-size: inherit;
+  font-weight: 400;
+  color: var(--color-text-primary);
+  overflow-wrap: normal;
+  word-break: normal;
+  white-space: pre;
 }
 .answer-md-body table {
   @apply w-full text-xs my-2 border-collapse;
