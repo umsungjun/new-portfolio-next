@@ -56,8 +56,7 @@ export const config = {
   /* 정규식 설명:
     - / : 루트 경로부터 시작
     - (?! ... ) : negative lookahead - 괄호 안의 패턴과 일치하지 않는 경우만 선택
+    - .*\\..* : 점(.)이 포함된 경로(= 확장자 있는 정적 파일: svg, png, ico, txt 등)는 모두 제외해 public 자산이 리다이렉트되지 않도록 함
   */
-  matcher: [
-    "/((?!api|_next/static|_next/image|favicon.ico|robots.txt|sitemap.xml|.*\\.html).*)",
-  ],
+  matcher: ["/((?!api|_next/static|_next/image|.*\\..*).*)"],
 };
