@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 300" role="img" aria-label="터미널 file 명령 결과: test.jpg는 AVIF, umsungjun.jpg는 JPEG">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; }
+      .fg { fill: #abb2bf; }
+      .green { fill: #98c379; }
+      .blue { fill: #61afef; }
+      .white { fill: #e6e6e6; }
+      .red { fill: #e06c75; font-weight: 700; }
+      .yellow { fill: #e5c07b; font-weight: 700; }
+      .muted { fill: #5c6370; }
+      .title { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #9099a8; }
+    </style>
+  </defs>
+  <!-- window -->
+  <rect x="8" y="8" width="704" height="284" rx="11" fill="#282c34"/>
+  <!-- title bar -->
+  <path d="M8 19 a11 11 0 0 1 11 -11 h682 a11 11 0 0 1 11 11 v23 h-704 z" fill="#21252b"/>
+  <circle cx="30" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="50" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="70" cy="30" r="6" fill="#27c93f"/>
+  <text x="360" y="34" text-anchor="middle" class="title">Desktop — zsh — 80×24</text>
+  <!-- body -->
+  <text x="26" y="78" class="mono">
+    <tspan class="green">user@mac</tspan><tspan class="fg"> </tspan><tspan class="blue">~/Desktop</tspan><tspan class="fg"> % </tspan><tspan class="white">file test.jpg</tspan>
+  </text>
+  <text x="26" y="104" class="mono">
+    <tspan class="fg">test.jpg: ISO Media, </tspan><tspan class="red">AVIF Image</tspan>
+  </text>
+  <text x="26" y="140" class="mono">
+    <tspan class="green">user@mac</tspan><tspan class="fg"> </tspan><tspan class="blue">~/Desktop</tspan><tspan class="fg"> % </tspan><tspan class="white">file umsungjun.jpg</tspan>
+  </text>
+  <text x="26" y="166" class="mono">
+    <tspan class="fg">umsungjun.jpg: </tspan><tspan class="yellow">JPEG image data</tspan><tspan class="fg">, JFIF standard 1.01,</tspan>
+  </text>
+  <text x="26" y="190" class="mono">
+    <tspan class="fg">baseline, precision 8, 500x500, components 1</tspan>
+  </text>
+  <text x="26" y="226" class="mono">
+    <tspan class="green">user@mac</tspan><tspan class="fg"> </tspan><tspan class="blue">~/Desktop</tspan><tspan class="fg"> % </tspan>
+  </text>
+  <rect x="206" y="214" width="9" height="16" fill="#abb2bf"/>
+  <!-- annotation -->
+  <text x="26" y="266" class="mono" font-size="12.5">
+    <tspan class="muted">↑ 확장자는 .jpg 인데 실제 포맷은 </tspan><tspan class="red">AVIF</tspan><tspan class="muted"> — 여기서 원인이 드러남</tspan>
+  </text>
+</svg>
