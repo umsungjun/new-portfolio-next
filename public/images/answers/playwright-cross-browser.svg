@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 372" role="img" aria-label="Playwright E2E 실행 결과 — Chromium·Firefox·WebKit 3개 브라우저에서 테스트 통과">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; }
+      .fg { fill: #d4d4d4; }
+      .dim { fill: #808a94; }
+      .green { fill: #73c991; }
+      .blue { fill: #61afef; }
+      .yellow { fill: #e5c07b; }
+      .title { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #9099a8; }
+    </style>
+  </defs>
+  <rect x="8" y="8" width="704" height="356" rx="11" fill="#282c34"/>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h682 a11 11 0 0 1 11 11 v23 h-704 z" fill="#21252b"/>
+  <circle cx="30" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="50" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="70" cy="30" r="6" fill="#27c93f"/>
+  <text x="360" y="34" text-anchor="middle" class="title">web-www-front — playwright</text>
+
+  <text x="24" y="76" class="mono"><tspan class="yellow">❯ </tspan><tspan class="fg">pnpm test:e2e</tspan></text>
+  <text x="24" y="100" class="mono"><tspan class="dim">Running 18 tests using 3 workers</tspan></text>
+
+  <text x="24" y="132" class="mono"><tspan class="green">  ✓ </tspan><tspan class="blue">[chromium]</tspan><tspan class="fg"> partFilterSearch › 필터 검색 기본 렌더링</tspan></text>
+  <text x="24" y="156" class="mono"><tspan class="green">  ✓ </tspan><tspan class="blue">[firefox] </tspan><tspan class="fg"> partFilterSearch › 필터 검색 기본 렌더링</tspan></text>
+  <text x="24" y="180" class="mono"><tspan class="green">  ✓ </tspan><tspan class="blue">[webkit]  </tspan><tspan class="fg"> partFilterSearch › 필터 검색 기본 렌더링</tspan></text>
+  <text x="24" y="204" class="mono"><tspan class="green">  ✓ </tspan><tspan class="blue">[chromium]</tspan><tspan class="fg"> unifiedSearch › 통합 검색 결과 목록</tspan></text>
+  <text x="24" y="228" class="mono"><tspan class="green">  ✓ </tspan><tspan class="blue">[firefox] </tspan><tspan class="fg"> myWiniSaved › 찜 목록 렌더링</tspan></text>
+
+  <text x="24" y="264" class="mono"><tspan class="green" font-weight="700">  18 passed</tspan><tspan class="dim"> (24.3s)</tspan></text>
+
+  <text x="24" y="332" class="mono" font-size="12.5"><tspan class="dim">↑ </tspan><tspan class="blue">Chromium · Firefox · WebKit</tspan><tspan class="dim"> 3개 브라우저에서 동일 시나리오 자동 검증</tspan></text>
+</svg>
