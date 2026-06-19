@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 414" role="img" aria-label="Bitbucket Pipelines 흐름 - develop 자동 배포, master 수동 운영 배포 + Akamai 캐시 무효화">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; fill: #d4d4d4; }
+      .col { font-family: -apple-system, system-ui, sans-serif; font-size: 14px; font-weight: 700; }
+      .note { font-family: ui-monospace, SFMono-Regular, monospace; font-size: 12px; fill: #9099a8; }
+      .arrow { stroke: #6b7280; stroke-width: 1.6; }
+      .head { fill: #6b7280; }
+    </style>
+  </defs>
+  <rect x="8" y="8" width="724" height="398" rx="12" fill="#282c34"/>
+
+  <!-- column headers -->
+  <text x="190" y="44" text-anchor="middle" class="col" fill="#61afef">develop · 자동 배포</text>
+  <text x="552" y="44" text-anchor="middle" class="col" fill="#e5c07b">master · 수동 운영 배포</text>
+  <line x1="371" y1="60" x2="371" y2="356" stroke="#3a4150" stroke-width="1" stroke-dasharray="3 4"/>
+
+  <!-- develop boxes -->
+  <g>
+    <rect x="60" y="64" width="260" height="34" rx="7" fill="#2f3640" stroke="#61afef" stroke-width="1.2"/>
+    <text x="190" y="86" text-anchor="middle" class="mono">git push → develop</text>
+    <line class="arrow" x1="190" y1="98" x2="190" y2="108"/>
+    <path class="head" d="M185 108 L195 108 L190 114 Z"/>
+    <rect x="60" y="114" width="260" height="34" rx="7" fill="#21252b"/>
+    <text x="190" y="136" text-anchor="middle" class="mono">pnpm install</text>
+    <line class="arrow" x1="190" y1="148" x2="190" y2="158"/>
+    <path class="head" d="M185 158 L195 158 L190 164 Z"/>
+    <rect x="60" y="164" width="260" height="34" rx="7" fill="#21252b"/>
+    <text x="190" y="186" text-anchor="middle" class="mono">pnpm build:dev</text>
+    <line class="arrow" x1="190" y1="198" x2="190" y2="208"/>
+    <path class="head" d="M185 208 L195 208 L190 214 Z"/>
+    <rect x="60" y="214" width="260" height="34" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.2"/>
+    <text x="190" y="236" text-anchor="middle" class="mono"><tspan fill="#73c991">✓</tspan> rsync → Dev 서버</text>
+  </g>
+
+  <!-- master boxes -->
+  <g>
+    <rect x="422" y="64" width="260" height="34" rx="7" fill="#2f3640" stroke="#e5c07b" stroke-width="1.2"/>
+    <text x="552" y="86" text-anchor="middle" class="mono">git push → master</text>
+    <line class="arrow" x1="552" y1="98" x2="552" y2="108"/>
+    <path class="head" d="M547 108 L557 108 L552 114 Z"/>
+    <rect x="422" y="114" width="260" height="34" rx="7" fill="#21252b"/>
+    <text x="552" y="136" text-anchor="middle" class="mono">pnpm build (운영 빌드)</text>
+    <line class="arrow" x1="552" y1="148" x2="552" y2="158"/>
+    <path class="head" d="M547 158 L557 158 L552 164 Z"/>
+    <rect x="422" y="164" width="260" height="34" rx="7" fill="#332b22" stroke="#e5c07b" stroke-width="1.3" stroke-dasharray="5 4"/>
+    <text x="552" y="186" text-anchor="middle" class="mono"><tspan fill="#e5c07b">▶ manual</tspan> Deploy 승인</text>
+    <line class="arrow" x1="552" y1="198" x2="552" y2="208"/>
+    <path class="head" d="M547 208 L557 208 L552 214 Z"/>
+    <rect x="422" y="214" width="260" height="34" rx="7" fill="#21252b"/>
+    <text x="552" y="236" text-anchor="middle" class="mono">rsync → Prod 서버</text>
+    <line class="arrow" x1="552" y1="248" x2="552" y2="258"/>
+    <path class="head" d="M547 258 L557 258 L552 264 Z"/>
+    <rect x="422" y="264" width="260" height="34" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.2"/>
+    <text x="552" y="286" text-anchor="middle" class="mono"><tspan fill="#73c991">✓</tspan> Akamai CDN Purge</text>
+  </g>
+
+  <!-- bottom common note -->
+  <rect x="60" y="322" width="622" height="36" rx="8" fill="#21252b"/>
+  <text x="371" y="345" text-anchor="middle" class="note"><tspan fill="#d4d4d4">node:20</tspan>  ·  <tspan fill="#d4d4d4">pnpm cache</tspan>  ·  <tspan fill="#d4d4d4">size 4x + atlassian-ip-ranges</tspan> (IDC 방화벽 통과용 고정 IP)</text>
+
+  <!-- after-script note -->
+  <text x="371" y="384" text-anchor="middle" class="note">모든 스텝 종료 후 after-script → Naver Works 배포 알림 (성공/실패)</text>
+</svg>
