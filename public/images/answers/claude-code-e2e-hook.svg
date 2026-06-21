@@ -1,18 +1,18 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" role="img" aria-label="Claude Code Stop 훅 — 도메인 코드 변경 시 e2e 테스트 누락을 감지해 경고하고 자동 생성 유도">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 340" role="img" aria-label="Claude Code Stop 훅 — 도메인 코드 변경 시 e2e 테스트 누락을 감지해 경고하고 자동 생성 유도">
   <defs>
     <style>
-      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13.5px; }
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 14px; }
       .ui { font-family: -apple-system, system-ui, sans-serif; }
       .fg { fill: #d4d4d4; }
       .dim { fill: #808a94; }
       .amber { fill: #e5c07b; }
       .green { fill: #73c991; }
       .red { fill: #f0a35e; }
-      .label { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #9099a8; }
+      .label { font-family: -apple-system, system-ui, sans-serif; font-size: 12.5px; fill: #9099a8; }
     </style>
   </defs>
-  <rect x="8" y="8" width="704" height="324" rx="11" fill="#282c34"/>
-  <path d="M8 19 a11 11 0 0 1 11 -11 h682 a11 11 0 0 1 11 11 v23 h-704 z" fill="#21252b"/>
+  <rect x="8" y="8" width="504" height="324" rx="11" fill="#282c34"/>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h482 a11 11 0 0 1 11 11 v23 h-504 z" fill="#21252b"/>
   <circle cx="28" cy="30" r="5.5" fill="#d97757"/>
   <text x="46" y="34" class="ui label" fill="#cdb4f6">Claude Code · Stop hook</text>
 
@@ -20,12 +20,12 @@
   <text x="26" y="102" class="mono"><tspan class="dim">    CLAUDE.md의 e2e 규칙에 따라 Playwright 테스트를 추가/수정하세요.</tspan></text>
   <text x="26" y="126" class="mono"><tspan class="dim">    변경: </tspan><tspan class="fg">src/domains/MyWini/Saved/index.tsx</tspan></text>
 
-  <line x1="26" y1="158" x2="694" y2="158" stroke="#3a4150" stroke-width="1"/>
+  <line x1="26" y1="158" x2="494" y2="158" stroke="#3a4150" stroke-width="1"/>
 
   <text x="26" y="190" class="mono"><tspan class="green">→ </tspan><tspan class="fg">기존 코드를 분석해 </tspan><tspan class="green">e2e/myWiniSaved.spec.ts</tspan><tspan class="fg"> 자동 생성·수정</tspan></text>
   <text x="26" y="218" class="mono"><tspan class="dim">   page.route()로 API 모킹 · 렌더링/필터/URL 파라미터 커버리지</tspan></text>
 
-  <rect x="26" y="244" width="668" height="62" rx="8" fill="#21252b"/>
-  <text x="42" y="270" class="ui" font-size="13" fill="#9099a8">자동화 효과</text>
-  <text x="42" y="293" class="ui" font-size="13.5" fill="#d4d4d4">"테스트 작성"에서 <tspan fill="#73c991" font-weight="700">"검토·실행"</tspan>으로 전환, 놓치기 쉬운 E2E를 훅이 강제</text>
+  <rect x="26" y="244" width="468" height="62" rx="8" fill="#21252b"/>
+  <text x="42" y="270" class="ui" font-size="13.5" fill="#9099a8">자동화 효과</text>
+  <text x="42" y="293" class="ui" font-size="14" fill="#d4d4d4">"테스트 작성"에서 <tspan fill="#73c991" font-weight="700">"검토·실행"</tspan>으로 전환, 놓치기 쉬운 E2E를 훅이 강제</text>
 </svg>

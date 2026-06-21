@@ -361,6 +361,72 @@ body {
   @apply rounded-lg my-2 max-w-full h-auto;
 }
 
+/* 클릭 확대 트리거: 인라인 이미지·참고 이미지를 감싸는 버튼(버튼 기본 스타일 제거) */
+.lightboxTrigger {
+  @apply block w-full cursor-zoom-in;
+  padding: 0;
+  border: 0;
+  background: none;
+  line-height: 0;
+}
+.lightboxTrigger:focus-visible {
+  outline: 2px solid var(--color-bg-accent);
+  outline-offset: 2px;
+  border-radius: 0.6rem;
+}
+
+/* 이미지 라이트박스 오버레이 (createPortal로 body 직속 렌더 — 채팅 폭 밖으로 벗어남) */
+.lightboxOverlay {
+  @apply fixed inset-0 z-[9999] flex items-center justify-center p-4;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  animation: lightboxFadeIn 0.2s ease forwards;
+}
+.lightboxImage {
+  @apply rounded-lg;
+  max-width: 95vw;
+  max-height: 90vh;
+  object-fit: contain;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+  /* 로드 완료(.is-loaded) 시 페이드+팝인. 받아오는 동안은 투명해 빈 박스가 안 보임 */
+  opacity: 0;
+  transform: scale(0.98);
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.lightboxImage.is-loaded {
+  opacity: 1;
+  transform: scale(1);
+}
+.lightboxSpinner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.lightboxClose {
+  @apply fixed top-4 right-4 flex items-center justify-center rounded-full w-10 h-10;
+  background-color: var(--color-bg-secondary);
+  color: var(--color-text-primary);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+.lightboxClose:hover {
+  background-color: var(--color-hover-bg);
+}
+.lightboxClose:focus-visible {
+  outline: 2px solid var(--color-bg-accent);
+  outline-offset: 2px;
+}
+@keyframes lightboxFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
 /* 사이드 링크 카드 */
 .linkCard {
   background-color: var(--color-bg-secondary);
