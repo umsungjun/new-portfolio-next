@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
 import { useTranslations } from "next-intl";
-import Image from "next/image";
 
 import { LOCALE_KO } from "@/lib/client/constants";
 
@@ -14,6 +13,8 @@ import remarkGfm from "remark-gfm";
 
 import { PhotoIcon, VideoCameraIcon } from "@heroicons/react/24/solid";
 import { Answer as AnswerType } from "@prisma/client";
+
+import ZoomImage from "./zoomImage";
 
 interface AnswerProps {
   isRefresh: boolean;
@@ -75,6 +76,19 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
                   a: ({ node, ...props }) => (
                     <a {...props} target="_blank" rel="noopener noreferrer" />
                   ),
+                  // 인라인 이미지(SVG 목업 등)는 클릭 시 전체화면으로 확대 가능하도록 래핑
+                  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+                  img: ({ node, ...props }) => {
+                    if (!props.src) return null;
+                    const altText =
+                      typeof props.alt === "string" ? props.alt : "";
+                    return (
+                      <ZoomImage zoomSrc={String(props.src)} alt={altText}>
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img {...props} alt={altText} loading="lazy" />
+                      </ZoomImage>
+                    );
+                  },
                 }}
               >
                 {locale === LOCALE_KO ? chat.contentKo : chat.contentEn}
@@ -90,18 +104,26 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
                   />
                   {t("referenceImage")}
                 </span>
-                <div
-                  className="relative mt-3 flex h-[200px] w-full rounded-lg overflow-hidden"
-                  style={{ backgroundColor: "var(--color-bg-secondary)" }}
+                {/* 썸네일과 확대본이 같은 URL(w640)을 공유 → 확대 시 새 요청 없이 캐시된 이미지를 즉시 사용.
+                    숫자(w640)를 키우면 확대가 선명해지나 초기 로드가 무거워지고, 줄이면 그 반대. */}
+                <ZoomImage
+                  zoomSrc={`${process.env.NEXT_PUBLIC_GOOGLE_DRIVE_IMG_URL}${chat.mediaUrl}&sz=w640`}
+                  alt={t("referenceImage")}
                 >
-                  <Image
-                    className="object-contain p-1"
-                    fill
-                    src={`${process.env.NEXT_PUBLIC_GOOGLE_DRIVE_IMG_URL}${chat.mediaUrl}&sz=w300`}
-                    alt="referenceImage"
-                    sizes="(max-width: 215px) 100vw"
-                  />
-                </div>
+                  <div
+                    className="relative mt-3 flex h-[200px] w-full rounded-lg overflow-hidden"
+                    style={{ backgroundColor: "var(--color-bg-secondary)" }}
+                  >
+                    {/* Next/Image는 최적화 URL을 써서 확대본과 캐시가 갈리므로, 동일 URL 재사용을 위해 일반 img 사용 */}
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      className="h-full w-full object-contain p-1"
+                      src={`${process.env.NEXT_PUBLIC_GOOGLE_DRIVE_IMG_URL}${chat.mediaUrl}&sz=w640`}
+                      alt="referenceImage"
+                      loading="lazy"
+                    />
+                  </div>
+                </ZoomImage>
               </div>
             )}
             {/* 참고 영상 */}

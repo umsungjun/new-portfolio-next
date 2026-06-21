@@ -1,31 +1,31 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 360" role="img" aria-label="Windows 사진 뷰어에서 지원되지 않는 형식 에러 화면">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 360" role="img" aria-label="Windows 사진 뷰어에서 지원되지 않는 형식 에러 화면">
   <defs>
     <style>
       .ui { font-family: -apple-system, system-ui, "Segoe UI", sans-serif; }
-      .fname { font-size: 14px; fill: #d6d6d6; }
-      .err { font-size: 13px; fill: #9aa0a6; }
-      .bar { font-size: 12px; fill: #8a9099; }
+      .fname { font-size: 15px; fill: #d6d6d6; }
+      .err { font-size: 14px; fill: #9aa0a6; }
+      .bar { font-size: 12.5px; fill: #8a9099; }
     </style>
   </defs>
   <!-- window -->
-  <rect x="8" y="8" width="704" height="344" rx="11" fill="#1b1b1f"/>
+  <rect x="8" y="8" width="464" height="344" rx="11" fill="#1b1b1f"/>
   <!-- title bar -->
-  <path d="M8 19 a11 11 0 0 1 11 -11 h682 a11 11 0 0 1 11 11 v23 h-704 z" fill="#141417"/>
-  <text x="360" y="34" text-anchor="middle" class="ui bar">1000154463.jpg</text>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h442 a11 11 0 0 1 11 11 v23 h-464 z" fill="#141417"/>
+  <text x="240" y="34" text-anchor="middle" class="ui bar">1000154463.jpg</text>
   <!-- window controls -->
-  <text x="660" y="34" class="ui bar" fill="#6b7079">— ▢ ✕</text>
+  <text x="420" y="34" class="ui bar" fill="#6b7079">— ▢ ✕</text>
   <!-- broken image glyph -->
-  <g transform="translate(360 150)" stroke="#5a5f66" stroke-width="3.5" fill="none" stroke-linejoin="round">
+  <g transform="translate(240 150)" stroke="#5a5f66" stroke-width="3.5" fill="none" stroke-linejoin="round">
     <rect x="-44" y="-36" width="88" height="72" rx="8"/>
     <circle cx="-18" cy="-12" r="9" fill="#5a5f66" stroke="none"/>
     <path d="M-44 26 L-12 -4 L8 16 L26 -2 L44 20"/>
   </g>
   <!-- filename -->
-  <text x="360" y="232" text-anchor="middle" class="ui fname">1000154463.jpg</text>
+  <text x="240" y="232" text-anchor="middle" class="ui fname">1000154463.jpg</text>
   <!-- error message -->
-  <text x="360" y="262" text-anchor="middle" class="ui err">현재 지원되지 않는 형식이거나 파일이 손상되었기 때문에</text>
-  <text x="360" y="284" text-anchor="middle" class="ui err">사진을 열 수 없습니다.</text>
+  <text x="240" y="262" text-anchor="middle" class="ui err">현재 지원되지 않는 형식이거나 파일이 손상되었기 때문에</text>
+  <text x="240" y="284" text-anchor="middle" class="ui err">사진을 열 수 없습니다.</text>
   <!-- bottom toolbar hint -->
-  <line x1="8" y1="316" x2="712" y2="316" stroke="#2a2a2f" stroke-width="1"/>
-  <text x="360" y="338" text-anchor="middle" class="ui bar" fill="#5a5f66">100%</text>
+  <line x1="8" y1="316" x2="472" y2="316" stroke="#2a2a2f" stroke-width="1"/>
+  <text x="240" y="338" text-anchor="middle" class="ui bar" fill="#5a5f66">100%</text>
 </svg>

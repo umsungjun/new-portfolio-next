@@ -1,20 +1,20 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 320" role="img" aria-label="Naver Works 배포 알림 - Frontend Bot이 보낸 web-www-front develop 배포 성공 캐러셀 메시지">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 320" role="img" aria-label="Naver Works 배포 알림 - Frontend Bot이 보낸 web-www-front develop 배포 성공 캐러셀 메시지">
   <defs>
     <style>
       .ui { font-family: -apple-system, system-ui, "Apple SD Gothic Neo", sans-serif; }
     </style>
   </defs>
   <!-- chat background -->
-  <rect x="0" y="0" width="440" height="320" rx="14" fill="#eef0f3"/>
+  <rect x="0" y="0" width="420" height="320" rx="14" fill="#eef0f3"/>
   <!-- room header -->
-  <rect x="0" y="0" width="440" height="44" rx="14" fill="#00c73c"/>
-  <rect x="0" y="22" width="440" height="22" fill="#00c73c"/>
+  <rect x="0" y="0" width="420" height="44" rx="14" fill="#00c73c"/>
+  <rect x="0" y="22" width="420" height="22" fill="#00c73c"/>
   <text x="20" y="29" class="ui" font-size="14" font-weight="700" fill="#ffffff">Frontend CI/CD 알림 방</text>
 
   <!-- bot row -->
   <circle cx="34" cy="78" r="14" fill="#00c73c"/>
   <text x="34" y="83" text-anchor="middle" class="ui" font-size="13" font-weight="700" fill="#ffffff">B</text>
-  <text x="56" y="72" class="ui" font-size="12" fill="#5b6573">Frontend Bot</text>
+  <text x="56" y="72" class="ui" font-size="12.5" fill="#5b6573">Frontend Bot</text>
 
   <!-- carousel card -->
   <rect x="56" y="80" width="312" height="206" rx="12" fill="#ffffff"/>
@@ -23,7 +23,7 @@
   <circle cx="92" cy="108" r="15" fill="#1db954"/>
   <path d="M85 108 l5 5 l9 -10" fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
   <text x="120" y="105" class="ui" font-size="13.5" font-weight="700" fill="#137a36">Success</text>
-  <text x="120" y="122" class="ui" font-size="12" fill="#3f7a55">배포가 완료되었습니다</text>
+  <text x="120" y="122" class="ui" font-size="12.5" fill="#3f7a55">배포가 완료되었습니다</text>
 
   <!-- card body -->
   <text x="72" y="158" class="ui" font-size="14" font-weight="700" fill="#1f2329">[Success] web-www-front - develop</text>
@@ -37,5 +37,5 @@
   <rect x="220" y="216" width="132" height="34" rx="8" fill="#f3f5f8" stroke="#d8dde4" stroke-width="1"/>
   <text x="286" y="238" text-anchor="middle" class="ui" font-size="13" fill="#2a6fdb">🚀  Pipeline</text>
 
-  <text x="72" y="272" class="ui" font-size="11" fill="#98a0ab">after-script · $BITBUCKET_EXIT_CODE = 0</text>
+  <text x="72" y="272" class="ui" font-size="12" fill="#98a0ab">after-script · $BITBUCKET_EXIT_CODE = 0</text>
 </svg>
