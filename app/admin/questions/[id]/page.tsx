@@ -395,6 +395,13 @@ const AnswerPreview = ({
           <ReactMarkdown
             remarkPlugins={[remarkGfm, remarkBreaks]}
             rehypePlugins={[rehypeSanitize]}
+            components={{
+              // 미리보기 링크도 production(answer.tsx)과 동일하게 새 창으로 열기
+              // eslint-disable-next-line @typescript-eslint/no-unused-vars
+              a: ({ node, ...props }) => (
+                <a {...props} target="_blank" rel="noopener noreferrer" />
+              ),
+            }}
           >
             {source}
           </ReactMarkdown>
