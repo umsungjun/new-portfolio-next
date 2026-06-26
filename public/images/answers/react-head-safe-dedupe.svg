@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 384" role="img" aria-label="react-helmet-async는 페이지 이동 시 같은 og:title 태그가 2개로 누적되지만, react-head-safe는 동일 속성 태그를 제거 후 교체해 항상 1개만 유지함">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13.5px; }
+      .fg { fill: #d4d4d4; }
+      .dim { fill: #808a94; }
+      .green { fill: #73c991; }
+      .red { fill: #f14c4c; }
+      .yellow { fill: #e5c07b; }
+      .label { font-family: -apple-system, system-ui, sans-serif; font-size: 12.5px; font-weight: 700; }
+      .title { font-family: -apple-system, system-ui, sans-serif; font-size: 12.5px; fill: #9099a8; }
+      .annot { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; }
+    </style>
+  </defs>
+  <rect x="8" y="8" width="484" height="368" rx="11" fill="#282c34"/>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h462 a11 11 0 0 1 11 11 v23 h-484 z" fill="#21252b"/>
+  <circle cx="30" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="50" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="70" cy="30" r="6" fill="#27c93f"/>
+  <text x="250" y="34" text-anchor="middle" class="title">&lt;head&gt; 중복 태그 제거 · react-head-safe</text>
+
+  <!-- BEFORE -->
+  <text x="24" y="72" class="label"><tspan class="red">BEFORE</tspan><tspan class="dim" font-weight="400"> react-helmet-async</tspan></text>
+  <text x="24" y="98" class="mono dim">&lt;head&gt;</text>
+  <text x="24" y="120" class="mono dim">  &lt;meta property="og:title" content="홈"&gt;</text>
+  <text x="24" y="142" class="mono"><tspan class="red">  &lt;meta property="og:title" content="상세"&gt;</tspan><tspan class="yellow"> ← 중복</tspan></text>
+  <text x="24" y="164" class="mono dim">&lt;/head&gt;</text>
+  <text x="24" y="190" class="annot"><tspan class="dim">↑ 페이지 이동 시 같은 og:title이 </tspan><tspan class="red" font-weight="700">2개</tspan><tspan class="dim">로 누적되어 크롤러가 혼란</tspan></text>
+
+  <line x1="24" y1="210" x2="476" y2="210" stroke="#3a3f4b" stroke-width="1"/>
+
+  <!-- AFTER -->
+  <text x="24" y="240" class="label"><tspan class="green">AFTER</tspan><tspan class="dim" font-weight="400"> react-head-safe</tspan></text>
+  <text x="24" y="266" class="mono dim">&lt;head&gt;</text>
+  <text x="24" y="288" class="mono"><tspan class="green">  &lt;meta property="og:title" content="상세"&gt;</tspan><tspan class="green"> ✓</tspan></text>
+  <text x="24" y="310" class="mono dim">&lt;/head&gt;</text>
+  <text x="24" y="336" class="annot"><tspan class="dim">↑ 동일 속성 태그를 제거 후 교체해 항상 </tspan><tspan class="green" font-weight="700">1개</tspan><tspan class="dim">만 유지</tspan></text>
+</svg>
