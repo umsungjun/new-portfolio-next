@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744 340" role="img" aria-label="Vercel Region 변경 전후 데이터 경로 비교. 변경 전(sfo1, 미국)은 한국 사용자의 요청 1건이 한국과 미국을 4번 횡단하지만, 변경 후(icn1, 서울)는 함수와 DB가 같은 서울 리전에 있어 횡단이 없음">
+  <defs>
+    <style>
+      .node { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; fill: #d4d4d4; }
+      .lane { font-family: -apple-system, system-ui, sans-serif; font-size: 11px; fill: #6b7280; font-weight: 700; }
+      .label { font-family: -apple-system, system-ui, sans-serif; font-size: 13px; font-weight: 700; }
+      .annot { font-family: -apple-system, system-ui, sans-serif; font-size: 12.5px; }
+      .title { font-family: -apple-system, system-ui, sans-serif; font-size: 12.5px; fill: #9099a8; }
+    </style>
+    <marker id="rh" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f14c4c"/></marker>
+    <marker id="gh" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#73c991"/></marker>
+  </defs>
+  <rect x="8" y="8" width="728" height="324" rx="12" fill="#282c34"/>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h706 a11 11 0 0 1 11 11 v23 h-728 z" fill="#21252b"/>
+  <circle cx="30" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="50" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="70" cy="30" r="6" fill="#27c93f"/>
+  <text x="376" y="34" text-anchor="middle" class="title">데이터 경로 · Vercel Region: sfo1 (US) → icn1 (Seoul)</text>
+
+  <!-- BEFORE -->
+  <text x="48" y="62" class="label"><tspan fill="#f14c4c">BEFORE</tspan><tspan fill="#9099a8" font-weight="400"> sfo1 · Washington(US) 기본값</tspan></text>
+  <text x="16" y="93" class="lane">US</text>
+  <text x="16" y="139" class="lane">KR</text>
+
+  <!-- before arrows (zig-zag = 태평양 횡단) -->
+  <line x1="152" y1="130" x2="190" y2="93" stroke="#f14c4c" stroke-width="2" marker-end="url(#rh)"/>
+  <line x1="296" y1="93" x2="334" y2="130" stroke="#f14c4c" stroke-width="2" marker-end="url(#rh)"/>
+  <line x1="440" y1="130" x2="478" y2="93" stroke="#f14c4c" stroke-width="2" marker-end="url(#rh)"/>
+  <line x1="584" y1="93" x2="622" y2="130" stroke="#f14c4c" stroke-width="2" marker-end="url(#rh)"/>
+
+  <!-- before nodes (KR=green, US=red) -->
+  <rect x="48" y="116" width="104" height="34" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="100" y="138" text-anchor="middle" class="node">사용자·KR</text>
+  <rect x="192" y="72" width="104" height="34" rx="7" fill="#2f3640" stroke="#f14c4c" stroke-width="1.3"/>
+  <text x="244" y="94" text-anchor="middle" class="node">Vercel·US</text>
+  <rect x="336" y="116" width="104" height="34" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="388" y="138" text-anchor="middle" class="node">DB·KR</text>
+  <rect x="480" y="72" width="104" height="34" rx="7" fill="#2f3640" stroke="#f14c4c" stroke-width="1.3"/>
+  <text x="532" y="94" text-anchor="middle" class="node">Vercel·US</text>
+  <rect x="624" y="116" width="104" height="34" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="676" y="138" text-anchor="middle" class="node">사용자·KR</text>
+
+  <text x="48" y="176" class="annot"><tspan fill="#f14c4c" font-weight="700">↑ </tspan><tspan fill="#abb2bf">요청 1건이 한국↔미국을 </tspan><tspan fill="#f14c4c" font-weight="700">4번 횡단</tspan><tspan fill="#abb2bf"> (왕복 2회). Lighthouse 97점은 이 실제 레이턴시를 못 잡습니다.</tspan></text>
+
+  <line x1="48" y1="196" x2="696" y2="196" stroke="#3a4150" stroke-width="1" stroke-dasharray="3 4"/>
+
+  <!-- AFTER -->
+  <text x="48" y="218" class="label"><tspan fill="#73c991">AFTER</tspan><tspan fill="#9099a8" font-weight="400"> icn1 · Seoul(KR)</tspan></text>
+
+  <rect x="40" y="230" width="412" height="46" rx="10" fill="none" stroke="#3f6b50" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="446" y="246" class="lane" fill="#73c991">같은 서울 리전</text>
+
+  <line x1="148" y1="253" x2="190" y2="253" stroke="#73c991" stroke-width="2" marker-end="url(#gh)"/>
+  <line x1="292" y1="253" x2="334" y2="253" stroke="#73c991" stroke-width="2" marker-end="url(#gh)"/>
+
+  <rect x="50" y="236" width="96" height="34" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="98" y="258" text-anchor="middle" class="node">사용자·KR</text>
+  <rect x="194" y="236" width="96" height="34" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="242" y="258" text-anchor="middle" class="node">Vercel·KR</text>
+  <rect x="338" y="236" width="96" height="34" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="386" y="258" text-anchor="middle" class="node">DB·KR</text>
+
+  <text x="48" y="300" class="annot"><tspan fill="#73c991" font-weight="700">↑ </tspan><tspan fill="#abb2bf">함수와 DB가 같은 서울 리전 → 횡단 0회, Vercel↔Supabase 레이턴시 ≈ 0</tspan></text>
+</svg>
