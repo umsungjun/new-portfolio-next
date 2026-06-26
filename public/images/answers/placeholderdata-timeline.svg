@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 744 280" role="img" aria-label="queryKey 변경 시 data 상태 흐름 비교. placeholderData가 없으면 data가 잠시 undefined가 되어 아코디언 메뉴가 접히지만, placeholderData로 이전 데이터를 유지하면 메뉴가 그대로 유지됨">
+  <defs>
+    <style>
+      .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; fill: #d4d4d4; }
+      .sub { font-family: -apple-system, system-ui, sans-serif; font-size: 11.5px; }
+      .label { font-family: -apple-system, system-ui, sans-serif; font-size: 13px; font-weight: 700; }
+      .evt { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; font-weight: 700; fill: #e5c07b; }
+      .note { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #9099a8; }
+    </style>
+    <marker id="rh" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f14c4c"/></marker>
+    <marker id="gh" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#73c991"/></marker>
+  </defs>
+  <rect x="8" y="8" width="728" height="264" rx="12" fill="#282c34"/>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h706 a11 11 0 0 1 11 11 v23 h-728 z" fill="#21252b"/>
+  <circle cx="30" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="50" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="70" cy="30" r="6" fill="#27c93f"/>
+  <text x="376" y="34" text-anchor="middle" class="note" fill="#9099a8">필터 변경 시 data 상태 흐름 · queryKey 변경 전 / 후</text>
+
+  <!-- queryKey 변경 이벤트선 -->
+  <text x="300" y="58" text-anchor="middle" class="evt">queryKey 변경</text>
+  <line x1="300" y1="64" x2="300" y2="232" stroke="#e5c07b" stroke-width="1.2" stroke-dasharray="4 4"/>
+
+  <!-- BEFORE -->
+  <text x="44" y="80" class="label"><tspan fill="#f14c4c">BEFORE</tspan><tspan fill="#9099a8" font-weight="400"> placeholderData 없음</tspan></text>
+  <line x1="286" y1="113" x2="314" y2="113" stroke="#f14c4c" stroke-width="2" marker-end="url(#rh)"/>
+  <rect x="44" y="90" width="240" height="46" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.2"/>
+  <text x="164" y="112" text-anchor="middle" class="mono">data: 목록A</text>
+  <text x="164" y="128" text-anchor="middle" class="sub" fill="#9099a8">메뉴 열림 (정상)</text>
+  <rect x="316" y="90" width="384" height="46" rx="7" fill="#2f3640" stroke="#f14c4c" stroke-width="1.2"/>
+  <text x="508" y="112" text-anchor="middle" class="mono">data: undefined → (fetch 후) 목록B</text>
+  <text x="508" y="128" text-anchor="middle" class="sub" fill="#f14c4c">아코디언 상태 리셋 → 메뉴 접힘 ✕</text>
+
+  <!-- AFTER -->
+  <text x="44" y="162" class="label"><tspan fill="#73c991">AFTER</tspan><tspan fill="#9099a8" font-weight="400"> placeholderData: (prev) =&gt; prev</tspan></text>
+  <line x1="286" y1="195" x2="314" y2="195" stroke="#73c991" stroke-width="2" marker-end="url(#gh)"/>
+  <rect x="44" y="172" width="240" height="46" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.2"/>
+  <text x="164" y="194" text-anchor="middle" class="mono">data: 목록A</text>
+  <text x="164" y="210" text-anchor="middle" class="sub" fill="#9099a8">메뉴 열림</text>
+  <rect x="316" y="172" width="384" height="46" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.2"/>
+  <text x="508" y="194" text-anchor="middle" class="mono">data: 이전 목록 유지 → 목록B로 교체</text>
+  <text x="508" y="210" text-anchor="middle" class="sub" fill="#73c991">아코디언 그대로 유지 ✓</text>
+
+  <text x="44" y="252" class="note">↑ queryKey가 바뀌면 캐시가 비며 data가 잠시 undefined가 되는데, placeholderData가 그 공백을 이전 데이터로 메웁니다.</text>
+</svg>
