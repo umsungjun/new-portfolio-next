@@ -154,6 +154,15 @@ body {
   }
 }
 
+/* 동작 줄이기 선호 시 채팅 진입 애니메이션 감축 (자동 스크롤 behavior 분기와 일관) */
+@media (prefers-reduced-motion: reduce) {
+  .questionButtonBox,
+  .answerLoader,
+  .answer {
+    animation: none;
+  }
+}
+
 /* 질문 CSS */
 .questionWrapper {
   @apply w-11/12 flex flex-col gap-3 web:w-4/5;
