@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" role="img" aria-label="언어 유지 전후 비교. SessionStorage가 없으면 새로고침 시 ui_locales 파라미터가 유실되어 언어가 영어로 초기화되지만, URL의 언어 코드를 SessionStorage에 저장해두면 새로고침 후 복원되어 언어가 유지됨">
+  <defs>
+    <style>
+      .t { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 12px; fill: #d4d4d4; }
+      .label { font-family: -apple-system, system-ui, sans-serif; font-size: 13px; font-weight: 700; }
+      .note { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #9099a8; }
+      .title { font-family: -apple-system, system-ui, sans-serif; font-size: 12.5px; fill: #9099a8; }
+    </style>
+    <marker id="rh" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#f14c4c"/></marker>
+    <marker id="gh" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#73c991"/></marker>
+  </defs>
+  <rect x="8" y="8" width="744" height="264" rx="12" fill="#282c34"/>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h722 a11 11 0 0 1 11 11 v23 h-744 z" fill="#21252b"/>
+  <circle cx="30" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="50" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="70" cy="30" r="6" fill="#27c93f"/>
+  <text x="380" y="34" text-anchor="middle" class="title">다국어 유지 · ui_locales 파라미터 문제</text>
+
+  <!-- BEFORE -->
+  <text x="24" y="64" class="label"><tspan fill="#f14c4c">BEFORE</tspan><tspan fill="#9099a8" font-weight="400"> SessionStorage 없음</tspan></text>
+  <line x1="182" y1="99" x2="196" y2="99" stroke="#f14c4c" stroke-width="2" marker-end="url(#rh)"/>
+  <line x1="356" y1="99" x2="370" y2="99" stroke="#f14c4c" stroke-width="2" marker-end="url(#rh)"/>
+  <line x1="530" y1="99" x2="544" y2="99" stroke="#f14c4c" stroke-width="2" marker-end="url(#rh)"/>
+  <rect x="24" y="76" width="156" height="46" rx="7" fill="#2f3640" stroke="#9099a8" stroke-width="1.2"/>
+  <text x="102" y="103" text-anchor="middle" class="t">URL ?ui_locales=mn</text>
+  <rect x="198" y="76" width="156" height="46" rx="7" fill="#21252b" stroke="#5c6370" stroke-width="1.2" stroke-dasharray="5 4"/>
+  <text x="276" y="103" text-anchor="middle" class="t" fill="#808a94">저장 단계 없음</text>
+  <rect x="372" y="76" width="156" height="46" rx="7" fill="#2f3640" stroke="#9099a8" stroke-width="1.2"/>
+  <text x="450" y="95" text-anchor="middle" class="t">로그인 실패</text>
+  <text x="450" y="113" text-anchor="middle" class="t">→ 새로고침</text>
+  <rect x="546" y="76" width="156" height="46" rx="7" fill="#2f3640" stroke="#f14c4c" stroke-width="1.3"/>
+  <text x="624" y="95" text-anchor="middle" class="t" fill="#f14c4c">ui_locales 유실</text>
+  <text x="624" y="113" text-anchor="middle" class="t" fill="#f14c4c">→ 영어로 초기화 ✕</text>
+
+  <!-- AFTER -->
+  <text x="24" y="158" class="label"><tspan fill="#73c991">AFTER</tspan><tspan fill="#9099a8" font-weight="400"> SessionStorage 저장/복원</tspan></text>
+  <line x1="182" y1="193" x2="196" y2="193" stroke="#73c991" stroke-width="2" marker-end="url(#gh)"/>
+  <line x1="356" y1="193" x2="370" y2="193" stroke="#73c991" stroke-width="2" marker-end="url(#gh)"/>
+  <line x1="530" y1="193" x2="544" y2="193" stroke="#73c991" stroke-width="2" marker-end="url(#gh)"/>
+  <rect x="24" y="170" width="156" height="46" rx="7" fill="#2f3640" stroke="#9099a8" stroke-width="1.2"/>
+  <text x="102" y="197" text-anchor="middle" class="t">URL ?ui_locales=mn</text>
+  <rect x="198" y="170" width="156" height="46" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="276" y="189" text-anchor="middle" class="t" fill="#73c991">SessionStorage</text>
+  <text x="276" y="207" text-anchor="middle" class="t" fill="#73c991">에 저장</text>
+  <rect x="372" y="170" width="156" height="46" rx="7" fill="#2f3640" stroke="#9099a8" stroke-width="1.2"/>
+  <text x="450" y="189" text-anchor="middle" class="t">로그인 실패</text>
+  <text x="450" y="207" text-anchor="middle" class="t">→ 새로고침</text>
+  <rect x="546" y="170" width="156" height="46" rx="7" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="624" y="189" text-anchor="middle" class="t" fill="#73c991">SessionStorage서 복원</text>
+  <text x="624" y="207" text-anchor="middle" class="t" fill="#73c991">→ 언어 유지 ✓</text>
+
+  <text x="24" y="246" class="note">↑ Keycloak은 언어를 URL ui_locales로 전달 → 새로고침 시 유실. SessionStorage에 저장해두면 복원 가능.</text>
+</svg>

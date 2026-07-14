@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 300" role="img" aria-label="Keycloak 인증 요청을 clientId로 분기. autowini-admin은 다크 300px 컴팩트 테마, autowini-web은 라이트 360px 테마에 Floating Label과 멤버십 박스를 두고, 단일 레포에서 공통 컴포넌트를 공유함">
+  <defs>
+    <style>
+      .t { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 13px; fill: #d4d4d4; }
+      .sub { font-family: -apple-system, system-ui, sans-serif; font-size: 11.5px; }
+      .note { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #9099a8; }
+      .title { font-family: -apple-system, system-ui, sans-serif; font-size: 12.5px; fill: #9099a8; }
+    </style>
+    <marker id="ah" markerWidth="9" markerHeight="9" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#6b7280"/></marker>
+  </defs>
+  <rect x="8" y="8" width="604" height="284" rx="12" fill="#282c34"/>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h582 a11 11 0 0 1 11 11 v23 h-604 z" fill="#21252b"/>
+  <circle cx="30" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="50" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="70" cy="30" r="6" fill="#27c93f"/>
+  <text x="310" y="34" text-anchor="middle" class="title">Keycloak 테마 · clientId 분기</text>
+
+  <rect x="200" y="56" width="220" height="34" rx="7" fill="#2f3640" stroke="#e5c07b" stroke-width="1.2"/>
+  <text x="310" y="78" text-anchor="middle" class="t">Keycloak 인증 요청</text>
+  <line x1="310" y1="90" x2="310" y2="106" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ah)"/>
+
+  <rect x="240" y="108" width="140" height="32" rx="7" fill="#21252b" stroke="#9099a8" stroke-width="1.2"/>
+  <text x="310" y="128" text-anchor="middle" class="t">clientId 판별</text>
+
+  <line x1="300" y1="142" x2="182" y2="170" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ah)"/>
+  <line x1="320" y1="142" x2="438" y2="170" stroke="#6b7280" stroke-width="1.6" marker-end="url(#ah)"/>
+
+  <rect x="40" y="172" width="250" height="70" rx="8" fill="#2f3640" stroke="#61afef" stroke-width="1.3"/>
+  <text x="165" y="197" text-anchor="middle" class="t" fill="#61afef">autowini-admin</text>
+  <text x="165" y="219" text-anchor="middle" class="sub" fill="#9099a8">컴팩트한 다크 테마</text>
+
+  <rect x="330" y="172" width="250" height="70" rx="8" fill="#2f3640" stroke="#73c991" stroke-width="1.3"/>
+  <text x="455" y="197" text-anchor="middle" class="t" fill="#73c991">autowini-web</text>
+  <text x="455" y="219" text-anchor="middle" class="sub" fill="#9099a8">서비스 톤에 맞춘 라이트 테마</text>
+
+  <text x="310" y="266" text-anchor="middle" class="note">단일 레포에서 clientId로 분기 → 공통 컴포넌트 공유로 유지보수 단순화</text>
+</svg>

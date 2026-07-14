@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 480" role="img" aria-label="Keycloakify가 제공하는 Storybook 화면. 왼쪽 story 트리에서 admin/web 클라이언트별 로그인, 에러, 회원가입 등 화면을 고르면 오른쪽 미리보기에 해당 화면이 렌더되어, Keycloak 서버 없이 모든 화면을 확인할 수 있음">
+  <defs>
+    <style>
+      .ui { font-family: -apple-system, system-ui, sans-serif; }
+      .tree { font-family: -apple-system, system-ui, sans-serif; font-size: 10.5px; fill: #c9d1d9; }
+      .caret { fill: #8b949e; }
+      .sec { font-family: -apple-system, system-ui, sans-serif; font-size: 9px; font-weight: 700; fill: #808a94; letter-spacing: 0.5px; }
+      .title { font-family: -apple-system, system-ui, sans-serif; font-size: 12.5px; fill: #9099a8; }
+      .ph { font-family: -apple-system, system-ui, sans-serif; font-size: 11px; fill: #9ca3af; }
+      .note { font-family: -apple-system, system-ui, sans-serif; font-size: 12px; fill: #9099a8; }
+    </style>
+  </defs>
+  <rect x="8" y="8" width="744" height="464" rx="12" fill="#282c34"/>
+  <path d="M8 19 a11 11 0 0 1 11 -11 h722 a11 11 0 0 1 11 11 v23 h-744 z" fill="#21252b"/>
+  <circle cx="30" cy="30" r="6" fill="#ff5f56"/>
+  <circle cx="50" cy="30" r="6" fill="#ffbd2e"/>
+  <circle cx="70" cy="30" r="6" fill="#27c93f"/>
+  <text x="400" y="34" text-anchor="middle" class="title">Storybook · Keycloak 서버 없이 모든 화면을 story로 확인</text>
+
+  <!-- ===== Sidebar ===== -->
+  <rect x="20" y="52" width="250" height="388" rx="8" fill="#1b1e23"/>
+  <rect x="33" y="64" width="14" height="14" rx="3" fill="#ff4785"/>
+  <text x="40" y="75" text-anchor="middle" class="ui" font-size="10" font-weight="700" fill="#fff">S</text>
+  <text x="54" y="76" class="ui" font-size="13" font-weight="700" fill="#ffffff">Storybook</text>
+  <rect x="33" y="88" width="224" height="22" rx="5" fill="#2a2e35"/>
+  <text x="44" y="103" class="ph" font-size="10.5">Find components</text>
+
+  <text x="34" y="130" class="sec">LOGIN</text>
+
+  <text x="34" y="150" class="tree"><tspan class="caret">▸ </tspan>error.ftl</text>
+  <text x="34" y="167" class="tree"><tspan class="caret">▸ </tspan>info.ftl</text>
+  <text x="34" y="184" class="tree"><tspan class="caret">▾ </tspan>login.ftl</text>
+  <text x="48" y="201" class="tree"><tspan class="caret">▾ </tspan>admin</text>
+  <text x="64" y="218" class="tree">Autowini Admin Login</text>
+  <text x="64" y="235" class="tree">Autowini Admin · Re Auth</text>
+  <text x="48" y="252" class="tree"><tspan class="caret">▾ </tspan>web</text>
+
+  <!-- 선택된 story 하이라이트 -->
+  <rect x="22" y="259" width="246" height="18" rx="3" fill="#1f6feb"/>
+  <text x="64" y="272" class="tree" fill="#ffffff" font-weight="600">Autowini Web Login</text>
+
+  <text x="64" y="289" class="tree">Autowini Web · Invalid Cred</text>
+  <text x="64" y="306" class="tree">Autowini Web · Item Detail</text>
+  <text x="64" y="323" class="tree">Autowini Web · Re Auth</text>
+  <text x="34" y="340" class="tree"><tspan class="caret">▸ </tspan>login-password.ftl</text>
+  <text x="34" y="357" class="tree"><tspan class="caret">▸ </tspan>logout-confirm.ftl</text>
+  <text x="34" y="374" class="tree"><tspan class="caret">▸ </tspan>login-update-password.ftl</text>
+  <text x="34" y="391" class="tree"><tspan class="caret">▸ </tspan>login-reset-password.ftl</text>
+  <text x="34" y="408" class="tree"><tspan class="caret">▸ </tspan>register.ftl</text>
+  <text x="34" y="428" class="sec">COMPONENTS</text>
+
+  <!-- ===== Preview pane ===== -->
+  <rect x="282" y="52" width="458" height="388" rx="8" fill="#f3f4f6"/>
+
+  <!-- 로그인 카드 -->
+  <rect x="372" y="104" width="278" height="296" rx="10" fill="#ffffff" stroke="#e5e7eb" stroke-width="1.2"/>
+
+  <!-- 로고 -->
+  <circle cx="468" cy="146" r="12" fill="#1aa64b"/>
+  <text x="468" y="151" text-anchor="middle" class="ui" font-size="13" font-weight="800" fill="#fff">w</text>
+  <text x="488" y="151" class="ui" font-size="18" font-weight="800" fill="#222">Autowini</text>
+  <text x="511" y="167" text-anchor="middle" class="ui" font-size="7.5" fill="#9ca3af">No.1 Auto Trading Platform in Korea</text>
+
+  <!-- MEGAPASS 안내 박스 -->
+  <rect x="392" y="180" width="238" height="36" rx="6" fill="#f3f4f6"/>
+  <rect x="402" y="190" width="62" height="16" rx="3" fill="#e8331c"/>
+  <text x="433" y="202" text-anchor="middle" class="ui" font-size="8" font-weight="700" fill="#fff">MEGAPASS</text>
+  <text x="472" y="195" class="ui" font-size="8.5" fill="#374151">Get One Pass ID</text>
+  <text x="472" y="208" class="ui" font-size="8.5" fill="#2563eb">Learn More</text>
+
+  <!-- Username -->
+  <rect x="392" y="226" width="238" height="28" rx="5" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+  <text x="404" y="244" class="ph">Username</text>
+  <!-- Password -->
+  <rect x="392" y="260" width="238" height="28" rx="5" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+  <text x="404" y="278" class="ph">Password</text>
+  <ellipse cx="614" cy="274" rx="7" ry="4.5" fill="none" stroke="#9ca3af" stroke-width="1"/>
+  <circle cx="614" cy="274" r="1.8" fill="#9ca3af"/>
+
+  <!-- Remember Me -->
+  <rect x="392" y="296" width="11" height="11" rx="2" fill="#fff" stroke="#9ca3af" stroke-width="1"/>
+  <text x="409" y="306" class="ui" font-size="10" fill="#6b7280">Remember Me</text>
+
+  <!-- Sign in -->
+  <rect x="392" y="316" width="238" height="30" rx="6" fill="#1aa64b"/>
+  <text x="511" y="335" text-anchor="middle" class="ui" font-size="12" font-weight="700" fill="#fff">Sign in</text>
+
+  <!-- Forgot links -->
+  <text x="511" y="362" text-anchor="middle" class="ui" font-size="9" fill="#6b7280">Forgot Username?    Forgot Password?</text>
+  <text x="511" y="382" text-anchor="middle" class="ui" font-size="9" fill="#374151">Not a member yet? <tspan fill="#2563eb" font-weight="700">Sign up for free</tspan></text>
+
+  <!-- 언어 드롭다운 -->
+  <rect x="392" y="402" width="86" height="22" rx="5" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+  <text x="402" y="417" class="ui" font-size="10" fill="#374151">English  ▾</text>
+
+  <text x="290" y="456" class="note">↑ 왼쪽 트리에서 story 선택 → 오른쪽에 화면 렌더 (Keycloak 서버 불필요)</text>
+</svg>
