@@ -28,72 +28,18 @@ CSR(Client-Side Rendering): 우측 질문-답변 UI(채팅 영역)은 CSR 방식
 기존 React 프로젝트는 CSR 중심이었지만, Next.js의 서버 컴포넌트 기능을 활용하여 성능과 SEO를 최적화하였습니다.
 
 Next.js의 Metadata API를 사용하여 각 언어별 title, description, keywords를 동적으로 설정하여 SEO를 강화했습니다.
+
+4. 모바일 반응형 대응
+
+데스크탑에서는 좌측 소개 영역(@side)과 우측 채팅(@chat)을 2단으로 배치하지만, 모바일(1055px 미만)에서는 소개 영역이 숨겨져 방문자가 프로필 정보를 볼 수 없는 문제가 있었습니다.
+
+이를 개선하기 위해 채팅 상단에 프로필 이미지·소개·연락처·소셜 링크와 "대화 시작하기" CTA를 담은 모바일 전용 히어로 인트로를 추가하고, 고정 너비였던 채팅 컨테이너를 화면에 맞게 반응형으로 조정했습니다.
 ```
 
 ### 프로젝트 사용 기술
 
 ```
 Next.js(15.1.4), TypeScript, Tailwind CSS, Zustand, next-intl, Prisma, Supabase
-```
-
-### 폴더 구조
-
-```
-├─ app
-│  ├─ [locale]
-│  │  ├─ home
-│  │  │  ├─ @chat
-│  │  │  │  ├─ _components
-│  │  │  │  │  ├─ answer.tsx
-│  │  │  │  │  ├─ question.tsx
-│  │  │  │  │  └─ selectQuestion.tsx
-│  │  │  │  ├─ _lib
-│  │  │  │  │  └─ constants.ts
-│  │  │  │  ├─ body.tsx
-│  │  │  │  ├─ header.tsx
-│  │  │  │  └─ page.tsx
-│  │  │  ├─ @side
-│  │  │  │  ├─ _components
-│  │  │  │  │  ├─ contactInfo.tsx
-│  │  │  │  │  └─ profileSwiper.tsx
-│  │  │  │  └─ page.tsx
-│  │  │  └─ layout.tsx
-│  │  └─ layout.tsx
-│  ├─ api
-│  │  ├─ answer
-│  │  │  └─ route.ts
-│  │  └─ question
-│  │     └─ route.ts
-│  └─ globals.css
-├─ components
-│  └─ swrProvider.tsx
-├─ i18n
-│  ├─ loadSpreadSheet.js
-│  ├─ request.ts
-│  └─ routing.ts
-├─ lib
-│  ├─ client
-│  │  ├─ constants.ts
-│  │  └─ type.ts
-│  └─ server
-│     └─ prisma.ts
-├─ messages
-│  ├─ en.json
-│  └─ ko.json
-├─ middleware.ts
-├─ package.json
-├─ postcss.config.mjs
-├─ prisma
-│  ├─ migrations
-│  │  └─ migration_lock.toml
-│  └─ schema.prisma
-├─ public
-│  ├─ favicon.ico
-│  └─ robots.txt
-├─ store
-│  └─ useChatStore.ts
-├─ tailwind.config.ts
-└─ tsconfig.json
 ```
 
 ## 커밋 컨벤션

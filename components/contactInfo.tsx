@@ -8,9 +8,15 @@ import { ClipboardDocumentIcon } from "@heroicons/react/24/outline";
 interface ContactInfoProps {
   value: string;
   type: "phone" | "email";
+  /* 사용처별 여백·글자 크기 오버라이드 (기본값은 @side 스타일) */
+  className?: string;
 }
 
-export default function ContactInfo({ value, type }: ContactInfoProps) {
+export default function ContactInfo({
+  value,
+  type,
+  className = "mt-2 text-lg",
+}: ContactInfoProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [isCopied, setIsCopied] = useState(false);
 
@@ -49,7 +55,7 @@ export default function ContactInfo({ value, type }: ContactInfoProps) {
   return (
     <button
       onClick={handleClick}
-      className="mt-2 text-lg flex items-center gap-2 group transition-colors"
+      className={`flex items-center gap-2 group transition-colors ${className}`}
       style={{ color: "var(--color-text-secondary)" }}
       title={isVisible ? "클릭하여 복사" : "클릭하여 보기"}
       onMouseEnter={(e) =>
