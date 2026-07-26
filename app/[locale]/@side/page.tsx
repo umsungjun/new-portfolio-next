@@ -28,20 +28,12 @@ export default async function Side({ params }: SideProps) {
           >
             {t("portfolioTitle")}
           </h1>
-          <div className="flex flex-col gap-2">
-            <h3
-              className="text-xl"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              &ldquo;{t("introduce1")}
-            </h3>
-            <h3
-              className="text-xl text-right"
-              style={{ color: "var(--color-text-secondary)" }}
-            >
-              {t("introduce2")}&rdquo;
-            </h3>
-          </div>
+          <h3
+            className="text-xl text-center break-keep"
+            style={{ color: "var(--color-text-secondary)" }}
+          >
+            &ldquo;{t("introduce1")} {t("introduce2")}&rdquo;
+          </h3>
         </div>
         {/* 연락처 */}
         <div className="flex gap-8">
