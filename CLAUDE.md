@@ -57,7 +57,9 @@ Next.js 15 풀스택 포트폴리오 애플리케이션 (React에서 마이그�
 
 ### 데이터베이스 (Prisma + Supabase PostgreSQL)
 
-스키마: `prisma/schema.prisma` — `Question` → 다수의 `Answer` 보유 (cascade 삭제). Answer는 선택적으로 `mediaUrl`(Google Drive 파일 ID)과 `mediaType`(IMAGE | VIDEO)을 가질 수 있음.
+스키마: `prisma/schema.prisma` — `Question` → 다수의 `Answer` 보유 (cascade 삭제). Answer는 선택적으로 `mediaUrl`과 `mediaType`(IMAGE | VIDEO)을 가질 수 있음. `mediaUrl`은 IMAGE면 Google Drive 파일 ID, VIDEO면 `/videos/answers/{슬러그}.mp4` 경로.
+
+`MediaType` enum이 걸린 쿼리(`where: { mediaType }`, `update`)는 `@prisma/adapter-pg`에서 `type "public.MediaType" does not exist`로 실패하므로 `$queryRaw`/`$executeRaw`로 우회 (`app/api/admin/answers/[id]/route.ts` 참고).
 
 Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 사용하여 개발 핫 리로드 시 커넥션 누적 방지. Supabase pgBouncer를 통한 커넥션 풀링에 `@prisma/adapter-pg` 사용.
 
@@ -70,7 +72,13 @@ Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 �
 5. 초기 인사 메시지 2개는 하드코딩(ID 998, 999)으로 DB 조회 없이 스토어 초기값으로 설정
 6. 모바일(`web` 미만)에서는 채팅 스크롤 영역 최상단에 `MobileHero`(`@chat/_components/mobileHero.tsx`) 노출 — 프로필 이미지·소개·연락처·소셜 링크 + "대화 시작하기" CTA(채팅 영역으로 스크롤). `web:hidden`으로 데스크탑에서는 숨기고 `@side`가 대신 노출. 스크롤 로직은 `body.tsx`의 `scrollElementToTop` 헬퍼를 `scrollToLastQuestion`/`scrollToChat`이 공유
 
-미디어 렌더링: 이미지는 Next.js `<Image>` (Google Drive 원격 패턴 허용), 동영상은 `react-player`. 프로필 이미지 슬라이더는 Swiper 사용.
+미디어 렌더링: 이미지는 Next.js `<Image>` (Google Drive 원격 패턴 허용), 동영상은 네이티브 `<video>`. 프로필 이미지 슬라이더는 Swiper 사용.
+
+참고 영상은 YouTube 임베드 대신 `public/videos/answers/`에 직접 둠. 새 영상을 넣을 때:
+
+- H.264 mp4로 `-movflags +faststart`를 걸어 인코딩 (moov가 앞에 있어야 다 받기 전에 재생 시작)
+- 같은 이름의 `.jpg` 포스터를 함께 둠 (`answer.tsx`의 `getVideoPosterUrl`이 확장자만 바꿔 찾음)
+- GitHub 단일 파일 100MB 제한이 있으므로 CRF 28 전후로 재인코딩해 수십 MB 이하로 유지
 
 ### 멀티 테마 시스템
 

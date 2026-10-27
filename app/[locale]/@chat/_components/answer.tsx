@@ -5,7 +5,6 @@ import { useTranslations } from "next-intl";
 import { LOCALE_KO } from "@/lib/client/constants";
 
 import ReactMarkdown from "react-markdown";
-import YoutubePlayer from "react-player";
 import PulseLoader from "react-spinners/PulseLoader";
 import rehypeSanitize from "rehype-sanitize";
 import remarkBreaks from "remark-breaks";
@@ -24,6 +23,10 @@ interface AnswerProps {
 
 const IMAGE_TYPE = "IMAGE";
 const VIDEO_TYPE = "VIDEO";
+
+// 영상 mediaUrl 은 public/videos/answers 의 mp4 경로이고, 포스터는 같은 이름의 .jpg
+const getVideoPosterUrl = (videoUrl: string) =>
+  videoUrl.replace(/\.mp4$/, ".jpg");
 
 export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
   const t = useTranslations();
@@ -136,8 +139,17 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
                   />
                   {t("referenceVideo")}
                 </span>
-                <div className="videoPlayer flex justify-center ">
-                  <YoutubePlayer url={chat.mediaUrl} />
+                <div className="flex justify-center">
+                  {/* 크기는 포스터 비율을 따름. 세로 영상은 max-h 로 눌러 폰 화면처럼 보이게 함
+                      preload=metadata 라 재생 전에도 컨트롤에 길이가 뜨고, 본편은 재생할 때 받음 */}
+                  <video
+                    className="max-h-[480px] max-w-full rounded-lg bg-black"
+                    src={chat.mediaUrl}
+                    poster={getVideoPosterUrl(chat.mediaUrl)}
+                    controls
+                    playsInline
+                    preload="metadata"
+                  />
                 </div>
               </div>
             )}
