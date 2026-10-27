@@ -17,7 +17,7 @@ memory: project
   - **이 프로젝트에서 "Question"은 면접 질문이 아니라 카테고리/토픽 라벨입니다.**
   - `isDraft: true`면 공개 페이지에 노출되지 않음 (어드민에서만 보임).
 - `Answer` 모델: `id`, `questionId`, `contentKo`, `contentEn`, `mediaUrl?`, `mediaType?`, `isDraft`
-  - `mediaUrl`: Google Drive 파일 ID (이미지) 또는 YouTube URL (비디오) — 하단 "참고 이미지/영상"으로 1개만 표시
+  - `mediaUrl`: Google Drive 파일 ID (이미지) 또는 `/videos/answers/{슬러그}.mp4` (비디오, 같은 이름 `.jpg` 포스터 필요) — 하단 "참고 이미지/영상"으로 1개만 표시
   - `mediaType`: `IMAGE` | `VIDEO`
   - **블로그 본문 이미지는 `mediaUrl`이 아니라 SVG로 재현해 본문 인라인 삽입하는 것을 우선** (아래 4단계 "이미지 처리" 참고)
 
