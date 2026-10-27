@@ -325,7 +325,7 @@ function AnswerForm({
         />
       </div>
       <input
-        placeholder="미디어 URL (선택, Google Drive 파일 ID 또는 YouTube URL)"
+        placeholder="미디어 URL (선택, 이미지는 Google Drive 파일 ID, 영상은 /videos/answers/파일명.mp4)"
         value={form.mediaUrl}
         onChange={(e) => onChange({ ...form, mediaUrl: e.target.value })}
         className={inputClass}
