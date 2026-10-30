@@ -16,6 +16,8 @@ Next.js 15 풀스택 포트폴리오 애플리케이션 (React에서 마이그�
 - `npx prisma migrate dev` — DB 스키마 변경 후 마이그레이션 실행 (`DIRECT_URL` 환경 변수 필요)
 - `npx prisma studio` — DB 데이터 확인/편집 GUI
 
+**Node.js:** `package.json` `engines.node`의 **24.x**로 고정한다. Vercel은 이 값을 프로젝트 설정보다 우선해 빌드·함수를 24.x 최신 패치로 돌린다. 로컬도 Node 보안 릴리스가 나오면 같은 24.x 최신 패치로 올린다.
+
 **테스트:** 테스트 프레임워크 미설정 (Jest/Vitest 없음)
 
 ## 기술 스택
