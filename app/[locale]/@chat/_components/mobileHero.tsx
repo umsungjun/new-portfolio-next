@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import ContactInfo from "@/components/contactInfo";
 import ProfileSwiper from "@/components/profileSwiper";
 import SocialLinks from "@/components/socialLinks";
+import YoutubeChannels from "@/components/youtubeChannels";
 import { LOCALE_KO } from "@/lib/client/constants";
 
 /* 아이콘 */
@@ -97,6 +98,17 @@ export default function MobileHero({ onStart }: MobileHeroProps) {
 
         {/* 소셜 링크 */}
         <SocialLinks />
+
+        {/* 운영 중인 채널(유튜브·인스타그램) */}
+        <div className="w-full flex flex-col gap-2 text-left">
+          <span
+            className="text-sm font-semibold uppercase tracking-widest"
+            style={{ color: "var(--color-text-muted)" }}
+          >
+            {locale === LOCALE_KO ? "채널" : "Channels"}
+          </span>
+          <YoutubeChannels />
+        </div>
 
         {/* 질문하기 CTA (채팅 영역으로 스크롤) */}
         <button

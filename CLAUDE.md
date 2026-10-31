@@ -48,7 +48,7 @@ Next.js 15 풀스택 포트폴리오 애플리케이션 (React에서 마이그�
 홈 페이지는 **Next.js 병렬 라우트** 사용:
 
 - `@chat/` — 클라이언트 사이드 렌더링 채팅 인터페이스 (모바일 `w-full`, `web`(1055px) 이상 475px 고정)
-- `@side/` — 서버 사이드 렌더링 프로필/연락처 섹션 (1055px 미만에서 숨김, 대신 `@chat`의 모바일 히어로가 프로필 정보를 노출)
+- `@side/` — 서버 사이드 렌더링 프로필/연락처 섹션 (1055px 미만에서 숨김, 대신 `@chat`의 모바일 히어로가 프로필 정보를 노출). 화면 높이에 맞춘 영역이라 낮은 화면에서는 사이드 안에서 스크롤한다(`overflow-y-auto` + 안쪽 `my-auto`, items-center 로 가운데 두면 넘칠 때 위쪽이 잘린다)
 
 ### API 라우트
 
@@ -117,6 +117,7 @@ Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 �
 - `profileSwiper.tsx` — 프로필 이미지 카드 슬라이더 (Swiper EffectCards), `@side`·모바일 히어로 공용
 - `contactInfo.tsx` — 연락처 마스킹/복사 버튼, `@side`·모바일 히어로 공용
 - `socialLinks.tsx` — 깃허브·블로그·링크드인 링크 카드, `@side`·모바일 히어로 공용
+- `youtubeChannels.tsx` — 운영 중인 채널(SUNGJUNN·3초 개발 면접·3초 경제 상식) 카드와 유튜브·인스타그램 버튼, `@side`(compact 가로 세 칸)·모바일 히어로(list, 한 줄 소개 포함) 공용. 채널 데이터와 한·영 소개는 `lib/client/constants.ts` 의 `YOUTUBE_CHANNELS`(i18n 시트 동기화 대상 아님). 사진은 `public/images/channels/`
 
 ### 환경 변수
 
