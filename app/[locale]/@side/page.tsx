@@ -3,6 +3,8 @@ import { getTranslations } from "next-intl/server";
 import ContactInfo from "@/components/contactInfo";
 import ProfileSwiper from "@/components/profileSwiper";
 import SocialLinks from "@/components/socialLinks";
+import YoutubeChannels from "@/components/youtubeChannels";
+import { LOCALE_KO } from "@/lib/client/constants";
 import { localeType } from "@/lib/client/type";
 
 /* 아이콘 */
@@ -17,9 +19,10 @@ export default async function Side({ params }: SideProps) {
   const { locale } = (await params) as { locale: localeType };
   const t = await getTranslations({ locale });
 
+  /* 화면이 낮으면 사이드 안에서 스크롤한다. items-center 대신 my-auto 로 가운데 둬야 넘칠 때 위쪽이 잘리지 않는다 */
   return (
-    <aside className="hidden max-w-[450px] w-[450px] h-screen items-center web:flex">
-      <div className="w-full flex flex-col gap-10">
+    <aside className="hidden max-w-[450px] w-[450px] h-screen overflow-y-auto web:flex">
+      <div className="w-full flex flex-col gap-10 my-auto py-6">
         {/* 제목 및 소개 */}
         <div className="flex flex-col gap-10">
           <h1
@@ -95,6 +98,16 @@ export default async function Side({ params }: SideProps) {
             {t("links")}
           </h3>
           <SocialLinks />
+        </div>
+        {/* 운영 중인 채널(유튜브·인스타그램) */}
+        <div className="flex flex-col gap-3">
+          <h3
+            className="text-xs font-semibold uppercase tracking-widest"
+            style={{ color: "var(--color-text-muted)" }}
+          >
+            {locale === LOCALE_KO ? "채널" : "Channels"}
+          </h3>
+          <YoutubeChannels variant="compact" />
         </div>
       </div>
     </aside>
