@@ -4,9 +4,11 @@ import { useEffect, useRef } from "react";
 
 import { useLocale } from "next-intl";
 
+import {
+  Answer as AnswerType,
+  Question as QuestionType,
+} from "@/lib/client/type";
 import { useChatStore } from "@/store/useChatStore";
-
-import { Answer as AnswerType, Question as QuestionType } from "@prisma/client";
 
 import Answer from "./_components/answer";
 import MobileHero from "./_components/mobileHero";

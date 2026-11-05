@@ -1,6 +1,12 @@
 # Next Portfolio(https://next-umsungjun.vercel.app/)
 
-<img width="100%" src="https://drive.google.com/thumbnail?id=1_OWiDt2NzD4g2pdq0wdsZsctNaHC5zpu&sz=w1000"/>
+<img width="100%" src="docs/readme-cover.png"/>
+
+> **2026년 11월 5일까지 관리했습니다.**
+>
+> 지금은 주소만 살려 둔 보관 상태이고, 검색엔진 색인에서는 뺐습니다(noindex).
+>
+> 보관하면서 Supabase 와 관리자 화면을 걷어 냈습니다. 질문·답변은 `lib/server/qna.json` 에, 이미지는 `public/images/` 에 있어 저장소만으로 열립니다.
 
 ## 프로젝트 소개
 
@@ -45,7 +51,7 @@ Next.js의 Metadata API를 사용하여 각 언어별 title, description, keywor
 ### 프로젝트 사용 기술
 
 ```
-Next.js(15.1.4), TypeScript, Tailwind CSS, Zustand, next-intl, Prisma, Supabase
+Next.js(15.1.4), TypeScript, Tailwind CSS, Zustand, next-intl, Prisma, Supabase (Prisma·Supabase 는 2026-11 보관 때 제거)
 ```
 
 ## 커밋 컨벤션
