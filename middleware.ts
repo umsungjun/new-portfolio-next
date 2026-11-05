@@ -3,11 +3,10 @@ import { NextRequest, NextResponse } from "next/server";
 
 import { routing } from "./i18n/routing";
 import { LOCALE_EN, LOCALE_KO } from "./lib/client/constants";
-import { verifySessionFromRequest } from "./lib/server/auth";
 
 const intlMiddleware = createMiddleware(routing);
 
-export default async function middleware(request: NextRequest) {
+export default function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname;
   const permanentRedirect = { status: 301 as const };
 
@@ -29,17 +28,6 @@ export default async function middleware(request: NextRequest) {
   }
   if (pathname === `/${LOCALE_EN}/home`) {
     return redirectTo(`/${LOCALE_EN}`);
-  }
-
-  // admin zone — i18n 미들웨어 완전히 우회
-  if (pathname.startsWith("/admin")) {
-    if (pathname === "/admin/login") return NextResponse.next();
-    if (!(await verifySessionFromRequest(request))) {
-      const url = request.nextUrl.clone();
-      url.pathname = "/admin/login";
-      return NextResponse.redirect(url); // 302 (임시 리다이렉트)
-    }
-    return NextResponse.next();
   }
 
   // 유효한 경로만 허용, 나머지는 루트로 리다이렉트

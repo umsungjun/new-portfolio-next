@@ -1,6 +1,5 @@
 import { LOCALE_KO } from "@/lib/client/constants";
-
-import { Question as QuestionType } from "@prisma/client";
+import { Question as QuestionType } from "@/lib/client/type";
 
 interface QuestionProps {
   showMark?: boolean;

@@ -1,0 +1,492 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2024] 기억에 남는 프로젝트 경험",
+      "contentEn": "[2024] Memorable Project Experience"
+    },
+    {
+      "id": 2,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "주로 사용하는 프론트엔드 기술 스택",
+      "contentEn": "Primary Frontend Tech Stack"
+    },
+    {
+      "id": 3,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2024] 성능 최적화 경험",
+      "contentEn": "[2024] Performance optimization experience"
+    },
+    {
+      "id": 4,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2024] 반응형 디자인 및 웹 접근성",
+      "contentEn": "[2024] Responsive design and web accessibility"
+    },
+    {
+      "id": 5,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2024] 크로스 브라우징 경험",
+      "contentEn": "[2024] Cross-browser experience"
+    },
+    {
+      "id": 6,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "개인 프로젝트 경험",
+      "contentEn": "Personal Project Experience"
+    },
+    {
+      "id": 7,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2025] 레거시 마이그레이션 경험",
+      "contentEn": "[2025] Legacy Migration Experience"
+    },
+    {
+      "id": 9,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2025] 오픈소스 기여 경험",
+      "contentEn": "[2025] Open Source Contributions"
+    },
+    {
+      "id": 10,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2025] i18n 번들 최적화 경험",
+      "contentEn": "[2025] i18n Bundle Optimization"
+    },
+    {
+      "id": 11,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2025] 이미지 포맷 문제 해결 경험",
+      "contentEn": "[2025] Image Format Troubleshooting"
+    },
+    {
+      "id": 12,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2025] Vitest 테스트 코드 도입 경험",
+      "contentEn": "[2025] Introducing Vitest"
+    },
+    {
+      "id": 13,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2026] Playwright E2E 테스트와 Claude Code 자동화",
+      "contentEn": "[2026] Playwright E2E Tests & Claude Code Automation"
+    },
+    {
+      "id": 14,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2025] Bitbucket CI/CD 파이프라인 구축",
+      "contentEn": "[2025] CI/CD Pipeline with Bitbucket"
+    },
+    {
+      "id": 15,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2026] React 메타 태그 중복 해결 라이브러리 제작",
+      "contentEn": "[2026] Building a Library to Fix React Meta Tag Duplication"
+    },
+    {
+      "id": 16,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2026] Vercel Region 최적화로 TTFB 개선",
+      "contentEn": "[2026] Improving TTFB with Vercel Region Optimization"
+    },
+    {
+      "id": 17,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2026] TanStack Query placeholderData로 필터 UI 상태 유지",
+      "contentEn": "[2026] Preserving Filter UI State with TanStack Query placeholderData"
+    },
+    {
+      "id": 18,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "[2026] Keycloakify로 Keycloak 테마 개발 및 다국어 처리",
+      "contentEn": "[2026] Keycloak Theme Development & i18n with Keycloakify"
+    },
+    {
+      "id": 1000,
+      "type": "QUESTION",
+      "isDraft": false,
+      "contentKo": "깃허브 & 블로그 & 링크드인",
+      "contentEn": "GitHub & Blog & Linkedin"
+    }
+  ],
+  "answers": [
+    {
+      "id": 1,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "오토위니 입사 후 1년 동안 가장 기억에 남는 프로젝트는 **클레임 시스템 개발 프로젝트**입니다.\n\n클레임 시스템은 차량을 구매한 바이어가 구매 후 **30일 이내** 문제나 하자를 발견했을 때, 오토위니에 문의를 제기할 수 있는 **채팅 상담 시스템**입니다.\n\n### 1. 새로운 아키텍처 경험\n기존 오토위니 프로젝트는 **JSP 기반**이지만, 클레임 시스템은 SEO가 필요하지 않아 **SPA 방식의 React 프로젝트**로 분리하고 **메가존 IDC**를 활용해 결합했습니다. 인프라 작업은 백엔드 팀에서 담당했지만, 이러한 방식의 개발 과정을 직접 경험할 수 있었습니다.\n\n### 2. 깊이 있는 반응형 UI 개발\n웹과 모바일은 물론, **WebView**를 통해 iOS·Android 화면까지 제어하면서 다양한 환경에서의 UI 구현 능력을 키웠습니다.\n\n### 3. 프로젝트 오너십\n초기 설정부터 설계까지 모든 과정을 단독으로 진행하며 큰 책임감을 느꼈고, 기존에 다른 프로젝트에서 사용되던 **번역 시스템(i18n 자동화)** 을 직접 구현해보는 의미 있는 경험을 했습니다.\n\n---\n\n많은 도전과 성취감, 그리고 기술적 성장의 기회를 안겨준 프로젝트였기에 가장 기억에 남습니다.",
+      "contentEn": "During my first year at Autowini, the most memorable project I worked on was the **Claim System** development.\n\nThe Claim System is a **chat-based consultation platform** that lets buyers report any issue or defect within **30 days** of purchasing a vehicle.\n\n### 1. New Architecture Experience\nWhile the existing Autowini project was built on **JSP**, the Claim System didn't require SEO optimization, so we developed it as a separate **SPA using React** and integrated it via **Megazone IDC**. Although the backend team handled infrastructure setup, I gained hands-on experience with this development approach.\n\n### 2. Deep Responsive UI Development\nI implemented the UI for web and mobile, and also gained experience handling iOS and Android screens through **WebView**, strengthening my ability to build UIs across various environments.\n\n### 3. Project Ownership\nI owned the entire process from initial project setup to system design. I also independently implemented an **internationalization (i18n) system** for automated translations, which had previously been used in other projects.\n\n---\n\nThe project offered numerous challenges, a real sense of accomplishment, and opportunities for technical growth - making it the most significant project I've worked on.",
+      "mediaUrl": "/videos/answers/autowini-claim-demo.mp4",
+      "mediaType": "VIDEO",
+      "questionId": 1
+    },
+    {
+      "id": 2,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "### 언어\n- JavaScript, TypeScript\n\n### 프레임워크 & 라이브러리\n- React.js, Next.js\n\n### 스타일링\n- CSS3, Styled-Components, Emotion, Tailwind CSS\n\n### 상태 관리\n- TanStack Query (React Query), useSWR\n\n### 전역 상태 관리\n- Zustand, Redux Toolkit",
+      "contentEn": "### Languages\n- JavaScript, TypeScript\n\n### Frameworks & Libraries\n- React.js, Next.js\n\n### Styling\n- CSS3, Styled-Components, Emotion, Tailwind CSS\n\n### State Management\n- TanStack Query (React Query), useSWR\n\n### Global State Management\n- Zustand, Redux Toolkit",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 2
+    },
+    {
+      "id": 3,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "### SEO 향상\n- **SPA인 React 프로젝트**에서 `React-helmet` 라이브러리를 활용해 각 페이지의 `title`, `description`, `keyword`를 동적으로 조정하여 SEO를 향상\n- 검색 엔진에서 페이지가 더 잘 인식·노출되도록 하여 가시적인 성과를 얻은 경험",
+      "contentEn": "### SEO Improvement\n- In a **SPA React project**, used the `React-helmet` library to dynamically adjust each page's `title`, `description`, and `keywords` to improve SEO\n- Ensured pages were better recognized and exposed by search engines, achieving measurable results",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 3
+    },
+    {
+      "id": 4,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "### 이미지 성능 최적화\n- **Akamai CDN**을 사용하여 웹 페이지에서 사용되는 이미지를 효율적으로 관리하고 성능을 향상\n- CDN을 통해 이미지를 캐싱하고 전송 속도를 최적화하여 사용자 경험 개선",
+      "contentEn": "### Image Optimization\n- Used **Akamai CDN** to efficiently manage images on web pages and enhance performance\n- Cached images through CDN and optimized delivery speed to improve the user experience",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 3
+    },
+    {
+      "id": 5,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "### 렌더링 성능 최적화\n- **Next.js의 `Image` 컴포넌트**로 로컬 이미지에 blur placeholder와 Lazy Loading을 적용하여 렌더링 속도와 성능을 최적화\n- **Cloudflare**로 이미지 사이즈를 상황에 맞게 조절하여 빠른 페이지 로딩 달성",
+      "contentEn": "### Rendering Performance Optimization\n- Used the **Next.js `Image` component** to apply blur placeholders and lazy loading to local images, improving rendering speed and performance\n- Adjusted image sizes appropriately via **Cloudflare** for faster page loading",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 3
+    },
+    {
+      "id": 6,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "### API 요청 최적화\n- **react-query**의 `useQuery`, `useInfiniteQuery`, `useMutation`을 활용해 API 요청을 최소화\n- 네트워크 사용량을 최적화하고 데이터를 효율적으로 관리하여 더 나은 성능 제공",
+      "contentEn": "### API Request Optimization\n- Minimized API requests using **react-query**'s `useQuery`, `useInfiniteQuery`, and `useMutation`\n- Optimized network usage and managed data efficiently to deliver better performance",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 3
+    },
+    {
+      "id": 7,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "### 개인 블로그 SEO 최적화\n- Google에서 **\"엄성준\"** 검색 시 개인 블로그가 최상위에 노출되도록 SEO 작업 수행\n\n블로그: [developer-sungjun.tistory.com](https://developer-sungjun.tistory.com/)",
+      "contentEn": "### Personal Blog SEO Optimization\n- Conducted SEO work so that my personal blog appears at the top of Google search results for the query **\"엄성준\"**\n\nBlog: [developer-sungjun.tistory.com](https://developer-sungjun.tistory.com/)",
+      "mediaUrl": "/images/answers/answer-7.gif",
+      "mediaType": "IMAGE",
+      "questionId": 3
+    },
+    {
+      "id": 8,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "현재 보고 계신 포트폴리오 프로젝트는 다양한 환경에서 정상적으로 작동하도록 설계된 **웹앱 형식**의 프로젝트입니다.\n\n웹과 모바일을 포함한 모든 디바이스에서 최적의 사용자 경험을 제공하기 위해 **반응형 디자인**을 적용했습니다.\n\n현재는 **Tailwind CSS**를 사용해 구현했으나, 기본 CSS나 Styled-components로도 동일한 반응형 웹을 구현할 수 있습니다.",
+      "contentEn": "The portfolio project you're currently viewing is a **web app** designed to work properly across various environments.\n\nI applied **responsive design** to deliver an optimal user experience on every device - web and mobile alike.\n\nIt's currently implemented with **Tailwind CSS**, but the same responsive layout could be built equally well with plain CSS or Styled-components.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 4
+    },
+    {
+      "id": 9,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## 웹 접근성을 높이기 위한 노력\n\n### 메타 태그 활용\n- `<head>` 내 `title`, `description`, `keyword`를 적절히 사용해 **SEO**를 진행\n- 최신 트렌드에 따라 무분별한 키워드 사용은 오히려 부정적 영향을 줄 수 있다는 점을 인지하고 균형 있게 적용\n\n### 시멘틱 태그 사용\n- **시멘틱 태그**로 코드 가독성을 높이고, 검색 엔진과 접근성 도구가 더 잘 이해할 수 있도록 설계\n\n### `<img>` 태그의 `alt` 속성\n- 시각장애인을 위한 웹 접근성을 고려해 `img` 태그에 `alt` 속성 추가를 철저히 준수\n\n### 디자인 패턴 일관성\n- 버튼 등 UI 요소를 규격에 맞게 공통화하여 **일관된 디자인**을 유지하고 사용자 경험을 향상",
+      "contentEn": "## Efforts to Enhance Web Accessibility\n\n### Utilizing Meta Tags\n- Implement **SEO** by properly using meta tags such as `title`, `description`, and `keywords` within `<head>`\n- Aware that excessive keyword stuffing can have a negative impact, and apply it with balance\n\n### Using Semantic Tags\n- Use **semantic tags** to improve code readability and help search engines and accessibility tools better understand the page\n\n### `alt` Attribute on `<img>`\n- Strictly add `alt` attributes to `<img>` tags, considering accessibility for visually impaired users\n\n### Design Pattern Consistency\n- Standardize UI elements like buttons to maintain **consistent design** and enhance the user experience",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 4
+    },
+    {
+      "id": 10,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## iOS 환경에서 키보드가 화면을 가리는 문제 해결\n\n### 문제 상황\nAutoWini 클레임 프로젝트에서 React로 웹·모바일·앱 모두를 지원하는 채팅 UI 반응형 웹을 구현하던 중,\n**iOS 환경에서 `input`/`textarea`로 입력 시 키보드가 올라오면서 뷰포트 높이를 인식하지 못해 키보드가 화면을 가리는 문제**가 발생했습니다.\n\n### 문제 해결 방법\n화면 높이가 변할 때 동적으로 **vh(viewport height)** 값을 재설정하는 방식으로 해결했습니다.\n\n```css\n#viewContainer {\n  height: 100vh;\n  height: calc(var(--vh, 1vh) * 100);\n}\n```\n\n```tsx\nuseEffect(() => {\n  const resizeListener = () => {\n    const vh = window.innerHeight * 0.01;\n    document.documentElement.style.setProperty(\"--vh\", `${vh}px`);\n  };\n\n  resizeListener();\n  window.addEventListener(\"resize\", resizeListener);\n  return () => {\n    window.removeEventListener(\"resize\", resizeListener);\n  };\n}, []);\n```",
+      "contentEn": "## Fixing the iOS Keyboard Covering the Screen\n\n### Problem\nWhile building a responsive chat UI in the AutoWini Claim project that had to work across web, mobile, and app via React,\n**on iOS, focusing an `input`/`textarea` would raise the keyboard, the viewport height wasn't recognized correctly, and the keyboard ended up covering the screen.**\n\n### Solution\nDynamically reset the **vh (viewport height)** value whenever the window height changes.\n\n```css\n#viewContainer {\n  height: 100vh;\n  height: calc(var(--vh, 1vh) * 100);\n}\n```\n\n```tsx\nuseEffect(() => {\n  const resizeListener = () => {\n    const vh = window.innerHeight * 0.01;\n    document.documentElement.style.setProperty(\"--vh\", `${vh}px`);\n  };\n\n  resizeListener();\n  window.addEventListener(\"resize\", resizeListener);\n  return () => {\n    window.removeEventListener(\"resize\", resizeListener);\n  };\n}, []);\n```",
+      "mediaUrl": "/images/answers/answer-10.png",
+      "mediaType": "IMAGE",
+      "questionId": 5
+    },
+    {
+      "id": 11,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## iOS Safari에서 CSS가 정상 작동하지 않는 문제 해결\n\n### 문제 상황\nChrome에서는 정상 작동하는 CSS가 **Safari에서는 정상 작동하지 않는 문제**가 발생했습니다.\n\n### 문제 해결 방법\nSass 코드 테스트/실행이 가능한 [SassMeister](https://www.sassmeister.com)를 활용해 CSS를 최적화하고, **자식 요소 선택자를 이용한 코드를 분리**하는 작업을 수행하여 문제를 해결했습니다.",
+      "contentEn": "## Resolving CSS Issues on iOS Safari\n\n### Problem\nCSS that worked normally in Chrome **didn't work properly in Safari**.\n\n### Solution\nUsed [SassMeister](https://www.sassmeister.com), an online platform for testing and running Sass code, to optimize the CSS and **separate rules that relied on child element selectors**, which resolved the issue.",
+      "mediaUrl": "/images/answers/answer-11.png",
+      "mediaType": "IMAGE",
+      "questionId": 5
+    },
+    {
+      "id": 12,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## New Portfolio\n\n- **기간**: 2024.05.19 ~ 2024.06.01\n- **사용 기술**: React, TypeScript, Tailwind CSS, Zustand, react-i18next, Vite\n\n### 간단 설명\nReact와 TypeScript를 사용하여 개발한 개인 포트폴리오 프로젝트입니다.\n\n### 링크\n- 깃허브: [umsungjun/new_portfolio](https://github.com/umsungjun/new_portfolio)\n- 배포 사이트: [umsungjun.vercel.app](https://umsungjun.vercel.app/)",
+      "contentEn": "## New Portfolio\n\n- **Duration**: 2024.05.19 ~ 2024.06.01\n- **Tech Stack**: React, TypeScript, Tailwind CSS, Zustand, react-i18next, Vite\n\n### Description\nA personal portfolio project developed using React and TypeScript.\n\n### Links\n- GitHub: [umsungjun/new_portfolio](https://github.com/umsungjun/new_portfolio)\n- Live Site: [umsungjun.vercel.app](https://umsungjun.vercel.app/)",
+      "mediaUrl": "/images/answers/answer-12.gif",
+      "mediaType": "IMAGE",
+      "questionId": 6
+    },
+    {
+      "id": 13,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Next Portfolio\n\n- **기간**: 2023.06.01 ~ 2023.06.04\n- **사용 기술**: Next.js, TypeScript, Tailwind CSS, BootStrap Icon, LottieFiles Animation, Vite\n\n### 간단 설명\nNext.js와 TypeScript를 사용하여 개발한 개인 포트폴리오 프로젝트입니다.\n\n### 링크\n- 깃허브: [umsungjun/Next-Portfolio](https://github.com/umsungjun/Next-Portfolio)\n- 배포 사이트: [next-portfolio-umsungjun.vercel.app](https://next-portfolio-umsungjun.vercel.app/)",
+      "contentEn": "## Next Portfolio\n\n- **Duration**: 2023.06.01 ~ 2023.06.04\n- **Tech Stack**: Next.js, TypeScript, Tailwind CSS, BootStrap Icon, LottieFiles Animation, Vite\n\n### Description\nA personal portfolio project developed using Next.js and TypeScript.\n\n### Links\n- GitHub: [umsungjun/Next-Portfolio](https://github.com/umsungjun/Next-Portfolio)\n- Live Site: [next-portfolio-umsungjun.vercel.app](https://next-portfolio-umsungjun.vercel.app/)",
+      "mediaUrl": "/images/answers/answer-13.gif",
+      "mediaType": "IMAGE",
+      "questionId": 6
+    },
+    {
+      "id": 14,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Compass\n\n- **기간**: 2023.03.27 ~ 2023.04.27\n- **사용 기술**: React, TypeScript, Redux Toolkit, Styled-Components, Vite, Java, Spring Boot, Spring Security, JPA, MySQL\n\n### 간단 설명\n여행을 즐기는 사용자들이 서로 정보를 공유하고 소통할 수 있는 **커뮤니티 사이트**입니다.\n\n### 링크\n- 깃허브: [umsungjun/1seok4jo_Front](https://github.com/umsungjun/1seok4jo_Front)",
+      "contentEn": "## Compass\n\n- **Duration**: 2023.03.27 ~ 2023.04.27\n- **Tech Stack**: React, TypeScript, Redux Toolkit, Styled-Components, Vite, Java, Spring Boot, Spring Security, JPA, MySQL\n\n### Description\nA **community site** where travel enthusiasts can share information and connect with one another.\n\n### Links\n- GitHub: [umsungjun/1seok4jo_Front](https://github.com/umsungjun/1seok4jo_Front)",
+      "mediaUrl": "/videos/answers/compass-demo.mp4",
+      "mediaType": "VIDEO",
+      "questionId": 6
+    },
+    {
+      "id": 15,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Poketmon Master\n\n- **기간**: 2023.03.13 ~ 2023.03.24\n- **사용 기술**: React, TypeScript, Redux Toolkit, Styled-Components, Kakao SDK, Vite\n\n### 간단 설명\nReact와 TypeScript를 사용하고 **Poke API** 데이터를 활용하여 만든 포켓몬 도감 프로젝트입니다.\n\n### 링크\n- 깃허브: [umsungjun/PoketmonMaster](https://github.com/umsungjun/PoketmonMaster)\n- 배포 사이트: [poketmon-master.vercel.app](https://poketmon-master.vercel.app/)",
+      "contentEn": "## Poketmon Master\n\n- **Duration**: 2023.03.13 ~ 2023.03.24\n- **Tech Stack**: React, TypeScript, Redux Toolkit, Styled-Components, Kakao SDK, Vite\n\n### Description\nA Pokédex project built with React and TypeScript using the **Poke API**.\n\n### Links\n- GitHub: [umsungjun/PoketmonMaster](https://github.com/umsungjun/PoketmonMaster)\n- Live Site: [poketmon-master.vercel.app](https://poketmon-master.vercel.app/)",
+      "mediaUrl": "/images/answers/answer-15.gif",
+      "mediaType": "IMAGE",
+      "questionId": 6
+    },
+    {
+      "id": 16,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## ReactShop\n\n- **기간**: 2023.03.02 ~ 2023.03.12\n- **사용 기술**: React, TypeScript, Redux Toolkit, Styled-Components, Kakao SDK, Vite\n\n### 간단 설명\nReact와 TypeScript를 사용하고 **Fake Store API** 데이터를 활용하여 만든 쇼핑몰 프로젝트입니다.\n\n### 링크\n- 깃허브: [umsungjun/React-Shop--TS](https://github.com/umsungjun/React-Shop--TS)\n- 배포 사이트: [react-shop-ts-hazel.vercel.app](https://react-shop-ts-hazel.vercel.app/)",
+      "contentEn": "## ReactShop\n\n- **Duration**: 2023.03.02 ~ 2023.03.12\n- **Tech Stack**: React, TypeScript, Redux Toolkit, Styled-Components, Kakao SDK, Vite\n\n### Description\nAn e-commerce project built with React and TypeScript using the **Fake Store API**.\n\n### Links\n- GitHub: [umsungjun/React-Shop--TS](https://github.com/umsungjun/React-Shop--TS)\n- Live Site: [react-shop-ts-hazel.vercel.app](https://react-shop-ts-hazel.vercel.app/)",
+      "mediaUrl": "/images/answers/answer-16.gif",
+      "mediaType": "IMAGE",
+      "questionId": 6
+    },
+    {
+      "id": 17,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## 레거시 JSP → React 단계적 마이그레이션\n\n### 대상 선정\n트래픽이 높고 이슈가 잦은 페이지를 우선 대상으로 선정해 단계적으로 마이그레이션했습니다.\n- 통합 검색 / 필터 검색\n- 쉬핑 스케줄\n- 마이위니 (찜하기)\n- 파츠위니 통합·필터 검색\n\n### 기존 구조의 문제점\n- **JSTL + Vanilla JavaScript + Vue** 혼재 → 복잡성 증가, 빌드 사이즈 비대\n- 사용하지 않는 코드 다수, **관심사 분리** 미흡\n- 초기 로딩 성능과 유지보수 효율 저하\n- TypeScript 미사용으로 **타입 안정성** 한계\n\n### 마이그레이션 전략\n**React + TypeScript + Vite + TanStack Query** 기반으로 진행했습니다.\n- 컴포넌트 단위로 구조를 재정비\n- 불필요한 코드 제거 + 모듈화로 빌드 사이즈 축소\n- 초기 로딩 성능 개선\n\n### 데이터 처리 개선\n**TanStack Query**의 캐싱 전략을 적용하여\n- 페이지 전환 시에만 변경되는 데이터는 **캐시 재사용**\n- `window focus` 시 재호출이 필요한 API는 상황에 맞게 제어\n\n→ 불필요한 네트워크 요청을 줄이고 전반적인 성능을 개선했습니다.\n\n### 코드 스플리팅 도입\n마이그레이션 직후, JSP → React 페이지 이동 시 **SPA 특성상 모든 페이지 리소스를 한 번에 로드하는 문제**가 발생했습니다.\n\n→ React의 `lazy`와 `Suspense`를 도입해 **페이지 단위 코드 스플리팅**을 적용, 사용자가 접근한 페이지의 리소스만 로드하도록 개선했습니다.\n\n### SmartLink Headless 컴포넌트\nReact 페이지 간 이동에서도 SPA의 이점을 유지하기 위해 **SmartLink Headless 컴포넌트**를 개발했습니다.\n페이지 유형과 관계없이 공통된 네비게이션 동작·스타일을 적용해, React → React 이동 시 **전체 리로드 없이** 빠르고 일관된 UX를 제공합니다.",
+      "contentEn": "## Legacy JSP → React Progressive Migration\n\n### Scope\nWe prioritized high-traffic, issue-prone pages and migrated them progressively:\n- Integrated Search / Filter Search\n- Shipping Schedule\n- MyWini (Favorites)\n- PartsWini Integrated & Filter Search\n\n### Problems with the Legacy Stack\n- Mix of **JSTL + Vanilla JavaScript + Vue** → high complexity, bloated bundle\n- Lots of unused code, poor **separation of concerns**\n- Degraded initial loading performance and maintainability\n- No TypeScript → limited **type safety**\n\n### Migration Strategy\nMigrated to **React + TypeScript + Vite + TanStack Query**.\n- Reorganized into a component-based architecture\n- Removed unnecessary code and modularized the structure\n- Reduced bundle size and improved initial load performance\n\n### Data Handling Improvements\nApplied **TanStack Query** caching strategies:\n- Reuse the **cache** for data that only changes on page transitions\n- Conditionally control APIs that need to refetch on `window` focus\n\n→ Reduced unnecessary network requests and improved overall performance.\n\n### Code Splitting\nAfter migration, a new issue emerged: navigating from JSP to React pages loaded **all SPA resources at once**.\n\n→ Adopted React `lazy` + `Suspense` for **page-level code splitting**, loading only the resources required for the visited page.\n\n### SmartLink Headless Component\nTo preserve SPA benefits across React-to-React navigation, we built a **SmartLink Headless component**. It applies consistent navigation behavior and styling across page types, enabling **fast transitions without full reloads** and a uniform UX.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 7
+    },
+    {
+      "id": 18,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Portfolio with Claude Code\n\n- **기간**: 2026.02.11 ~ 2026.02.21\n- **사용 기술**: HTML5, CSS3, JavaScript\n\n### 간단 설명\n**Claude Code의 Plan 모드**를 활용하여 프로젝트 계획 수립부터 기획, UI 구현, 인터랙션 개발까지 전 과정을 **30분 만에 완료**한 개발자 웹 이력서 프로젝트입니다.\n\n### 링크\n- 깃허브: [umsungjun/portfolio-with-claude-code](https://github.com/umsungjun/portfolio-with-claude-code)\n- 배포 사이트: [portfolio-with-claude-code.vercel.app](https://portfolio-with-claude-code.vercel.app)",
+      "contentEn": "## Portfolio with Claude Code\n\n- **Duration**: 2026.02.11 ~ 2026.02.21\n- **Tech Stack**: HTML5, CSS3, JavaScript\n\n### Description\nA developer web resume project completed in **just 30 minutes** - covering planning, concept design, UI implementation, and interaction development - using **Claude Code's Plan mode**.\n\n### Links\n- GitHub: [umsungjun/portfolio-with-claude-code](https://github.com/umsungjun/portfolio-with-claude-code)\n- Live Site: [portfolio-with-claude-code.vercel.app](https://portfolio-with-claude-code.vercel.app)",
+      "mediaUrl": "/images/answers/answer-18.gif",
+      "mediaType": "IMAGE",
+      "questionId": 6
+    },
+    {
+      "id": 19,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## LET'S KO\n\n- **기간**: 2026.02.17 ~\n- **사용 기술**: Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Supabase (PostgreSQL), next-intl, Google Gemini API, Vercel\n\n### 간단 설명\n평소 UFC 시청을 취미로 즐기며, **UFC 웰터급 파이터 고석현 (The Korean Tyson)** 선수를 응원하는 마음에서 출발한 개인 프로젝트입니다.\n\n선수 관련 정보와 팬 활동을 하나의 공간에서 경험할 수 있도록 기획·개발했습니다.\n\n### 링크\n- 깃허브: [umsungjun/lets-ko](https://github.com/umsungjun/lets-ko)\n- 배포 사이트: [lets-ko.vercel.app](https://lets-ko.vercel.app/)",
+      "contentEn": "## LET'S KO\n\n- **Duration**: 2026.02.17 ~\n- **Tech Stack**: Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Supabase (PostgreSQL), next-intl, Google Gemini API, Vercel\n\n### Description\nA personal project inspired by my hobby of watching UFC, built to support **UFC welterweight fighter Go Seok-hyun (The Korean Tyson)**.\n\nPlanned and developed as a unified space where users can explore fighter-related information and engage in fan activities.\n\n### Links\n- GitHub: [umsungjun/lets-ko](https://github.com/umsungjun/lets-ko)\n- Live Site: [lets-ko.vercel.app](https://lets-ko.vercel.app/)",
+      "mediaUrl": "/images/answers/answer-19.gif",
+      "mediaType": "IMAGE",
+      "questionId": 6
+    },
+    {
+      "id": 20,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Frontend Kit\n\n- **기간**: 2026.02.21 ~\n- **사용 기술**: Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Google Gemini API, Vercel, PWA (Serwist)\n\n### 간단 설명\n프론트엔드 개발자 면접 준비를 위한 **플래시카드 웹앱**입니다. 출퇴근 시간에 스와이프하며 핵심 개념을 빠르게 복습하고, 앱을 벗어나지 않고 **AI에게 바로 질문**할 수 있도록 기획·개발했습니다.\n\n### 주요 기능\n- CS, JavaScript, React 등 **7개 카테고리** 질문\n- AI 문답 (카드 컨텍스트 포함)\n- 랜덤 셔플 모드\n- 다크모드\n- 글자 크기 조절\n- **PWA 설치** 지원\n\n### 링크\n- 깃허브: [umsungjun/frontend-kit](https://github.com/umsungjun/frontend-kit)\n- 배포 사이트: [kr-frontend-kit.vercel.app](https://kr-frontend-kit.vercel.app)",
+      "contentEn": "## Frontend Kit\n\n- **Duration**: 2026.02.21 ~\n- **Tech Stack**: Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Google Gemini API, Vercel, PWA (Serwist)\n\n### Description\nA **flashcard web app** for frontend developer interview preparation. Designed for quick concept review by swiping through cards during commutes, with the ability to **ask the AI directly** without leaving the app.\n\n### Key Features\n- **7 categories** including CS, JavaScript, React\n- AI chat with card context\n- Random shuffle mode\n- Dark mode\n- Font size adjustment\n- **PWA installation** support\n\n### Links\n- GitHub: [umsungjun/frontend-kit](https://github.com/umsungjun/frontend-kit)\n- Live Site: [kr-frontend-kit.vercel.app](https://kr-frontend-kit.vercel.app)",
+      "mediaUrl": "/images/answers/answer-20.gif",
+      "mediaType": "IMAGE",
+      "questionId": 6
+    },
+    {
+      "id": 21,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## When Cherry Blossoms\n\n- **기간**: 2026.03 ~ 2026.04\n- **사용 기술**: Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Firebase Firestore, Google Gemini API, Vercel\n\n### 간단 설명\n매년 봄 벚꽃 개화 시기를 매번 검색하다 보니, **지역별 개화 정보를 한눈에 볼 수 있는 공간**이 있으면 좋겠다는 생각에서 출발한 개인 프로젝트입니다.\n\n### 주요 기능\n- **전국 16개 지역** 벚꽃 개화 예보 및 현황\n- **AI(Gemini)** 가 날씨 데이터 기반으로 개화일을 예측 → 기상청 예보와 나란히 비교\n- AI 챗봇 **\"버꼬\"** 와 대화하며 방문 추천 명소 정보 제공\n\n### 링크\n- 깃허브: [umsungjun/when-cherry-blossoms](https://github.com/umsungjun/when-cherry-blossoms)\n- 배포 사이트: [when-cherry-blossoms.vercel.app](https://when-cherry-blossoms.vercel.app)",
+      "contentEn": "## When Cherry Blossoms\n\n- **Duration**: 2026.03 ~ 2026.04\n- **Tech Stack**: Next.js 16 (App Router), TypeScript, Tailwind CSS v4, Firebase Firestore, Google Gemini API, Vercel\n\n### Description\nA personal project born from the habit of searching for cherry blossom timing every spring - a place to see **regional bloom information at a glance**.\n\n### Key Features\n- Bloom forecasts and status for **16 regions** across South Korea\n- **AI (Gemini)** predicts bloom dates from weather data → compared side-by-side with official KMA forecasts\n- Chat with the AI bot **\"Beokko\"** for recommended spots to visit\n\n### Links\n- GitHub: [umsungjun/when-cherry-blossoms](https://github.com/umsungjun/when-cherry-blossoms)\n- Live Site: [when-cherry-blossoms.vercel.app](https://when-cherry-blossoms.vercel.app)",
+      "mediaUrl": "/images/answers/answer-21.gif",
+      "mediaType": "IMAGE",
+      "questionId": 6
+    },
+    {
+      "id": 22,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Next.js 한글 문서 - PR #158\n\n### 기여 내용\n\nReact로 만든 포트폴리오를 **Next.js로 마이그레이션**하던 중, 공식 문서가 한글을 지원하지 않아 **Next.js 한글 문서** 프로젝트를 자주 참고하게 되었습니다.\n\n문서를 둘러보던 중 **모든 페이지의 이미지가 깨지는 현상**을 발견했습니다. 원인을 추적해보니 전역적으로 사용되는 `ExternalImage` 컴포넌트의 `baseUrl`이 잘못 설정되어 있었고, `baseUrl`을 올바른 값으로 수정하는 단 **한 줄짜리 PR**을 올려 머지되었습니다.",
+      "contentEn": "## Next.js Korean Docs - PR #158\n\n### Contribution\n\nWhile migrating my React portfolio to **Next.js**, I turned to the **Next.js Korean docs** project because the official docs weren't translated.\n\nWhile browsing the docs, I noticed that **images were broken across every page**. Tracing the cause led me to a misconfigured `baseUrl` on the globally-shared `ExternalImage` component. I submitted a **single-line PR** updating the `baseUrl`, and it was merged.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 9
+    },
+    {
+      "id": 23,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## es-toolkit - PR #1125\n\n### 기여 내용\n\n평소 자주 사용하던 유틸리티 라이브러리 **es-toolkit**의 코드베이스를 살펴보던 중, 일관성이 부족한 부분을 발견했습니다.\n\n코드베이스 전반에 흩어져 있던 `typeof value === \"string\"` 같은 **원시적인 타입 체크를, 이미 라이브러리가 제공하는 `isString()` 유틸리티로 통일**하는 작업을 진행했습니다. 벤치마크 테스트와 내부 코드 모두 동일한 패턴으로 정리했습니다.",
+      "contentEn": "## es-toolkit - PR #1125\n\n### Contribution\n\nWhile exploring **es-toolkit**, a utility library I use often, I noticed inconsistencies in how primitive type checks were written.\n\nI worked on **replacing primitive checks like `typeof value === \"string\"` with the library's own `isString()` utility**, unifying the pattern across both benchmark tests and internal source code.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 9
+    },
+    {
+      "id": 24,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Frontend Fundamentals - PR #211\n\n### 기여 내용\n\n학습에 큰 도움을 받았던 **Frontend Fundamentals** 저장소의 README를 살펴보던 중, **이미지 경로가 잘못 설정**되어 깨져 보이는 부분을 발견했습니다.\n\n`./public/images/ff-meta.png`로 되어 있던 경로를, GitHub에서 정상적으로 보이도록 `./images/ff-meta.png`로 수정하는 PR을 올렸고 머지되었습니다.",
+      "contentEn": "## Frontend Fundamentals - PR #211\n\n### Contribution\n\nWhile reading the **Frontend Fundamentals** repository - a project I'd learned a lot from - I noticed a **broken image path** in the README.\n\nI submitted a PR updating the path from `./public/images/ff-meta.png` to `./images/ff-meta.png` so the image would render correctly on GitHub, and it was merged.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 9
+    },
+    {
+      "id": 25,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Frontend Fundamentals - PR #207\n\n### 기여 내용\n\n같은 저장소의 문서 일부가 **이미지로 캡처된 코드 예시**로 구성되어 있어, 학습자가 코드를 복사해 실습하기 어렵다는 불편함을 발견했습니다.\n\n해당 부분을 **복사 가능한 코드 블록으로 전환**하고, 코드 설명 문구도 간결하게 다듬는 PR을 올렸습니다.",
+      "contentEn": "## Frontend Fundamentals - PR #207\n\n### Contribution\n\nSome sections of the same repository's docs used **image screenshots of code examples**, which made it hard for learners to copy and try the snippets.\n\nI submitted a PR **converting those examples into copyable markdown code blocks** and tightened the surrounding explanations.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 9
+    },
+    {
+      "id": 26,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## 지금까지 등록한 PR 전체 목록\n\n### toss/es-toolkit\n- **#1125** - 원시 타입 체크를 `isString()` 등 유틸리티로 통일\n- **#1159** - `ary` 함수 벤치마크 추가\n- **#1197** - `identity` 함수 벤치마크 추가\n- **#1273** - `take` 함수 JSDoc 및 벤치마크 추가\n- **#1695** - `map` / `set` 모듈의 누락된 export 추가\n\n### mdn/translated-content\n- **#29197** - `Right shift (>>)` 신규 번역\n- **#29279** - `typeof` 문서 영어 원문과 동기화\n- **#29314** - `for...of` 문서 동기화\n- **#29417** - `Set` 문서 동기화\n- **#29429** - `matchMedia` 문서 동기화\n- **#29457** - `Fetch API` 문서 동기화\n- **#29482** - `::first-letter` 문서 동기화\n- **#29737** - `requestAnimationFrame()` 문서 동기화\n- **#29831** - `DOMContentLoaded` 이벤트 문서 동기화\n- **#29895** - `Response()` constructor 신규 번역\n- **#29925** - `Response.headers` 신규 번역\n\n### toss/frontend-fundamentals\n- **#207** - 코드 예시를 복사 가능한 코드 블록으로 전환\n- **#211** - README 이미지 경로 수정\n- **#380** - 타입 에러 해결 방법 추가\n\n### NaverPayDev/hidash\n- **#250** - CI 배지 URL 수정\n- **#252** - `isArray` 테스트 / 벤치마크 추가\n- **#253** - `isFunction` 벤치마크 추가\n- **#254** - `before` 벤치마크 추가\n- **#262** - `first` 벤치마크 추가\n- **#265** - `isMap` 테스트 / 벤치마크 추가\n- **#268** - `last` 벤치마크 추가\n- **#270** - `isNumber` 벤치마크 추가\n- **#271** - `reverse` 벤치마크 추가\n- **#272** - `once` JSDoc / 벤치마크 추가\n- **#277** - `isError` JSDoc / 벤치마크 추가\n- **#283** - `isUndefined` 테스트 / 벤치마크 추가\n\n### luciancah/nextjs-ko (Next.js 한글 문서)\n- **#158** - `ExternalImage` baseUrl 수정\n\n### React Hook Form 한글 문서\n- **#100** - 중복된 컴포넌트 제거\n\n### daangn/stackflow\n- **#603** - `ActivityComponentType`에 `import type` 적용\n\n### ssi02014/react-query-tutorial\n- **#41** - 문체 변경 및 `cacheTime` 초기화 내용 추가",
+      "contentEn": "## All Submitted Pull Requests\n\n### toss/es-toolkit\n- **#1125** - Replace primitive type checks with `isString()` and related utilities\n- **#1159** - Add benchmarks for `ary`\n- **#1197** - Add benchmarks for `identity`\n- **#1273** - Add JSDoc and benchmarks for `take`\n- **#1695** - Add missing exports for the `map` / `set` modules\n\n### mdn/translated-content\n- **#29197** - Translate `Right shift (>>)`\n- **#29279** - Sync `typeof` docs with the English source\n- **#29314** - Sync `for...of` docs\n- **#29417** - Sync `Set` docs\n- **#29429** - Sync `matchMedia` docs\n- **#29457** - Sync `Fetch API` docs\n- **#29482** - Sync `::first-letter` docs\n- **#29737** - Sync `requestAnimationFrame()` docs\n- **#29831** - Sync `DOMContentLoaded` event docs\n- **#29895** - Translate `Response()` constructor\n- **#29925** - Translate `Response.headers`\n\n### toss/frontend-fundamentals\n- **#207** - Convert image-based code samples into copyable code blocks\n- **#211** - Fix broken README image path\n- **#380** - Add guidance on resolving type errors\n\n### NaverPayDev/hidash\n- **#250** - Fix CI badge URL\n- **#252** - Add tests / benchmarks for `isArray`\n- **#253** - Add benchmarks for `isFunction`\n- **#254** - Add benchmarks for `before`\n- **#262** - Add benchmarks for `first`\n- **#265** - Add tests / benchmarks for `isMap`\n- **#268** - Add benchmarks for `last`\n- **#270** - Add benchmarks for `isNumber`\n- **#271** - Add benchmarks for `reverse`\n- **#272** - Add JSDoc / benchmarks for `once`\n- **#277** - Add JSDoc / benchmarks for `isError`\n- **#283** - Add tests / benchmarks for `isUndefined`\n\n### luciancah/nextjs-ko (Next.js Korean Docs)\n- **#158** - Fix the `ExternalImage` baseUrl\n\n### React Hook Form Korean Docs\n- **#100** - Remove a duplicated component\n\n### daangn/stackflow\n- **#603** - Use `import type` for `ActivityComponentType`\n\n### ssi02014/react-query-tutorial\n- **#41** - Refine tone and add `cacheTime` reset details",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 9
+    },
+    {
+      "id": 27,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Autowini 서비스 i18n 번들 최적화\n\n### 배경 및 문제\nAutowini 서비스는 15개 국어를 지원하는 다국어 환경이었습니다. 초기 react-i18next 설정에서 번역 JSON 파일을 직접 import하여 JS 번들에 포함시켰는데, **언어 수와 페이지가 늘어날수록 JS 청크 크기가 급격히 증가**하는 문제가 있었습니다.\n\n```js\n// 기존: 모든 번역 파일을 JS 번들에 포함\nimport ko from './locales/ko/translation.json';\nimport en from './locales/en/translation.json';\n\ni18n.init({\n  resources: { ko: { translation: ko }, en: { translation: en } },\n});\n```\n\n이 방식은 빌드 시간 증가와 초기 로딩 성능 저하로 이어졌습니다.\n\n---\n\n### 1차 개선: HTTP Backend로 번들에서 분리\n\n**`i18next-http-backend`** 를 도입해 번역 파일을 JS 번들에서 완전히 분리했습니다. JSON 파일을 `/public/locales/{{lng}}/translation.json` 경로에 정적 파일로 배치하고, 런타임에 현재 언어만 네트워크로 로드하도록 변경했습니다.\n\n```js\ni18n\n  .use(HttpBackend)\n  .use(initReactI18next)\n  .init({\n    backend: { loadPath: '/locales/{{lng}}/translation.json' },\n    lng: userLanguage,\n    fallbackLng: 'en',\n  });\n```\n\nVite(Rollup) 기반 번들러에서 public 폴더 파일은 번들에 포함되지 않으므로, JS 청크 크기 감소 및 빌드 시간 단축 효과를 얻을 수 있었습니다.\n\n---\n\n### 2차 개선: 네임스페이스 분리로 페이지별 번역 최적화\n\n1차 개선 이후에도 문제가 남아 있었습니다. 모든 번역 키가 하나의 파일에 있어 **특정 페이지에 접속해도 전체 번역을 로드**하는 비효율이 있었습니다. 특히 JSP → React 전환을 진행하면서 페이지가 늘어날수록 이 문제가 심화될 것이 예상됐습니다.\n\n**해결 전략**: key 설계 단계부터 `namespace.key` 구조를 채택했습니다.\n\n- 공통 사용 단어: `search`, `confirm` (단일 키 → `common.json`)\n- 페이지 종속 문구: `myWini.saved`, `shippingSchedule.title` (`namespace.key` 형태)\n\nGoogle Sheets에서 번역을 추출할 때 점(`.`)을 기준으로 네임스페이스를 결정하는 로직을 구성했습니다.\n\n```\n/locales/ko/common.json\n/locales/ko/myWini.json\n/locales/ko/shippingSchedule.json\n/locales/ko/userSideMenu.json\n```\n\ni18next 초기 설정에서는 `common`과 `seo` 네임스페이스만 먼저 로드하고, 페이지별 네임스페이스는 on-demand로 동적 로드하도록 구성했습니다.\n\n---\n\n### 느낀 점\n\n두 번의 개선을 통해 **번역 파일을 번들에서 완전히 분리**하고, **페이지별 필요한 번역만 로드**하는 구조를 만들었습니다. 특히 네임스페이스 분리는 key 네이밍 컨벤션 설계 단계부터 미리 고려했기 때문에 추후 마이그레이션 시에도 빌드 크기 증가 없이 확장할 수 있었습니다.",
+      "contentEn": "## i18n Bundle Optimization at Autowini\n\n### Background & Problem\nAutowini is a multilingual platform supporting 15 languages. In the initial react-i18next setup, translation JSON files were imported directly into the JS bundle. As the number of languages and pages grew, **JS chunk sizes increased dramatically**, leading to longer build times and slower initial loads.\n\n```js\n// Before: every translation file bundled into JS\nimport ko from './locales/ko/translation.json';\nimport en from './locales/en/translation.json';\n\ni18n.init({\n  resources: { ko: { translation: ko }, en: { translation: en } },\n});\n```\n\n---\n\n### Step 1: Extract from Bundle with HTTP Backend\n\nI introduced **`i18next-http-backend`** to completely separate translation files from the JS bundle. JSON files were placed as static assets at `/public/locales/{{lng}}/translation.json`, and only the active language is fetched at runtime.\n\n```js\ni18n\n  .use(HttpBackend)\n  .use(initReactI18next)\n  .init({\n    backend: { loadPath: '/locales/{{lng}}/translation.json' },\n    lng: userLanguage,\n    fallbackLng: 'en',\n  });\n```\n\nSince Vite (Rollup) does not bundle files in the `public` directory, this immediately reduced JS chunk size and build time.\n\n---\n\n### Step 2: Namespace Splitting for Per-Page Optimization\n\nAfter the first improvement, a new issue remained: even a single-page visit loaded the entire translation file. With an ongoing JSP → React migration adding new pages steadily, this would only get worse.\n\n**Strategy**: Adopt `namespace.key` naming from the start.\n\n- Common terms: `search`, `confirm` (single key → `common.json`)\n- Page-specific phrases: `myWini.saved`, `shippingSchedule.title` (`namespace.key` format)\n\nA script parsing Google Sheets exports uses the dot (`.`) as a namespace delimiter, generating files like `common.json`, `myWini.json`, `shippingSchedule.json` per language.\n\n```\n/locales/en/common.json\n/locales/en/myWini.json\n/locales/en/shippingSchedule.json\n/locales/en/userSideMenu.json\n```\n\nThe i18next config loads only `common` and `seo` upfront; page namespaces load on demand.\n\n---\n\n### What I Learned\n\nThrough two rounds of optimization, I achieved a structure where **translations are fully removed from the bundle** and **only the necessary translations per page are loaded**. By designing the `namespace.key` convention upfront, the architecture scales cleanly as more JSP pages are migrated to React.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 10
+    },
+    {
+      "id": 28,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## AVIF 이미지가 .jpg로 저장되어 Windows에서 열리지 않는 버그 해결\n\n### 배경\n안드로이드 폰에서 캡처한 이미지를 업로드한 사용자가 다운로드 시 \"현재 지원되지 않는 형식이거나 파일이 손상되었습니다\"라는 에러를 Windows에서 겪었습니다. Mac이나 Chrome 브라우저에서는 정상 작동했기 때문에 초기엔 원인을 파악하기 어려웠습니다.\n\n![Windows 사진 뷰어에서 \"지원되지 않는 형식\" 에러 화면](/images/answers/windows-open-error.svg)\n\n### 원인 파악\n터미널에서 파일 포맷을 직접 확인해보니, `.jpg` 확장자를 가진 파일의 실제 포맷이 **AVIF**인 것을 발견했습니다.\n\n![터미널 file 명령 결과 - test.jpg는 AVIF, umsungjun.jpg는 JPEG](/images/answers/avif-file-check.svg)\n\n- `test.jpg` → ISO Media, **AVIF Image** (확장자와 실제 포맷 불일치)\n- `umsungjun.jpg` → JPEG image data (정상)\n\n안드로이드 폰이 내부적으로 AVIF 포맷으로 이미지를 저장하면서도 확장자는 `.jpg`로 붙이는 방식이 문제의 원인이었습니다. AVIF는 최신 압축 규격으로 호환성이 높지 않아 구형 Windows 환경에서는 열리지 않습니다.\n\n### 해결 전략\nFetch로 받아온 Blob의 `type` 필드로 실제 MIME 타입을 확인한 뒤, `image/avif`인 경우 **Canvas API**를 통해 JPEG로 변환 후 저장하는 방식으로 해결했습니다.\n\n```typescript\nconst convertIfAvif = async (blob: Blob): Promise<Blob> => {\n  if (blob.type === 'image/avif') {\n    const img = await createImageBitmap(blob);\n    const canvas = document.createElement('canvas');\n    canvas.width = img.width;\n    canvas.height = img.height;\n    const ctx = canvas.getContext('2d');\n    if (!ctx) throw new Error('Canvas context 생성 실패');\n\n    ctx.drawImage(img, 0, 0);\n    return new Promise<Blob>((resolve, reject) => {\n      canvas.toBlob(\n        (newBlob) => {\n          if (newBlob) resolve(newBlob);\n          else reject(new Error('JPG 변환 실패'));\n        },\n        'image/jpeg',\n        0.9\n      );\n    });\n  }\n  return blob;\n};\n```\n\n핵심 포인트는 변환 후 **파일명의 확장자도 `.jpg`로 강제 교체**하고, Object URL 사용 후 `revokeObjectURL`로 메모리를 해제한 것입니다.\n\n### 결과\nWindows 환경에서도 이미지 다운로드 및 열기가 정상 동작하게 되었습니다. 이 경험을 통해 **\"확장자는 껍데기일 뿐, 실제 내부 MIME 타입이 진짜 포맷\"** 이라는 점을 체감했고, 파일 처리 로직 작성 시 MIME 타입 기반으로 방어적으로 처리하는 습관을 갖게 되었습니다.",
+      "contentEn": "## Fixing a Bug: AVIF Images Saved as .jpg That Wouldn't Open on Windows\n\n### Background\nA user reported that images downloaded from our service would show an error on Windows - \"The file format is unsupported or the file is corrupted.\" The same files opened fine on Mac or in Chrome, which made the root cause hard to pinpoint initially.\n\n![Windows Photos showing an \"unsupported format\" error](/images/answers/windows-open-error.svg)\n\n### Root Cause\nRunning a file format check in the terminal revealed that some `.jpg` files were actually **AVIF** under the hood.\n\n![Terminal `file` output - test.jpg is AVIF, umsungjun.jpg is JPEG](/images/answers/avif-file-check.svg)\n\n- `test.jpg` → ISO Media, **AVIF Image** (extension mismatch with actual format)\n- `umsungjun.jpg` → JPEG image data (normal)\n\nIt turned out that Android phones internally save screenshots in AVIF format while still appending a `.jpg` extension. AVIF is a modern, high-efficiency codec with limited support on older Windows environments, which caused the failures.\n\n### Solution\nI checked the Blob's `type` field (the actual MIME type, not the filename extension) after fetching the file. If the MIME type was `image/avif`, I used the **Canvas API** to re-encode the image as JPEG before triggering the download.\n\n```typescript\nconst convertIfAvif = async (blob: Blob): Promise<Blob> => {\n  if (blob.type === 'image/avif') {\n    const img = await createImageBitmap(blob);\n    const canvas = document.createElement('canvas');\n    canvas.width = img.width;\n    canvas.height = img.height;\n    const ctx = canvas.getContext('2d');\n    if (!ctx) throw new Error('Canvas context creation failed');\n\n    ctx.drawImage(img, 0, 0);\n    return new Promise<Blob>((resolve, reject) => {\n      canvas.toBlob(\n        (newBlob) => {\n          if (newBlob) resolve(newBlob);\n          else reject(new Error('JPG conversion failed'));\n        },\n        'image/jpeg',\n        0.9\n      );\n    });\n  }\n  return blob;\n};\n```\n\nTwo additional details mattered: **forcing the file extension to `.jpg`** after conversion, and calling `revokeObjectURL` afterward to prevent memory leaks.\n\n### Outcome\nDownloads now work correctly on Windows. The key takeaway: **the file extension is just a label - the actual MIME type is what determines how the OS handles the file.** Since then, I've made it a habit to validate MIME types explicitly whenever writing file-handling logic.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 11
+    },
+    {
+      "id": 29,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Autowini WEB 통합 프로젝트 - Vitest 단위 테스트 도입\n\nweb-www-front는 오토위니의 JSP 기반 레거시 페이지를 React로 전환하는 통합 프로젝트입니다. 필터 검색, 통합 검색, 찜 목록, 운송 정보, 파츠위니 검색 등 6개 페이지가 분리 완료된 상태였습니다.\n\n### 배경\n\n처음엔 \"기능 개발하고 유지보수할 시간도 부족한데 테스트 코드까지?\"라는 의구심이 컸습니다. es-toolkit, hidash 같은 오픈소스에는 테스트 코드를 기여해본 경험이 있었지만, 정작 사내 프로젝트에는 도입하지 못하고 있었습니다.\n\n파츠위니 필터 검색 페이지 마이그레이션 후 QA 과정에서 시간이 남은 것을 계기로, 실제 프로젝트에 테스트를 도입해 보기로 결심했습니다.\n\n### 기존 구조의 문제점\n\n- 유틸 함수와 비즈니스 로직에 테스트가 전혀 없어, 리팩토링 시 회귀 버그 검출 불가\n- 코드 신뢰도를 주관적 코드리뷰에만 의존하는 구조\n\n### 도입 과정\n\n**Vitest를 선택한 이유**\n\nJest와 비교 검토했지만, Vite 환경과 잘 맞물려 돌아가고 오픈소스 기여를 통해 이미 익숙한 **Vitest**를 선택했습니다.\n\n**테스트 파일 구조**\n\n순수 유틸 함수의 단위 테스트는 소스 옆에 두는 co-location 대신 **`src/utils/__tests__/` 디렉토리**에 모았습니다. import 경로가 단순하고, 단위 테스트를 한곳에서 훑어볼 수 있어 유지보수할 때 보기 편했습니다.\n\n```\nsrc/utils/\n ┣ formatUtils.ts\n ┣ isUtils.ts\n ┗ __tests__/              # 단위 테스트 (Vitest)\n    ┣ formatUtils.test.ts\n    ┣ isUtil.test.ts\n    ┗ scrollUtils.test.ts\n```\n\n**현실적인 테스트 범위**\n\nAPI에서 들어올 일이 없는 `Infinity` 같은 케이스는 제외하고, 실제 운영에서 들어오는 값(`0`, `null` 등)에 집중했습니다.\n\n### 결과\n\n테스트 작성 중 기존 유틸 함수의 로직 허점을 발견했습니다. `formatPrice`에서 `!price` 조건을 사용하던 코드가 **`price = 0`일 때도 `'*,***'`를 반환하는 버그**가 있었습니다. `formatPrice(0)`은 `'0'`이어야 하는데 테스트가 이를 잡아냈고, 버그를 고치면서 JSDoc 주석과 반환 타입도 함께 추가했습니다.\n\n![Vitest 실행 결과 - formatPrice 테스트가 price=0에서 '*,***'를 반환하던 버그를 잡아냄](/images/answers/vitest-formatprice-catch.svg)\n\n### 느낀 점\n\n도입 전엔 반신반의했는데, formatPrice 공통 유틸 함수에서 바로 버그를 발견하게 되어 신기했습니다. price가 0일 때 값이 `*,***`로 보이는 문제였는데, 테스트를 진행하지 않았더라면 몰랐을 겁니다.\n\n앞으로는 공통 Util 함수부터 차례로 Claude Code를 활용해 테스트 코드를 작성할 계획입니다. 더 나아가 로직 변경이 생기면 테스트 코드도 자동으로 생성·수정되도록 hook으로 연결하는 것을 목표로 하고 있습니다.",
+      "contentEn": "## Autowini WEB Unified Project - Introducing Vitest Unit Tests\n\nweb-www-front is a unified project at AutoWini to migrate legacy JSP-based pages to React. By the time this work began, six pages (filter search, unified search, wish list, shipping info, Parts WiNi search) had already been separated.\n\n### Background\n\nAt first I was skeptical - \"we barely have time to ship features and keep things maintained, do we really need tests on top of that?\" I had contributed test code to open-source libraries like Toss's es-toolkit and NaverPay's hidash, but hadn't brought that discipline into our internal codebase.\n\nThe trigger was practical: after finishing the Parts WiNi filter search page migration, there was some slack time left during the QA phase. I decided to use it to finally introduce tests to the project.\n\n### Problems with the Existing Setup\n\n- No tests on utility functions or business logic, making regression detection during refactors impossible\n- Code confidence relied entirely on subjective code review\n\n### How I Introduced It\n\n**Why I chose Vitest**\n\nAfter evaluating Jest, I chose **Vitest** because it works smoothly with Vite and I was already familiar with it from open-source contributions.\n\n**Test file structure**\n\nFor pure utility functions, I gathered unit tests into a **`src/utils/__tests__/` directory** rather than co-locating them next to the source. Imports stay simple, and keeping all unit tests in one place makes them easy to scan during maintenance.\n\n```\nsrc/utils/\n ┣ formatUtils.ts\n ┣ isUtils.ts\n ┗ __tests__/              # unit tests (Vitest)\n    ┣ formatUtils.test.ts\n    ┣ isUtil.test.ts\n    ┗ scrollUtils.test.ts\n```\n\n**Keeping the test scope pragmatic**\n\nI excluded cases that can't come from our API (like `Infinity`) and focused on realistic runtime values such as `0` and `null`.\n\n### Outcome\n\nWriting tests immediately caught a bug in the existing utility code. `formatPrice` used a `!price` check to return `'*,***'`, which incorrectly triggered when **`price = 0`**. `formatPrice(0)` should return `'0'`, and the test caught it. The fix also prompted me to add JSDoc comments and an explicit return type.\n\n![Vitest run - the formatPrice test catching the price=0 bug that returned '*,***'](/images/answers/vitest-formatprice-catch.svg)\n\n### What I Learned\n\nI was on the fence before adopting it, but a bug in formatPrice turned up right away, which honestly surprised me. It returned `*,***` when price was 0, and I wouldn't have known without running the tests.\n\nGoing forward, I plan to add tests to our shared util functions one by one using Claude Code. Further out, I want to wire up a hook so that whenever the logic changes, the tests are generated and updated automatically.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 12
+    },
+    {
+      "id": 30,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Autowini WEB 통합 프로젝트 - Playwright E2E 테스트와 Claude Code 자동화\n\n오토위니 web-www-front를 React로 마이그레이션하면서, 페이지가 늘어날수록 \"이게 모든 브라우저에서 제대로 동작하나?\"라는 질문이 커졌습니다. 사용자가 실제 보는 화면을 자동으로 검증할 방법이 필요했습니다.\n\n### 배경\n\n- 페이지가 실제로 렌더되고 검색·필터가 동작하는지는 코드만 봐서는 알 수 없어, 매번 브라우저에서 직접 확인해야 했습니다.\n- Chrome에서만 수동으로 확인하던 터라 Firefox, WebKit(Safari) 동작은 사실상 미검증 상태였습니다.\n\n### Playwright를 선택한 이유\n\nChromium, Firefox, WebKit 3개 엔진을 한 번에 돌릴 수 있고, `page.route()`로 API를 모킹해 백엔드 의존 없이 실제 브라우저에서 UI 흐름을 검증할 수 있어 Playwright를 택했습니다.\n\n![Playwright E2E 실행 결과 - Chromium/Firefox/WebKit 3개 브라우저에서 동일 시나리오 통과](/images/answers/playwright-cross-browser.svg)\n\n### E2E 테스트 구조\n\n도메인 단위로 spec을 두고, 공통 데이터와 모킹 로직은 분리했습니다.\n\n```\ne2e/\n ┣ partFilterSearch.spec.ts     # 도메인별 E2E\n ┣ unifiedSearch.spec.ts\n ┣ myWiniSaved.spec.ts\n ┣ fixtures/                    # 공통 테스트 데이터\n ┗ helpers/                     # 공통 로직 + API 모킹 (mockApi 등)\n```\n\n테스트는 기본 렌더링, 검색·필터 결과 목록, URL 파라미터 반영을 최소 커버리지로 잡고, 번역 키는 실제 locale 값을 기준으로 검증했습니다.\n\n### Claude Code로 테스트 자동화\n\nE2E의 가장 큰 현실적 문제는 새 페이지·기능을 추가할 때 테스트 작성을 깜빡하는 것이었습니다. 그래서 사람 규율 대신 도구로 강제했습니다.\n\n- CLAUDE.md에 e2e 규칙 문서화: 파일 위치(`e2e/<도메인>.spec.ts`), `page.route()` 모킹 방식, 공통 헬퍼, 최소 커버리지 기준을 명시했습니다.\n- Claude Code Stop 훅: 작업이 끝날 때 `src/domains/`나 `Router.tsx`가 변경됐는데 `e2e/` 변경이 없으면 경고를 띄웁니다. 이를 받아 Claude Code가 기존 코드를 분석해 Playwright 테스트를 자동으로 생성·수정합니다.\n\n![Claude Code Stop 훅 - 도메인 변경 시 e2e 누락을 감지해 테스트 자동 생성 유도](/images/answers/claude-code-e2e-hook.svg)\n\n결과적으로 제 역할이 테스트를 직접 작성하는 일에서 생성된 테스트를 검토·실행하는 일로 옮겨갔습니다.\n\n### 느낀 점\n\nE2E까지 붙이고 나니 손으로 일일이 클릭해 확인하던 일이 확 줄었습니다. 특히 사람이 깜빡하기 쉬운 \"테스트 추가\"를 훅이 대신 챙겨주니, 기능이 늘어도 커버리지가 같이 따라온 게 가장 좋았습니다.\n\n앞으로는 기획서·요구사항에서 뽑은 테스트 시나리오까지 검증해볼 생각입니다.",
+      "contentEn": "## Autowini WEB Unified Project - Playwright E2E Tests & Claude Code Automation\n\nWhile migrating AutoWini's web-www-front to React, the more pages we added, the louder one question got: \"does this actually work in every browser?\" I needed a way to automatically verify the screens users actually see.\n\n### Background\n\n- Whether a page actually renders and search/filter works can't be verified from the code alone; it had to be checked in a real browser every time.\n- Since I'd only been checking manually in Chrome, behavior in Firefox and WebKit (Safari) was effectively unverified.\n\n### Why I chose Playwright\n\nPlaywright runs three engines - Chromium, Firefox, and WebKit - in one go, and `page.route()` lets me mock API responses to verify real UI flows in a real browser without a backend dependency.\n\n![Playwright E2E run - the same scenario passing across Chromium/Firefox/WebKit](/images/answers/playwright-cross-browser.svg)\n\n### E2E test structure\n\nSpecs are organized per domain, with shared data and mocking logic kept separate.\n\n```\ne2e/\n ┣ partFilterSearch.spec.ts     # per-domain E2E\n ┣ unifiedSearch.spec.ts\n ┣ myWiniSaved.spec.ts\n ┣ fixtures/                    # shared test data\n ┗ helpers/                     # shared logic + API mocking (mockApi, etc.)\n```\n\nMinimum coverage is basic rendering, search/filter result lists, and URL parameter reflection, with translation keys verified against actual locale values.\n\n### Automating tests with Claude Code\n\nWhat I kept getting wrong with E2E was forgetting to write tests when adding a new page or feature. So I enforced it with tooling instead of leaving it to memory.\n\n- Documented the e2e rules in CLAUDE.md: file location (`e2e/<domain>.spec.ts`), the `page.route()` mocking approach, shared helpers, and minimum coverage criteria.\n- A Claude Code Stop hook: when a session ends, if `src/domains/` or `Router.tsx` changed but `e2e/` didn't, it surfaces a warning. Claude Code then analyzes the existing code and generates or updates the Playwright tests automatically.\n\n![Claude Code Stop hook - detecting a missing e2e change on a domain edit and driving automatic test generation](/images/answers/claude-code-e2e-hook.svg)\n\nAs a result, I spent my time reviewing and running the generated tests instead of writing them by hand.\n\n### What I Learned\n\nAdding E2E cut down a lot of the manual click-through checking I'd been doing. The best part was that the hook handled the easy-to-forget \"add a test\" step for me, so coverage kept pace even as features grew.\n\nNext, I want to extend this toward verifying test scenarios derived from specs and requirements.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 13
+    },
+    {
+      "id": 31,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Autowini 프론트엔드 CI/CD 파이프라인\n\n### 배경\n\n회사 프론트엔드 프로젝트(web-www-front 등)는 개발 완료 후 개발자가 직접 CLI로 IDC 서버에 파일을 업로드해 배포해왔습니다. 매번 수동으로 진행하다 보니 develop 브랜치 코드와 실제 서버 파일이 맞지 않는 일이 생길 수 있었고, 자동화가 필요하다고 판단했습니다. 회사에서 Bitbucket을 사용하고 있어서 Bitbucket Pipelines로 CI/CD를 구성하기로 했습니다.\n\n### 파이프라인 구성\n\n브랜치별로 두 가지 흐름으로 나뉩니다.\n\n**develop 브랜치 - 자동 배포**\n\n```yaml\npipelines:\n  branches:\n    develop:\n      - step:\n          name: Build and Deploy to Dev\n          image: node:20\n          size: 4x\n          caches:\n            - pnpm\n          script:\n            - pnpm install\n            - pnpm build:dev\n            - rsync -avz --delete dist/ dev-server:/path/to/deploy/\n            - find /path/to/deploy/ -mtime +30 -delete\n          artifacts:\n            - dist/**\n```\n\ndevelop에 머지되면 빌드부터 개발 서버 rsync 전송까지 자동으로 돌아갑니다. 30일 지난 파일도 정리합니다.\n\n**master 브랜치 - 수동 트리거 운영 배포**\n\n```yaml\n    master:\n      - step:\n          name: Build for Production\n          image: node:20\n          size: 4x\n          script:\n            - pnpm install\n            - pnpm build\n          artifacts:\n            - dist/**\n      - step:\n          name: Deploy to Production\n          size: 4x\n          trigger: manual\n          deployment: production\n          script:\n            - rsync -avz dist/ prod-server:/path/to/deploy/\n            - # Akamai EdgeGrid Fast Purge - 주요 페이지 + 15개 언어 locale JSON CDN 캐시 무효화\n```\n\n운영은 빌드까지 자동 실행되지만, 실제 서버 반영은 `trigger: manual`로 사람이 직접 눌러야 합니다. 배포 후 Akamai CDN 캐시를 15개 언어 locale JSON 포함해 즉시 무효화합니다.\n\n![Bitbucket Pipelines 흐름 - develop 자동 배포, master 수동 운영 배포 + Akamai 캐시 무효화](/images/answers/bitbucket-cicd-pipeline-flow.svg)\n\n### 트러블슈팅\n\n**방화벽 IP 차단**\n\n파이프라인을 처음 연결했더니 SSH/rsync가 계속 타임아웃이 났습니다. 파이프라인 안에서 실제 외부 접속 IP를 출력해보니 실행할 때마다 다른 AWS EC2 대역이었고, 회사 IDC 방화벽이 그걸 막고 있었습니다. 공식 문서의 IP 목록을 방화벽에 열어봐도 IP가 계속 바뀌니 소용이 없었습니다. 그렇게 며칠을 헤맸습니다.\n\n해결은 의외로 설정 한 줄이었습니다. `size: 4x`와 `runtime.cloud.atlassian-ip-ranges: true`를 같이 주면 파이프라인이 Atlassian 고정 IP 풀에서 실행돼서, 방화벽엔 그 범위만 열어두면 됐습니다.\n\n**배포 결과가 한눈에 안 보이던 문제**\n\n파이프라인이 돌아가더라도 결과를 확인하려면 매번 Bitbucket 파이프라인 페이지에 직접 접속해야 했습니다. 여러 프로젝트가 병렬로 배포되는 상황에서는 특히 불편했고, 배포 실패를 뒤늦게 발견하는 경우도 생겼습니다.\n\n**Naver Works Bot 알림 자동화**로 해결했습니다. 파이프라인 `after-script`에서 `$BITBUCKET_EXIT_CODE`로 성공/실패를 판별하고, Python으로 JWT(RS256) 기반 access token을 발급한 뒤 캐러셀 메시지를 전송합니다.\n\n알림 메시지 구성:\n\n- 성공/실패 이미지\n- 제목: \"프로젝트명 - 브랜치명\"\n- 커밋 제목(60자 이내)\n- Commit URL, Pipeline URL 버튼\n\n![Naver Works 배포 알림 - web-www-front develop 배포 성공 캐러셀 메시지](/images/answers/naver-works-deploy-notification.svg)\n\n민감 정보(Bot ID, Client ID/Secret, Service Account, Private Key, Channel ID)는 전부 Bitbucket Repository Variables에 저장해서 yml 파일에는 노출하지 않았습니다.\n\n여기서 작은 삽질도 했습니다. 네이버웍스 콘솔의 \"복사\" 버튼으로 Client ID를 복사하면 문자열 일부가 누락돼 401 Unauthorized가 났는데, 처음엔 인증 로직을 의심하다 결국 콘솔 UI 버그임을 알았습니다. 마우스로 직접 드래그해 복사하니 바로 해결됐습니다.\n\n### 결과\n\n- develop 머지 즉시 개발 서버 자동 배포 - CLI 수동 작업 완전 제거\n- 배포 결과가 Naver Works 채팅으로 실시간 공유되어 파이프라인 페이지 직접 확인 불필요\n- 배포 실패 즉각 감지 및 대응\n- 신입 개발자도 배포 현황을 별도 권한 없이 채팅으로 바로 파악 가능\n\n### 느낀 점\n\n처음 직접 구축해본 CI/CD라, 방화벽에서 막혔을 땐 꽤 막막했습니다. 그래도 한번 붙여놓으니 develop에 머지만 하면 배포가 끝나고 결과는 알림으로 바로 확인돼서, 매번 파이프라인 페이지를 들여다보던 일이 사라졌습니다. 거창한 결론은 아니지만 배포가 실패해도 금방 알아채고, 새로 온 분도 현황을 쉽게 볼 수 있게 된 것만으로 충분히 가치가 있었습니다.",
+      "contentEn": "## Autowini Frontend CI/CD Pipeline\n\n### Background\n\nFrontend projects at Autowini (including web-www-front) had been deployed manually: a developer ran CLI commands to upload files directly to the IDC server after each release. Doing this by hand every time meant the develop branch code and the actual server files could easily get out of sync. We were already using Bitbucket, so I decided to set up CI/CD with Bitbucket Pipelines.\n\n### Pipeline Structure\n\nThe pipeline splits into two flows depending on the branch.\n\n**develop branch - automatic deployment**\n\n```yaml\npipelines:\n  branches:\n    develop:\n      - step:\n          name: Build and Deploy to Dev\n          image: node:20\n          size: 4x\n          caches:\n            - pnpm\n          script:\n            - pnpm install\n            - pnpm build:dev\n            - rsync -avz --delete dist/ dev-server:/path/to/deploy/\n            - find /path/to/deploy/ -mtime +30 -delete\n          artifacts:\n            - dist/**\n```\n\nAny merge into develop triggers the full build and rsync to the dev server automatically. Files older than 30 days are also cleaned up.\n\n**master branch - manually triggered production deployment**\n\n```yaml\n    master:\n      - step:\n          name: Build for Production\n          image: node:20\n          size: 4x\n          script:\n            - pnpm install\n            - pnpm build\n          artifacts:\n            - dist/**\n      - step:\n          name: Deploy to Production\n          size: 4x\n          trigger: manual\n          deployment: production\n          script:\n            - rsync -avz dist/ prod-server:/path/to/deploy/\n            - # Akamai EdgeGrid Fast Purge - invalidate CDN cache for key pages + 15 locale JSON files\n```\n\nThe build step runs automatically on master, but the actual server deployment requires a manual click (`trigger: manual`). After deploying, the Akamai CDN cache is purged immediately, including locale JSON files for all 15 languages.\n\n![Bitbucket Pipelines flow - develop auto-deploy, master manual production deploy plus Akamai purge](/images/answers/bitbucket-cicd-pipeline-flow.svg)\n\n### Troubleshooting\n\n**Firewall IP blocking**\n\nRight after wiring up the pipeline, SSH/rsync kept timing out. Printing the pipeline's actual outbound IP showed a different AWS EC2 address on every run, and the company IDC firewall was blocking them. Allowlisting the IP lists from the official docs didn't help, since the addresses kept changing. I spent a couple of days stuck here.\n\nThe fix turned out to be a single setting. Combining `size: 4x` with `runtime.cloud.atlassian-ip-ranges: true` runs the pipeline from Atlassian's fixed IP pool, so the firewall only needs to allow that range.\n\n**No visibility into deploy results**\n\nEven with the pipeline running, checking results still meant visiting the Bitbucket Pipelines page manually. With multiple projects deploying in parallel, this got tedious fast, and failed deployments were sometimes noticed too late.\n\nI automated it with **Naver Works Bot notifications**. In the pipeline's `after-script`, I check `$BITBUCKET_EXIT_CODE` to determine success or failure, generate a JWT (RS256) to get an access token, and send a carousel message.\n\nThe notification includes:\n\n- A success or failure image\n- Title: \"project name - branch name\"\n- Commit message (up to 60 characters)\n- Buttons linking to the commit and pipeline URLs\n\n![Naver Works deploy notification - web-www-front develop deployment success](/images/answers/naver-works-deploy-notification.svg)\n\nAll sensitive values (Bot ID, Client ID/Secret, Service Account, Private Key, Channel ID) are stored as Bitbucket Repository Variables; nothing is hardcoded in the yml.\n\nThere was one small headache too. Copying the Client ID with the Naver Works console's \"copy\" button silently truncated part of the string, which caused a 401 Unauthorized. I suspected my auth logic at first, but it turned out to be a console UI bug. Selecting and copying the value manually fixed it.\n\n### Outcome\n\n- Merging into develop triggers automatic deployment to the dev server: no more manual CLI uploads\n- Deployment results are shared in real time via Naver Works chat, eliminating the need to check the Pipelines page\n- Failed deployments are caught and handled right away\n- Even new developers can check deployment status without any special permissions, just from the chat\n\n### What I Learned\n\nThis was my first time building CI/CD from scratch, so getting stuck at the firewall was honestly pretty discouraging. But once the automation was in place, merging into develop was all it took to deploy, and the results showed up as notifications - so the habit of constantly checking the Pipelines page just went away. It's not a grand takeaway, but catching failed deploys quickly and letting new teammates see the status at a glance was already well worth it.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 14
+    },
+    {
+      "id": 32,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## react-head-safe 제작기\n\n### 배경 및 문제\n\nReact SPA에서는 보통 `index.html`에 선언한 메타 태그가 모든 페이지에 동일하게 적용됩니다. 그래서 페이지마다 다른 메타 정보를 주려면 전환 시점에 동적으로 바꿔야 하는데, 이를 위해 `react-helmet-async`를 도입했었습니다.\n\n그런데 여기서 새로운 문제가 생겼습니다. `title` 태그는 정상적으로 교체됐지만, `meta`나 og 태그는 기존 태그를 교체하지 않고 그 뒤에 새 태그가 계속 누적됐습니다. 그 결과 `<head>` 안에 동일한 `property`를 가진 메타 태그가 여러 개 쌓였고, 크롤러는 어느 값을 신뢰해야 할지 불명확한 상태가 됐습니다.\n\n![react-helmet-async는 og 태그가 중복 누적되지만 react-head-safe는 동일 속성 태그를 제거 후 교체해 항상 1개만 유지](/images/answers/react-head-safe-dedupe.svg)\n\n### 해결 전략\n\n`react-helmet-async`에 직접 기여하는 방법도 있었지만, 실무에서 겪은 문제를 직접 해결한 오픈소스를 배포해보고 싶다는 생각이 있었습니다. 그래서 직접 만들기로 했습니다.\n\n핵심 설계 원칙은 하나였습니다. 컴포넌트가 마운트될 때 `<head>` 안에 이미 동일한 속성의 태그가 있으면 즉시 제거하고 새 태그로 교체한다. `react-helmet-async`처럼 자신이 만든 태그만 추적하지 않고, 동일 속성 기준으로 `<head>` 전체를 제어하는 방식입니다.\n\n`useLayoutEffect`를 쓴 건 DOM 반영 타이밍 때문입니다. `useEffect`는 페인트 후에 실행되는데, 메타 태그 교체가 페인트 이후에 일어나면 그 사이 크롤러가 중복 태그를 볼 수 있기 때문입니다.\n\n### 도입 과정\n\nAPI는 최대한 단순하게 설계했습니다. `Context Provider` 없이 컴포넌트 하나만 가져다 쓰면 되는 형태입니다.\n\n```jsx\nimport { ReactHeadSafe } from 'react-head-safe';\n\nfunction MyPage() {\n  return (\n    <>\n      <ReactHeadSafe\n        title=\"My Page Title\"\n        description=\"This is the page description for SEO.\"\n        ogTitle=\"My Page Title for Social Media\"\n        ogImage=\"https://example.com/image.jpg\"\n      />\n      <div>Your page content...</div>\n    </>\n  );\n}\n```\n\n`title`, `description`, `keywords`, og 태그를 prop으로 선언하면 해당 태그들을 단일하게 유지해줍니다. `index.html`에 기본값을 넣어두고 페이지 진입 시 안전하게 교체하는 패턴에 딱 맞습니다.\n\n### 결과\n\nNPM에 `react-head-safe`로 배포하고, GitHub(`umsungjun/react-head-safe`)에 오픈소스로 공개했습니다.\n\n아직 초기 단계이지만, 실무에서 실제로 불편했던 부분을 직접 해결한 라이브러리라는 점에서 의미 있었습니다. 비슷한 고민을 하는 개발자에게 조금이라도 도움이 됐으면 합니다.",
+      "contentEn": "## Building react-head-safe\n\n### Background and Problem\n\nIn a React SPA, the meta tags declared in `index.html` apply to every page the same way by default. To show different meta information per page, you have to swap the tags dynamically on navigation, so I brought in `react-helmet-async`.\n\nThat introduced a new problem. The `title` tag was replaced correctly, but `meta` and og tags were never replaced. New ones just kept piling up after the existing ones, so `<head>` ended up with several tags sharing the same `property`, leaving crawlers unsure which value to trust.\n\n![react-helmet-async lets duplicate og tags accumulate, while react-head-safe removes and replaces same-attribute tags to keep exactly one](/images/answers/react-head-safe-dedupe.svg)\n\n### Solution\n\nI could have contributed a fix to `react-helmet-async`, but I'd wanted to ship an open-source package that solved a real problem I'd actually hit at work. So I built one.\n\nThe core design principle was simple: when the component mounts, scan `<head>` for any existing tag with the same attribute, remove it, then insert the new one. Unlike `react-helmet-async`, which only tracks tags it created, this approach treats the entire `<head>` as the source of truth, deduplicating by attribute value.\n\nI used `useLayoutEffect` instead of `useEffect` for the timing - if the swap happens after paint, a crawler could theoretically read the duplicate state in that window.\n\n### How I Built It\n\nI wanted the API to be as minimal as possible - no `Context Provider`, just drop in a single component.\n\n```jsx\nimport { ReactHeadSafe } from 'react-head-safe';\n\nfunction MyPage() {\n  return (\n    <>\n      <ReactHeadSafe\n        title=\"My Page Title\"\n        description=\"This is the page description for SEO.\"\n        ogTitle=\"My Page Title for Social Media\"\n        ogImage=\"https://example.com/image.jpg\"\n      />\n      <div>Your page content...</div>\n    </>\n  );\n}\n```\n\nDeclare `title`, `description`, `keywords`, and og tags as props - the component ensures exactly one of each lives in `<head>` at any time. It fits naturally into the pattern of setting safe defaults in `index.html` and replacing them cleanly on page load.\n\n### Outcome\n\nPublished to NPM as `react-head-safe` and open-sourced on GitHub at `umsungjun/react-head-safe`.\n\nStill early-stage, but it feels satisfying to have shipped something that came directly from a real frustration at work. Hopefully it saves someone else the same debugging session.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 15
+    },
+    {
+      "id": 33,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Next.js 포트폴리오 사이트 Vercel Region 최적화로 TTFB 개선\n\nNext.js로 만든 개인 포트폴리오 사이트(Vercel 배포 · Supabase DB)를 운영하면서 겪은 일입니다. Lighthouse 성능 점수는 **97점**이 나오는데, 직접 써보면 질문 목록이 뜨기까지 체감상 꽤 느리다는 게 계속 걸렸습니다. 지표는 좋은데 왜 이렇게 답답하지? 하고 파고들었습니다.\n\n### 문제 상황\n\n원인은 두 가지였습니다.\n\n첫 번째는 `middleware.ts` 문제였습니다. 조건부 리다이렉트가 중복 선언되어 초기 진입 시 불필요한 리다이렉트가 발생했고, 그 결과 흰 화면이 길게 노출됐습니다. 이건 [PR #17](https://github.com/umsungjun/new-portfolio-next/pull/17)에서 리다이렉트 로직을 단일화하고 실행 조건을 정리해서 해결했습니다.\n\n두 번째가 더 핵심이었는데, 인프라 구성의 문제였습니다.\n\n### 원인 파악\n\n프로젝트 구성은 이렇습니다.\n\n- **Supabase DB**: 서울(Northeast Asia) 리전\n- **Vercel 서버리스 함수**: 기본값인 미국 Washington(`sfo1`)\n\n사용자가 한국에서 접속하면 데이터 요청 경로가 이렇게 됩니다.\n\n```\n사용자(KR) → Vercel 함수(US) → Supabase DB(KR) → Vercel 함수(US) → 사용자(KR)\n```\n\n단순한 질문 목록 조회 하나에 태평양을 두 번 왕복하는 구조였습니다. Lighthouse가 97점인 건 시뮬레이션 환경 기준이라 이 실제 레이턴시는 잡아내지 못한 겁니다.\n\n### 해결 과정\n\nVercel 대시보드에서 `Functions → Region` 설정을 `sfo1`(Washington, US)에서 `icn1`(Seoul, KR)로 바꾸고 재배포했습니다. 코드는 한 줄도 건드리지 않았습니다.\n\n```\n변경 전: sfo1 (Washington, USA)\n변경 후: icn1 (Seoul, South Korea)\n```\n\n![Vercel Region 변경 전후 데이터 경로 비교 - 변경 전 sfo1은 한국과 미국을 4번 횡단하지만 변경 후 icn1은 같은 서울 리전이라 횡단이 없음](/images/answers/vercel-region-latency.svg)\n\n### 결과\n\n재배포 후 질문 목록을 불러오는 TTFB가 눈에 띄게 줄었고, 그 답답함이 사라졌습니다. Vercel 서버리스 함수와 Supabase DB가 같은 서울 리전에 위치하게 되면서 Vercel-Supabase 구간 레이턴시가 거의 없어진 덕분입니다.\n\n### 느낀 점\n\nLighthouse 점수만 보면 최적화가 다 된 것처럼 느껴지지만, 실제 사용자 경험은 인프라 구성에서도 충분히 갈릴 수 있다는 걸 알게 됐습니다. 서버와 DB를 지리적으로 가깝게 두는 것, CDN이 그런 역할을 한다는 것도 알고는 있었는데, 직접 겪고 나니 또 하나 배운 것 같습니다.",
+      "contentEn": "## Improving My Next.js Portfolio Site's TTFB with Vercel Region Optimization\n\nThis is about the personal portfolio site I built with Next.js (deployed on Vercel, backed by Supabase). My Lighthouse performance score was **97**, but using the site in person, the question list felt noticeably slow to load. The metrics looked fine - so why did it feel sluggish? That contradiction was enough to dig in.\n\n### The Problem\n\nThere were two issues.\n\nThe first was in `middleware.ts`. Duplicate conditional redirects were firing on the initial page entry, which caused a long blank screen before anything rendered. I fixed this in [PR #17](https://github.com/umsungjun/new-portfolio-next/pull/17) by consolidating the redirect logic and tightening the execution conditions.\n\nThe second issue was more significant - it was an infrastructure problem.\n\n### Root Cause\n\nHere's how the project was set up:\n\n- **Supabase DB**: Seoul region (Northeast Asia)\n- **Vercel serverless functions**: Default region, Washington, USA (`sfo1`)\n\nFor a user in South Korea, every data request had to travel like this:\n\n```\nUser (KR) → Vercel function (US) → Supabase DB (KR) → Vercel function (US) → User (KR)\n```\n\nA simple question list fetch was crossing the Pacific twice. Lighthouse's 97 score comes from a simulated environment that doesn't capture this real-world latency.\n\n### How I Solved It\n\nIn the Vercel dashboard, I changed `Functions → Region` from `sfo1` (Washington, USA) to `icn1` (Seoul, South Korea) and redeployed. Not a single line of code changed.\n\n```\nBefore: sfo1 (Washington, USA)\nAfter:  icn1 (Seoul, South Korea)\n```\n\n![Data path before and after the Vercel Region change - sfo1 crosses between Korea and the US four times, while icn1 keeps everything in the same Seoul region](/images/answers/vercel-region-latency.svg)\n\n### Outcome\n\nAfter redeploying, the TTFB for the question list fetch dropped noticeably - the sluggishness was gone. With the Vercel serverless functions and Supabase DB now sitting in the same Seoul region, the latency between them is nearly zero.\n\n### What I Learned\n\nA good Lighthouse score can make it look like optimization is finished, but the performance users actually feel can still come down to how the infrastructure is laid out. I already knew the basics, keeping the server and database geographically close and letting a CDN do that job, but running into it firsthand taught me one more thing.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 16
+    },
+    {
+      "id": 34,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Autowini 필터 검색 페이지 - 좌측 아코디언 메뉴가 접히던 문제\n\n[Autowini 중고차 검색 페이지](https://www.autowini.com/search/items?itemType=cars)의 좌측 필터 아코디언 메뉴에서 이상한 현상이 있었습니다. 사용자가 필터 파라미터를 바꿀 때마다 열려 있던 메뉴가 전부 접혔다가 다시 펼쳐지는 겁니다. 짧은 깜빡임처럼 보이기도 하고, 필터가 초기화됐나 싶어 당황하는 경우도 있었습니다.\n\n### 문제 상황\n\n필터 파라미터가 바뀌면 `useQuery`의 `queryKey`도 같이 바뀝니다. TanStack Query는 키가 달라지면 새 요청으로 인식해서 fetch를 시작하고, 그 사이 `data`가 `undefined`가 됩니다. 아코디언 컴포넌트는 `data`를 기반으로 렌더링하고 있었으니, `undefined` 구간에 리스트가 비워지면서 내부 상태가 초기화됐습니다. 열려 있던 메뉴가 닫히는 건 이 때문이었습니다.\n\n### 원인 파악\n\n핵심은 `queryKey` 변경 시 TanStack Query가 **이전 캐시 데이터를 즉시 비운다**는 점입니다. 새 키에 해당하는 캐시가 없으면 `data`는 fetch가 완료될 때까지 `undefined`로 유지됩니다. 이 짧은 공백이 아코디언 상태 리셋의 원인이었습니다.\n\n### 해결 전략\n\nTanStack Query v5의 `placeholderData` 옵션으로 해결했습니다. `placeholderData`에 이전 데이터를 반환하는 함수를 넣으면, 새 키로 fetch하는 동안 직전 `data`를 그대로 유지합니다.\n\n```typescript\nexport const useFilterSearch = ({\n  itemType,\n  filterSearchParams,\n}: {\n  itemType: string;\n  filterSearchParams: FilterSearchParams;\n}) => {\n  const { data, isLoading, isError } = useQuery({\n    queryKey: [\"useFilterSearch\", itemType, filterSearchParams],\n    queryFn: () =>\n      apiClient.get<FilterResponse>(`${API_URL}`, {\n        params: filterSearchParams,\n      }),\n    // 새 데이터 fetch 중에도 이전 데이터를 유지\n    placeholderData: (previousData) => previousData,\n  });\n\n  return {\n    filterData: data?.data?.data,\n    filterDataIsLoading: isLoading,\n    filterDataIsError: isError,\n  };\n};\n```\n\nv4에서는 `keepPreviousData: true`라는 별도 옵션이었는데, v5에서는 `placeholderData: (prev) => prev` 형태로 통합됐습니다. `isPlaceholderData` 플래그로 현재 표시 중인 데이터가 placeholder인지도 구분할 수 있습니다.\n\n![queryKey 변경 시 data 상태 흐름 - placeholderData가 없으면 data가 잠시 undefined가 되어 아코디언 메뉴가 접히지만, placeholderData로 이전 데이터를 유지하면 메뉴가 그대로 유지됨](/images/answers/placeholderdata-timeline.svg)\n\n### 결과\n\n필터를 바꿔도 아코디언 메뉴가 접히지 않고 그대로 유지됩니다. 새 데이터가 도착하면 자연스럽게 교체됩니다.\n\n### 느낀 점\n\n처음엔 아코디언이 접혔다 펴지는 문제를 `useState`와 `useEffect`로 해결했었습니다. 쿼리 결과를 로컬 상태로 따로 관리해서, `data`가 `undefined`로 바뀌는 순간에도 이전 데이터를 들고 있어 메뉴가 접히지 않도록 한 방식이었습니다. 동작은 했지만 같은 데이터를 캐시와 상태에 이중으로 들고 있어 메모리를 불필요하게 썼고 코드도 지저분했습니다. 그러다 TanStack Query 공식 문서를 보던 중 `placeholderData`를 알게 됐는데, `placeholderData: (previousData) => previousData` 한 줄이 제가 손으로 하던 일을 그대로 대신해줬습니다. 덕분에 불필요한 상태 관리와 지저분한 코드를 걷어낼 수 있었습니다.",
+      "contentEn": "## Autowini Filter Search Page - Accordion Menu Collapsing on Filter Change\n\nOn the [Autowini used-car search page](https://www.autowini.com/search/items?itemType=cars), the left-side filter accordion had an annoying behavior: every time a filter parameter changed, all open menus would collapse and re-expand. It looked like a quick flicker, and users could mistake it for the filters being reset.\n\n### The Problem\n\nWhen a filter parameter changes, the `queryKey` in `useQuery` changes with it. TanStack Query treats a new key as a new request, starts fetching, and in the meantime sets `data` to `undefined`. Since the accordion component rendered based on `data`, the list emptied out during that gap and the component's internal state reset - closing all the open menus.\n\n### Root Cause\n\nThe core issue is that when `queryKey` changes, TanStack Query **immediately clears the previous cached data** for that key. If there's no cache entry for the new key yet, `data` stays `undefined` until the fetch completes. That brief gap was what reset the accordion state.\n\n### Solution\n\nThe fix was TanStack Query v5's `placeholderData` option. By passing a function that returns the previous data, the old `data` stays in place while the new key is being fetched.\n\n```typescript\nexport const useFilterSearch = ({\n  itemType,\n  filterSearchParams,\n}: {\n  itemType: string;\n  filterSearchParams: FilterSearchParams;\n}) => {\n  const { data, isLoading, isError } = useQuery({\n    queryKey: [\"useFilterSearch\", itemType, filterSearchParams],\n    queryFn: () =>\n      apiClient.get<FilterResponse>(`${API_URL}`, {\n        params: filterSearchParams,\n      }),\n    // Keep previous data while fetching new results\n    placeholderData: (previousData) => previousData,\n  });\n\n  return {\n    filterData: data?.data?.data,\n    filterDataIsLoading: isLoading,\n    filterDataIsError: isError,\n  };\n};\n```\n\nIn v4 this was a separate `keepPreviousData: true` option; v5 consolidated it into the `placeholderData: (prev) => prev` form. The `isPlaceholderData` flag is also available to check whether the currently displayed data is a placeholder.\n\n![How the data state changes when queryKey changes - without placeholderData, data briefly becomes undefined and the accordion collapses, but keeping the previous data with placeholderData preserves the menu](/images/answers/placeholderdata-timeline.svg)\n\n### Outcome\n\nThe accordion menus no longer collapse when filters change - they stay open and update smoothly when new data arrives.\n\n### What I Learned\n\nI had originally fixed the collapse-and-reopen problem with `useState` and `useEffect`. I kept the query result in separate local state so the menu wouldn't collapse even when `data` briefly turned `undefined`. It worked, but holding the same data twice (in the query cache and in component state) wasted memory and left the code messy. Then, while reading the TanStack Query docs, I came across `placeholderData`, and the single line `placeholderData: (previousData) => previousData` did exactly what I had been doing by hand. That let me strip out the redundant state management and the messy code.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 17
+    },
+    {
+      "id": 35,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "## Autowini Keycloak 인증 화면 테마 개발\n\n오토위니 서비스에 Keycloak을 도입하면서 로그인, 회원가입, 에러, 비밀번호 재설정 등 여러 페이지의 인증 화면 전반을 Keycloakify 라이브러리를 통해 커스터마이징했습니다.\n\n### 배경\n\nKeycloak 기본 테마는 `.ftl`(FreeMarker Template Language) 파일로 짜여 있었지만 프론트엔드 팀에 FTL 문법을 다뤄본 사람이 없어서 개발하기에 앞서 더 좋은 방법이 없을까 리서치를 해보다가 Keycloakify를 알게 되었고, React와 JSX 문법 그대로 테마를 만들 수 있어서 러닝 커브도 줄고 유지보수성도 좋다고 생각해서 이 방향으로 정했습니다.\n\n처음에는 관리자용 프로젝트와 서비스용 프로젝트를 따로 두려고 했습니다. 하지만 운영 효율과 유지보수성을 고려해서, clientId 하나로 화면을 나누는 단일 프로젝트 구조로 바꿨습니다.\n\n### 도입 과정\n\n**clientId로 나눈 두 화면**\n\nAutowini는 관리자 클라이언트(autowini-admin)와 웹 클라이언트(autowini-web)를 함께 서비스합니다. 이 둘을 clientId 값으로 구분해서 한 프로젝트 안에서 관리했습니다.\n\n- autowini-admin: 300px 너비의 컴팩트한 다크 테마\n- autowini-web: 360px 너비의 라이트 테마에 Floating Label 애니메이션을 적용. 상품 상세 페이지에서 리다이렉트된 경우를 감지해 멤버십 안내 박스를 노출하도록 구현\n\n![Keycloak 인증 요청을 clientId로 분기 - autowini-admin은 컴팩트한 다크 테마, autowini-web은 라이트 테마이며 단일 레포에서 공통 컴포넌트를 공유](/images/answers/keycloakify-clientid-branch.svg)\n\n두 클라이언트를 한 레포에서 관리하니 공통 컴포넌트와 비즈니스 로직을 그대로 나눠 쓸 수 있어서 유지보수가 한결 수월했고, 이후 확장할 때도 부담이 적었습니다.\n\n### 문제 상황\n\nKeycloakify는 자체적으로 다국어(i18n) 기능을 지원하지만, 오토위니에 적용하는 과정에서 두 가지 문제가 걸렸습니다.\n\n- 오토위니가 지원해야 하는 15개 언어 중 az, sw, km, my, mn은 Keycloakify 기본 지원 목록에 들어있지 않았습니다.\n- 로그인에 실패하면 페이지가 새로고침되는데, 이때 URL의 ui_locales 파라미터가 같이 날아가서 언어가 다시 영어로 돌아갔습니다.\n\n### 해결 전략\n\n미지원 언어는 다른 오토위니 프론트엔드 프로젝트에서 사용하는 방식으로 i18n을 커스텀해서 resources에 번역 데이터를 직접 추가하는 방식으로 채웠습니다.\n\n언어 초기화 문제는 조금 더 손이 갔습니다. ui_locales 언어 코드로 언어를 설정할 때 그 값을 SessionStorage에도 함께 저장해두고, 새로고침으로 URL의 ui_locales 파라미터가 사라지면 SessionStorage에 남아있는 값을 참고해서 언어를 유지하도록 처리했습니다.\n\n![ui_locales 파라미터가 새로고침 시 유실되어 언어가 영어로 초기화되던 문제를, URL의 언어 코드를 SessionStorage에 저장했다가 복원하는 방식으로 해결](/images/answers/keycloak-locale-persistence.svg)\n\n**Storybook으로 화면 검증**\n\nKeycloakify는 Storybook 환경을 기본으로 제공합니다. Storybook은 예전부터 알고 있었는데 직접 써본 건 이 프로젝트가 처음이었습니다. 클라이언트별로 확인할 화면이 많다 보니 하나씩 Keycloak 서버를 띄워서 확인하기엔 번거로웠습니다. 그래서 Claude Code로 화면마다 story를 만들어두니, 서버 없이도 Storybook 한곳에서 전부 확인할 수 있었습니다. 에러 메시지 노출이나 재인증 플로우처럼 평소엔 재현하기 귀찮은 시나리오도 story로 고정해두고 바로 점검할 수 있었습니다.\n\n![Keycloakify가 제공하는 Storybook 화면 - 왼쪽 story 트리에서 admin/web 클라이언트별 로그인·에러·회원가입 등 화면을 고르면 오른쪽에 해당 화면이 렌더되어 Keycloak 서버 없이 확인 가능](/images/answers/keycloak-storybook-ui.svg)\n\n### 결과\n\n- 관리자·웹 클라이언트 테마를 단일 레포에서 관리하며 공통 컴포넌트 재사용\n- 15개 언어 지원, 로그인 실패 후에도 사용자가 고른 언어 유지\n\n### 느낀 점\n\nKeycloak 인증 시스템을 도입하면서 여러 구현 방식을 검토하고 프로젝트에 맞는 기술을 직접 골랐습니다. 처음엔 FTL도 고려했지만 리서치 끝에 Keycloakify를 택했고, 익숙한 React 기반이라 개발 속도와 유지보수성을 둘 다 높일 수 있었습니다.\n\n관리자와 웹 테마도 처음엔 따로 관리하려 했지만, 운영 효율과 유지보수성을 생각해서 하나의 프로젝트로 합쳤습니다. 덕분에 보일러플레이트 코드를 줄이면서 공통 컴포넌트와 비즈니스 로직도 그대로 나눠 썼습니다.\n\n국내에 참고할 자료가 많지 않아 막히는 부분도 꽤 있었지만, 하나씩 시행착오를 거치면서 Keycloakify와 React 조합으로 오토위니 테마를 완성했습니다.",
+      "contentEn": "## Autowini Keycloak Authentication Theme Development\n\nWhile rolling out Keycloak for the Autowini service, I customized the whole authentication flow, login, registration, error screens, and password reset, using the Keycloakify library.\n\n### Background\n\nKeycloak's default theme is built with `.ftl` (FreeMarker Template Language) files, but nobody on the frontend team had touched FTL syntax before, so before diving into development, I looked for a better way and came across Keycloakify. It let me build the theme in plain React and JSX, which meant a shorter learning curve and better maintainability, so I went with it.\n\nAt first I planned to keep the admin project and the service project completely separate. But considering operational efficiency and maintainability, I switched to a single project that branches by clientId instead.\n\n### How I Introduced It\n\n**Splitting screens by clientId**\n\nAutowini runs both an admin client (autowini-admin) and a web client (autowini-web). I told them apart by clientId and managed both inside one project.\n\n- autowini-admin: a compact 300px-wide dark theme\n- autowini-web: a 360px-wide light theme with a floating label animation, plus a membership banner that shows up when a redirect from the product detail page is detected\n\n![Branching the Keycloak auth request by clientId - autowini-admin uses a compact dark theme and autowini-web a light theme, sharing common components in one repo](/images/answers/keycloakify-clientid-branch.svg)\n\nKeeping both clients in one repo meant common components and business logic could just be shared as-is, which made maintenance a lot easier and left less burden when extending things later.\n\n### The Problem\n\nKeycloakify supports i18n out of the box, but I ran into two problems applying it to Autowini.\n\n- Languages like az, sw, km, my, and mn, out of the 15 languages Autowini needed to support, weren't in Keycloakify's default list.\n- A failed login triggers a page refresh that drops the ui_locales parameter from the URL, so the language falls back to English.\n\n### Solution\n\nFor the unsupported languages, I customized i18n the same way other Autowini frontend projects do, and added the translation data directly into resources.\n\nThe reset issue took a bit more work. Setting the language from the ui_locales code and saving that value to SessionStorage happen at the same time, so when a refresh drops the ui_locales parameter from the URL, the app falls back to the SessionStorage value to keep the language.\n\n![Fixing the language reset by saving the ui_locales code to SessionStorage and restoring it after a refresh, instead of relying on the URL parameter that gets dropped](/images/answers/keycloak-locale-persistence.svg)\n\n**Verifying screens with Storybook**\n\nKeycloakify ships with a Storybook setup by default. I'd known about Storybook for a while, but this was the first project where I actually used it. With so many screens to check per client, spinning up a Keycloak server for each one got tedious. So I used Claude Code to write a story for every screen, and after that I could check all of them in one place without a server. Scenarios that are normally a pain to reproduce, like error messages or re-authentication flows, could be pinned as stories and checked right away.\n\n![The Storybook UI that Keycloakify provides - picking a screen from the left story tree (admin/web login, error, register, etc.) renders it on the right, so screens can be checked without a Keycloak server](/images/answers/keycloak-storybook-ui.svg)\n\n### Outcome\n\n- Admin and web client themes managed in a single repo with shared components\n- 15 languages supported, with the user's chosen language preserved even after a failed login\n\n### What I Learned\n\nBringing in Keycloak, I weighed a few different ways to build it and picked the tech that actually fit the project. I looked at FTL at first, but after some research I went with Keycloakify instead, and working in familiar React gave both development speed and maintainability a boost.\n\nI'd planned to keep the admin and web themes separate too, but thinking about operational efficiency and maintainability, I merged them into one project. That cut down on boilerplate code and let me share common components and business logic as-is.\n\nThere wasn't much Korean-language material to lean on, so I hit a few walls, but working through it step by step, I put together the Autowini theme with Keycloakify and React.",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 18
+    },
+    {
+      "id": 1000,
+      "type": "ANSWER",
+      "isDraft": false,
+      "contentKo": "- **깃허브**: [github.com/umsungjun](https://github.com/umsungjun)\n- **블로그**: [developer-sungjun.tistory.com](https://developer-sungjun.tistory.com/)\n- **링크드인**: [linkedin.com/in/frontend-developer-umsungjun](https://www.linkedin.com/in/frontend-developer-umsungjun)",
+      "contentEn": "- **GitHub**: [github.com/umsungjun](https://github.com/umsungjun)\n- **Blog**: [developer-sungjun.tistory.com](https://developer-sungjun.tistory.com/)\n- **LinkedIn**: [linkedin.com/in/frontend-developer-umsungjun](https://www.linkedin.com/in/frontend-developer-umsungjun)",
+      "mediaUrl": null,
+      "mediaType": null,
+      "questionId": 1000
+    }
+  ]
+}

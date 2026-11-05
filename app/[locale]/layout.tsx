@@ -94,23 +94,8 @@ export async function generateMetadata({
       description: config.description,
       images: [config.ogImage],
     },
-    robots: {
-      index: true,
-      follow: true,
-      googleBot: {
-        index: true,
-        follow: true,
-        "max-video-preview": -1,
-        "max-image-preview": "large",
-        "max-snippet": -1,
-      },
-    },
-    verification: {
-      google: "FkVxpqkKnBQlSm1tgTF-GyQP0GLfhX_z03E6h21lipo",
-      other: {
-        "naver-site-verification": "5fe2f129f487d23b1b660ac6081da25d14f95e7a",
-      },
-    },
+    // 2026-11 보관 처리. 주소는 살려 두고 검색엔진에서만 뺀다. JS 를 안 돌리는 크롤러용으로 next.config 의 X-Robots-Tag 헤더도 같이 건다
+    robots: { index: false, follow: false },
   };
 }
 

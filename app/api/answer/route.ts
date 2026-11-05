@@ -1,18 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-import { unstable_cache } from "next/cache";
-
-import { prisma } from "@/lib/server/prisma";
-
-const getCachedAnswers = unstable_cache(
-  async (questionId: number) =>
-    prisma.answer.findMany({
-      where: { questionId, isDraft: false },
-      orderBy: { id: "asc" },
-    }),
-  ["answers"],
-  { tags: ["answers"], revalidate: 86400 }
-);
+import { getAnswers } from "@/lib/server/qna";
 
 export async function POST(request: NextRequest) {
   try {
@@ -26,9 +14,7 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const data = await getCachedAnswers(Number(id));
-
-    return NextResponse.json({ success: true, data });
+    return NextResponse.json({ success: true, data: getAnswers(Number(id)) });
   } catch (error) {
     return NextResponse.json(
       { success: false, message: `서버 내부 오류가 발생했습니다. ${error}` },

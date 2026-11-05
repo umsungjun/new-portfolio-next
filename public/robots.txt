@@ -1,6 +1,2 @@
 User-agent: *
 Allow: /
-Disallow: /home
-Disallow: /ko/home
-
-Sitemap: https://next-umsungjun.vercel.app/sitemap.xml

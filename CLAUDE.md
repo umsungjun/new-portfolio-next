@@ -6,26 +6,29 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 Next.js 15 풀스택 포트폴리오 애플리케이션 (React에서 마이그레이션). 사용자가 미리 정의된 질문을 선택하면 애니메이션과 함께 답변(선택적 미디어 포함)이 표시되는 채팅 스타일 UI. Vercel에 배포: https://next-umsungjun.vercel.app/
 
+**2026-11-05 까지 관리하고 보관 상태로 전환.** 주소는 살려 두고 검색엔진 색인에서만 뺐다. 외부 의존(Supabase·Google Drive)을 걷어 내 저장소만으로 열린다.
+
+- 색인 제외는 `layout.tsx` 의 `robots` meta 와 `next.config.ts` 의 `X-Robots-Tag` 헤더 두 겹. `robots.txt` 는 `Allow: /` 로 둔다. Disallow 로 막으면 크롤러가 noindex 를 못 읽어 이미 색인된 페이지가 남는다
+- 사이트맵과 Google·Naver 사이트 소유 확인 태그는 지웠다. Microsoft Clarity 는 남겨 둔다
+
 ## 명령어
 
-- `npm run dev` — Turbopack 개발 서버
-- `npm run build` — Prisma 클라이언트 생성 후 빌드 (`prisma generate && next build`)
-- `npm run lint` — ESLint 실행
-- `npm run prettier` — Prettier로 전체 파일 포맷팅
-- `npm run download:i18n` — Google Sheets에서 번역 파일을 `messages/` 디렉토리로 동기화 (`i18n/credentials.js` Google 서비스 계정 파일 필요, `.gitignore`에 포함됨)
-- `npx prisma migrate dev` — DB 스키마 변경 후 마이그레이션 실행 (`DIRECT_URL` 환경 변수 필요)
-- `npx prisma studio` — DB 데이터 확인/편집 GUI
+- `pnpm dev` — Turbopack 개발 서버
+- `pnpm build` — 프로덕션 빌드
+- `pnpm lint` — ESLint 실행
+- `pnpm prettier` — Prettier로 전체 파일 포맷팅
+- `pnpm download:i18n` — Google Sheets에서 번역 파일을 `messages/` 디렉토리로 동기화 (`i18n/credentials.js` Google 서비스 계정 파일 필요, `.gitignore`에 포함됨)
 
 **Node.js:** `package.json` `engines.node`를 **24.x**로 고정한다. Vercel은 이 값을 프로젝트 설정보다 우선해 빌드·함수를 24.x 최신 패치로 돌린다. 로컬도 Node 보안 릴리스가 나오면 같은 24.x 최신 패치로 올린다.
 
-**테스트:** 테스트 프레임워크 미설정 (Jest/Vitest 없음)
+**테스트:** Playwright e2e (`pnpm test:e2e`, 개발 서버를 띄워 돈다). 언어 전환 테스트 2개는 개발 모드에서만 뜨는 Agentation 도구의 "Learn more" 링크가 `getByRole("link", { name: "A" })` 에 먼저 걸려 실패한다
 
 ## 기술 스택
 
 - **프레임워크:** Next.js 15, React 19, TypeScript (strict 모드)
 - **스타일링:** Tailwind CSS 3 (커스텀 브레이크포인트 `web: 1055px`) + CSS 변수 기반 테마
 - **상태 관리:** Zustand — `useChatStore` (sessionStorage 영속), `useThemeStore` (URL `?theme=` 파라미터 영속)
-- **데이터 페칭:** SWR (클라이언트), Prisma 7 + PostgreSQL/Supabase (서버)
+- **데이터 페칭:** SWR (클라이언트), `lib/server/qna.json` 을 읽는 API 라우트 (서버)
 - **i18n:** next-intl — 한국어(기본) 및 영어, `localePrefix: "as-needed"` 설정으로 기본 언어(한국어)는 URL prefix 없음, 영어만 `/en` prefix 포함
 - **폰트:** Pretendard Variable (layout에서 CDN으로 로드)
 
@@ -57,13 +60,13 @@ Next.js 15 풀스택 포트폴리오 애플리케이션 (React에서 마이그�
 
 둘 다 `{ success: boolean, data: T[] }` 형태로 응답.
 
-### 데이터베이스 (Prisma + Supabase PostgreSQL)
+### 데이터 (`lib/server/qna.json`)
 
-스키마: `prisma/schema.prisma` — `Question` → 다수의 `Answer` 보유 (cascade 삭제). Answer는 선택적으로 `mediaUrl`과 `mediaType`(IMAGE | VIDEO)을 가질 수 있음. `mediaUrl`은 IMAGE면 Google Drive 파일 ID, VIDEO면 `/videos/answers/{슬러그}.mp4` 경로.
+질문 18개 · 답변 36개. 2026-11-05 보관하면서 Supabase 의 공개 질문·답변을 그대로 떠 왔고, 관리자 화면(`/admin`)과 Prisma 는 지웠다. 내용을 고칠 일이 생기면 이 JSON 을 직접 고친다.
 
-`MediaType` enum이 걸린 쿼리(`where: { mediaType }`, `update`)는 `@prisma/adapter-pg`에서 `type "public.MediaType" does not exist`로 실패하므로 `$queryRaw`/`$executeRaw`로 우회 (`app/api/admin/answers/[id]/route.ts` 참고).
-
-Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 사용하여 개발 핫 리로드 시 커넥션 누적 방지. Supabase pgBouncer를 통한 커넥션 풀링에 `@prisma/adapter-pg` 사용.
+- 타입은 `lib/client/type.ts` 의 `Question` · `Answer`. 읽기는 `lib/server/qna.ts`
+- `mediaUrl` 은 IMAGE·VIDEO 모두 `public/` 아래 경로. 이미지는 `public/images/answers/answer-{답변 id}.{gif|png}`, 영상은 `public/videos/answers/{슬러그}.mp4`
+- 답변 이미지는 Drive 원본이 아니라 사이트가 보여 주던 Drive 썸네일(w640)을 받은 것. 원본 GIF 는 최대 90MB 라 넣지 않았다
 
 ### 채팅 흐름
 
@@ -71,10 +74,10 @@ Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 �
 2. 사용자가 질문 클릭 → Zustand 스토어에 추가 → POST `/api/answer`로 답변 페칭
 3. 답변은 1초 로딩 애니메이션 후 텍스트 + 선택적 미디어 표시
 4. 채팅 기록은 sessionStorage 기반 Zustand 스토어에 저장 (세션마다 초기화)
-5. 초기 인사 메시지 2개는 하드코딩(ID 998, 999)으로 DB 조회 없이 스토어 초기값으로 설정
+5. 초기 인사 메시지 2개는 하드코딩(ID 998, 999)으로 API 조회 없이 스토어 초기값으로 설정
 6. 모바일(`web` 미만)에서는 채팅 스크롤 영역 최상단에 `MobileHero`(`@chat/_components/mobileHero.tsx`) 노출 — 프로필 이미지·소개·연락처·소셜 링크 + "대화 시작하기" CTA(채팅 영역으로 스크롤). `web:hidden`으로 데스크탑에서는 숨기고 `@side`가 대신 노출. 스크롤 로직은 `body.tsx`의 `scrollElementToTop` 헬퍼를 `scrollToLastQuestion`/`scrollToChat`이 공유
 
-미디어 렌더링: 이미지는 Next.js `<Image>` (Google Drive 원격 패턴 허용), 동영상은 네이티브 `<video>`. 프로필 이미지 슬라이더는 Swiper 사용.
+미디어 렌더링: 답변 이미지는 확대본과 같은 파일을 쓰려고 일반 `<img>`, 동영상은 네이티브 `<video>`. 프로필 이미지 슬라이더는 Swiper 와 Next.js `<Image>` 로 `public/images/profile/` 을 쓴다.
 
 참고 영상은 YouTube 임베드 대신 `public/videos/answers/`에 직접 둠. 새 영상을 넣을 때:
 
@@ -106,7 +109,7 @@ Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 �
 - `_lib/` — 라우트 전용 유틸/상수
 - `components/` (루트) — 앱 전역 공유 컴포넌트
 - `lib/client/` — 클라이언트용 타입/상수 (`type.ts`, `constants.ts`)
-- `lib/server/` — 서버 전용 모듈 (Prisma 싱글톤 등)
+- `lib/server/` — 서버 전용 모듈 (질문·답변 데이터 `qna.json` · `qna.ts`)
 
 ### 공유 컴포넌트 (`components/`)
 
@@ -121,8 +124,8 @@ Prisma 클라이언트는 `lib/server/prisma.ts`에서 **싱글톤 패턴**을 �
 
 ### 환경 변수
 
-클라이언트 (`NEXT_PUBLIC_`): `PHONE_NUMBER`, `MAIL`, `GOOGLE_DRIVE_IMG_URL`, `CHANNEL_PLUGIN_KEY`
-서버: `DATABASE_URL` (풀링), `DIRECT_URL` (마이그레이션)
+클라이언트 (`NEXT_PUBLIC_`): `PHONE_NUMBER`, `MAIL`, `CHANNEL_PLUGIN_KEY`
+서버 쪽 환경 변수는 없다. Vercel 에 남은 `DATABASE_URL` · `DIRECT_URL` · `ADMIN_*` · `NEXT_PUBLIC_GOOGLE_DRIVE_IMG_URL` 은 더 읽지 않는다
 
 ## 커밋 컨벤션
 

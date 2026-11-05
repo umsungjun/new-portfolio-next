@@ -11,10 +11,10 @@ import { EffectCards } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 /* Swiper의 loop 모드를 사용하려면 최소 5장 이상의 이미지가 필요 */
-const googleImgId = [
-  "1mHmEA6_u4HVNLZE-P8SeiyJUOw4VWY6P",
-  "1mqLoHWEo5l-xD8fNnn6BXhM-SpX13sG4",
-  "1pND2J6AogJTsuOR6L3PGMlTaM5Ck6TVF",
+const PROFILE_IMAGES = [
+  "/images/profile/profile-1.jpg",
+  "/images/profile/profile-2.jpg",
+  "/images/profile/profile-3.jpg",
 ];
 
 export default function ProfileSwiper() {
@@ -51,15 +51,15 @@ export default function ProfileSwiper() {
         /* 클릭 슬라이드 이동 여부 */
         slideToClickedSlide={true}
       >
-        {googleImgId.map((imgId, index) => {
+        {PROFILE_IMAGES.map((src) => {
           return (
             <SwiperSlide
-              key={`${index}+${imgId}`}
+              key={src}
               className="relative w-[215px] h-[290px] rounded-2xl overflow-hidden"
             >
               <Image
                 fill
-                src={`${process.env.NEXT_PUBLIC_GOOGLE_DRIVE_IMG_URL}${imgId}&sz=w250`}
+                src={src}
                 priority={true}
                 alt="profile"
                 sizes="(max-width: 215px) 100vw"

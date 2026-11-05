@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { useTranslations } from "next-intl";
 
 import { LOCALE_KO } from "@/lib/client/constants";
+import { Answer as AnswerType } from "@/lib/client/type";
 
 import ReactMarkdown from "react-markdown";
 import PulseLoader from "react-spinners/PulseLoader";
@@ -11,7 +12,6 @@ import remarkBreaks from "remark-breaks";
 import remarkGfm from "remark-gfm";
 
 import { PhotoIcon, VideoCameraIcon } from "@heroicons/react/24/solid";
-import { Answer as AnswerType } from "@prisma/client";
 
 import ZoomImage from "./zoomImage";
 
@@ -107,12 +107,8 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
                   />
                   {t("referenceImage")}
                 </span>
-                {/* 썸네일과 확대본이 같은 URL(w640)을 공유 → 확대 시 새 요청 없이 캐시된 이미지를 즉시 사용.
-                    숫자(w640)를 키우면 확대가 선명해지나 초기 로드가 무거워지고, 줄이면 그 반대. */}
-                <ZoomImage
-                  zoomSrc={`${process.env.NEXT_PUBLIC_GOOGLE_DRIVE_IMG_URL}${chat.mediaUrl}&sz=w640`}
-                  alt={t("referenceImage")}
-                >
+                {/* 썸네일과 확대본이 같은 파일을 공유해 확대 시 새 요청이 없음. 파일은 Drive 가 주던 w640 썸네일을 그대로 받아 둔 것 */}
+                <ZoomImage zoomSrc={chat.mediaUrl} alt={t("referenceImage")}>
                   <div
                     className="relative mt-3 flex h-[200px] w-full rounded-lg overflow-hidden"
                     style={{ backgroundColor: "var(--color-bg-secondary)" }}
@@ -121,7 +117,7 @@ export default function Answer({ isRefresh, locale, chat }: AnswerProps) {
                     {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       className="h-full w-full object-contain p-1"
-                      src={`${process.env.NEXT_PUBLIC_GOOGLE_DRIVE_IMG_URL}${chat.mediaUrl}&sz=w640`}
+                      src={chat.mediaUrl}
                       alt="referenceImage"
                       loading="lazy"
                     />
